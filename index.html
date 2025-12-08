@@ -1,302 +1,64 @@
 <!DOCTYPE html>
+<!-- html versiyonu, Yazdığımız kodların düzgün şekilde okunmasını sağlar-->
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"> <!--türkçe karakterleri kulanmak için ekledim-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kumarsız Hayat - Ana Sayfa</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-        }
-
-        header {
-            background: linear-gradient(135deg, #2c5282 0%, #1a365d 100%);
-            color: white;
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 0;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            padding: 0.75rem 1.5rem;
-            font-size: 1rem;
-            font-weight: 500;
-            transition: background 0.3s;
-            border-radius: 5px;
-            display: block;
-        }
-
-        .nav-links a:hover {
-            background: rgba(255,255,255,0.1);
-        }
-
-        .nav-links a.active {
-            background: rgba(255,255,255,0.2);
-        }
-
-        .emergency-banner {
-            background: #e53e3e;
-            color: white;
-            padding: 1.5rem 2rem;
-            text-align: center;
-            font-size: 1.1rem;
-            font-weight: bold;
-        }
-
-        .emergency-banner a {
-            color: white;
-            text-decoration: underline;
-        }
-
-        .content-wrapper {
-            margin-top: 120px;
-            min-height: calc(100vh - 200px);
-        }
-
-        .hero {
-            background: linear-gradient(135deg, #2c5282 0%, #1a365d 100%);
-            color: white;
-            padding: 100px 2rem;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .hero-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            max-width: 900px;
-            margin: 3rem auto 0;
-        }
-
-        .hero-stat {
-            padding: 1.5rem;
-            background: rgba(255,255,255,0.1);
-            border-radius: 10px;
-            backdrop-filter: blur(10px);
-        }
-
-        .hero-stat-number {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #48bb78;
-        }
-
-        .section {
-            padding: 80px 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: #2c5282;
-        }
-
-        .section-intro {
-            text-align: center;
-            font-size: 1.1rem;
-            margin-bottom: 3rem;
-            color: #666;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .solutions-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .solution-card {
-            padding: 2rem;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            border-left: 4px solid #48bb78;
-            transition: transform 0.3s;
-        }
-
-        .solution-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .solution-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .solution-card h3 {
-            color: #48bb78;
-            margin-bottom: 1rem;
-            font-size: 1.4rem;
-        }
-
-        footer {
-            background: #1a202c;
-            color: white;
-            padding: 3rem 2rem;
-            text-align: center;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .footer-content p {
-            margin: 0.5rem 0;
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
-            .nav-links {
-                gap: 0;
-            }
-
-            .nav-links a {
-                padding: 0.5rem 0.75rem;
-                font-size: 0.9rem;
-            }
-
-            .hero-stat-number {
-                font-size: 2rem;
-            }
-        }
-    </style>
+    <!--kulanılan cihaza göre en boy oranı yapıyor-->
+    <title>Sanal Bahis Farkındalık</title>
+    <!--sitenin başlığı bir nevi domain-->
+    <link rel="stylesheet" href="style.css">
+    <!--css dosyasını bağladım-->
 </head>
+<!--kulanıcının görmediği kısım -->
 <body>
-    <div class="emergency-banner">
-        🆘 Acil Durum Yardım Hattı: <a href="tel:182">182</a> | 7/24 Ücretsiz Destek
-    </div>
 
-    <header>
-        <nav>
-            <div class="logo">🛡️ Kumarsız Hayat</div>
-            <ul class="nav-links">
-                <li><a href="index.html" class="active">Ana Sayfa</a></li>
-                <li><a href="hedef.html">Hedef</a></li>
-                <li><a href="sorunlar.html">Sorunlar</a></li>
-                <li><a href="cozumler.html">Çözümler</a></li>
-                <li><a href="universite.html">Üniversite</a></li>
-                <li><a href="iletisim.html">İletişim</a></li>
-            </ul>
-        </nav>
+    <header> <!--ana başlığın olduğu kısım oluyor (tepe noktası)-->
+        <div class="kutu">
+            <div id="logo">
+                <h1>SANAL FARKINDALIK</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="aktif">Ana Sayfa</a></li>
+                    <li><a href="hedef.html">Hedef</a></li>
+                    <li><a href="sorunlar.html">Sorunlar</a></li>
+                    <li><a href="cozumler.html">Çözümler</a></li>
+                    <li><a href="universite.html">Üniversite</a></li>
+                </ul>
+                <!--hrefle link ekleye biliyoruz(başa dön diye buton ekleyebiliriz)-->
+                <!--bunun bide ol'si va onun başına a,1 vs. ayarlayabiliyoruz-->
+                <!--burda diğer sayfaları(dosyaları) ekledim-->
+            </nav>
+        </div>
+        <!--div ile nav aynı gibi bir arada yazmamım sebebi ise şu: div olmazsa her yazdığımız menü alt alta durur düzenli olmaz yani-->
     </header>
 
-    <div class="content-wrapper">
-        <section class="hero">
-            <h1>Kumar Bağımlılığı Bir Hastalıktır</h1>
-            <p>Sanal kumar ve bahis bağımlılığı hayatınızı, ailenizi ve geleceğinizi tehdit ediyor. Ama iyileşme mümkündür. Yalnız değilsiniz, biz buradayız.</p>
-            
-            <div class="hero-stats">
-                <div class="hero-stat">
-                    <div class="hero-stat-number">%2-3</div>
-                    <p>Toplumda kumar bağımlılığı oranı</p>
-                </div>
-                <div class="hero-stat">
-                    <div class="hero-stat-number">18-35</div>
-                    <p>En riskli yaş aralığı</p>
-                </div>
-                <div class="hero-stat">
-                    <div class="hero-stat-number">7/24</div>
-                    <p>Online kumar erişimi</p>
-                </div>
+    <section id="banner">
+        <div class="kutu">
+            <h1>KUMARA DEĞİL, GELECEĞE YATIRIM YAP</h1>
+            <p>Sanal bahis bir oyun değil, bağımlılıktır.</p>
+        </div>
+    </section>
+    <!-- Section -> header gibi ama bundan daha fazla yapabiliyoruz bide bunun beliri bir yeri yok-->
+
+    <section id="ana-icerik" class="kutu">
+        <h2>Hoş Geldiniz</h2>
+        <p>Bu site, Sanal Bahis ve Kumar Bağımlılığına karşı farkındalık oluşturmak ve Sürdürülebilir Kalkınma Amaçları (Madde 3: Sağlık) kapsamında bilgilendirme yapmak için hazırlanmıştır.</p>
+        
+        <div class="gorsel-alani">
+            <p>[Buraya İleride Bir Afiş Resmi Gelecek]</p>
             </div>
-        </section>
 
-        <section class="section">
-            <h2>Kumar Bağımlılığı Nedir?</h2>
-            <p class="section-intro">Kumar bağımlılığı, kontrol edilemeyen ve zararlı kumar oynama davranışı olarak tanımlanan ciddi bir ruh sağlığı bozukluğudur. Dünya Sağlık Örgütü (WHO) tarafından resmi olarak bir hastalık olarak kabul edilmiştir.</p>
-            
-            <div class="solutions-grid">
-                <div class="solution-card">
-                    <div class="solution-icon">🧬</div>
-                    <h3>Biyolojik Faktörler</h3>
-                    <p>Beyin kimyasındaki değişiklikler ve genetik yatkınlık, kumar bağımlılığının gelişiminde önemli rol oynar. Dopamin hormonu seviyelerindeki dengesizlikler bağımlılığı tetikleyebilir.</p>
-                </div>
-
-                <div class="solution-card">
-                    <div class="solution-icon">💭</div>
-                    <h3>Psikolojik Faktörler</h3>
-                    <p>Depresyon, anksiyete, düşük özgüven ve stresle başa çıkma güçlüğü gibi psikolojik durumlar kumar bağımlılığı riskini artırır.</p>
-                </div>
-
-                <div class="solution-card">
-                    <div class="solution-icon">🌍</div>
-                    <h3>Sosyal Faktörler</h3>
-                    <p>Aile geçmişi, sosyal çevre, kumar reklamlarına maruz kalma ve kolay erişilebilirlik bağımlılık gelişimini etkiler.</p>
-                </div>
-            </div>
-        </section>
-    </div>
+        <h3>Neden Bu Site Var?</h3>
+        <p>Üniversite gençliği arasında yayılan bu sessiz tehlikeye dur demek, sorunları ve çözüm yollarını konuşmak için buradayız.</p>
+    </section>
 
     <footer>
-        <div class="footer-content">
-            <h3 style="color: #48bb78; margin-bottom: 1rem;">🛡️ Kumarsız Hayat</h3>
-            <p>Kumar ve bahis bağımlılığıyla mücadelede yanınızdayız.</p>
-            <p style="margin-top: 1.5rem;">Acil Durum: <strong>182</strong> | E-posta: yardim@kumarsızhayat.org</p>
-            <p style="margin-top: 1.5rem; font-size: 0.9rem;">&copy; 2024 Kumarsız Hayat. İyileşme mümkündür.</p>
-            <p style="margin-top: 0.5rem; font-size: 0.85rem;">Bu site bilgilendirme amaçlıdır. Acil durumlarda 112 veya en yakın sağlık kuruluşuna başvurunuz.</p>
-        </div>
+        <p>Sanal Bahis Farkındalık Projesi &copy; 2025 | SKA Hedef 3</p>
+    <!--&copy yazmamın sebebi o simgenin klavyede karşılığı yok bu yüzdende kodunu yazdım tabiri caizse-->
     </footer>
+    <!--sitenin künyesi (son kısmı en altı olur yerinede başka kod gelmez gidipte sec. ve ya header vs yazma )-->
 </body>
+<!--Kulanıcının gördüğü kısım-->
 </html>
