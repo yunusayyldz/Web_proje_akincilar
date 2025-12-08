@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kumarsız Hayat - Farkındalık ve Destek</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c5282 0%, #1a365d 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 0;
+            list-style: none;
+        }
+
+        .nav-links button {
+            background: none;
+            border: none;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.3s;
+            border-radius: 5px;
+        }
+
+        .nav-links button:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        .nav-links button.active {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .emergency-banner {
+            background: #e53e3e;
+            color: white;
+            padding: 1.5rem 2rem;
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        .emergency-banner a {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .content-wrapper {
+            margin-top: 120px;
+            min-height: calc(100vh - 200px);
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #2c5282 0%, #1a365d 100%);
+            color: white;
+            padding: 100px 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 900px;
+            margin: 3rem auto 0;
+        }
+
+        .hero-stat {
+            padding: 1.5rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #48bb78;
+        }
+
+        .section {
+            padding: 80px 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #2c5282;
+        }
+
+        .section-intro {
+            text-align: center;
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            color: #666;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .problem-card {
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-left: 4px solid #e53e3e;
+            transition: transform 0.3s;
+        }
+
+        .problem-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .problem-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .problem-card h3 {
+            color: #e53e3e;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .problem-card ul {
+            margin-left: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .problem-card li {
+            margin-bottom: 0.5rem;
+        }
+
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .solution-card {
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-left: 4px solid #48bb78;
+            transition: transform 0.3s;
+        }
+
+        .solution-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .solution-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .solution-card h3 {
+            color: #48bb78;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .contact-card {
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-card h3 {
+            color: #2c5282;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #48bb78;
+            margin: 1rem 0;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #2c5282;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #48bb78;
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: #48bb78;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: #38a169;
+        }
+
+        footer {
+            background: #1a202c;
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-content p {
+            margin: 0.5rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .nav-links {
+                gap: 0;
+            }
+
+            .nav-links button {
+                padding: 0.5rem 0.75rem;
+                font-size: 0.9rem;
+            }
+
+            .hero-stat-number {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="emergency-banner">
+        🆘 Acil Durum Yardım Hattı: <a href="tel:182">182</a> | 7/24 Ücretsiz Destek
+    </div>
+
+    <header>
+        <nav>
+            <div class="logo">🛡️ Kumarsız Hayat</div>
+            <ul class="nav-links">
+                <li><button class="nav-btn active" data-tab="anasayfa">Ana Sayfa</button></li>
+                <li><button class="nav-btn" data-tab="sorunlar">Sorunlar</button></li>
+                <li><button class="nav-btn" data-tab="cozumler">Çözümler</button></li>
+                <li><button class="nav-btn" data-tab="iletisim">İletişim</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="content-wrapper">
+        <!-- ANA SAYFA -->
+        <div id="anasayfa" class="tab-content active">
+            <section class="hero">
+                <h1>Kumar Bağımlılığı Bir Hastalıktır</h1>
+                <p>Sanal kumar ve bahis bağımlılığı hayatınızı, ailenizi ve geleceğinizi tehdit ediyor. Ama iyileşme mümkündür. Yalnız değilsiniz, biz buradayız.</p>
+                
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">%2-3</div>
+                        <p>Toplumda kumar bağımlılığı oranı</p>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">18-35</div>
+                        <p>En riskli yaş aralığı</p>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">7/24</div>
+                        <p>Online kumar erişimi</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Kumar Bağımlılığı Nedir?</h2>
+                <p class="section-intro">Kumar bağımlılığı, kontrol edilemeyen ve zararlı kumar oynama davranışı olarak tanımlanan ciddi bir ruh sağlığı bozukluğudur. Dünya Sağlık Örgütü (WHO) tarafından resmi olarak bir hastalık olarak kabul edilmiştir.</p>
+                
+                <div class="problems-grid">
+                    <div class="solution-card">
+                        <div class="solution-icon">🧬</div>
+                        <h3>Biyolojik Faktörler</h3>
+                        <p>Beyin kimyasındaki değişiklikler ve genetik yatkınlık, kumar bağımlılığının gelişiminde önemli rol oynar. Dopamin hormonu seviyelerindeki dengesizlikler bağımlılığı tetikleyebilir.</p>
+                    </div>
+
+                    <div class="solution-card">
+                        <div class="solution-icon">💭</div>
+                        <h3>Psikolojik Faktörler</h3>
+                        <p>Depresyon, anksiyete, düşük özgüven ve stresle başa çıkma güçlüğü gibi psikolojik durumlar kumar bağımlılığı riskini artırır.</p>
+                    </div>
+
+                    <div class="solution-card">
+                        <div class="solution-icon">🌍</div>
+                        <h3>Sosyal Faktörler</h3>
+                        <p>Aile geçmişi, sosyal çevre, kumar reklamlarına maruz kalma ve kolay erişilebilirlik bağımlılık gelişimini etkiler.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- SORUNLAR -->
+        <div id="sorunlar" class="tab-content">
+            <section class="section" style="background: #f7fafc;">
+                <h2>Kumar Bağımlılığının Yarattığı Sorunlar</h2>
+                <p class="section-intro">Kumar ve bahis bağımlılığı sadece mali bir sorun değildir. Hayatın her alanını etkileyen ciddi bir hastalıktır.</p>
+                
+                <div class="problems-grid">
+                    <div class="problem-card">
+                        <div class="problem-icon">💸</div>
+                        <h3>Mali Yıkım</h3>
+                        <p>Kumar bağımlılığı ciddi ekonomik sonuçlara yol açar:</p>
+                        <ul>
+                            <li>Tüm birikimlerinin kaybı</li>
+                            <li>Borçların kontrolsüz artışı</li>
+                            <li>Kredi kartı limitleri dolması</li>
+                            <li>Ev, araba gibi varlıkların kaybı</li>
+                            <li>İflas ve haciz süreçleri</li>
+                        </ul>
+                    </div>
+
+                    <div class="problem-card">
+                        <div class="problem-icon">👨‍👩‍👧‍👦</div>
+                        <h3>Aile ve İlişkilerde Çöküş</h3>
+                        <p>En yakın ilişkileriniz zarar görür:</p>
+                        <ul>
+                            <li>Eş ve çocuklarla güven kaybı</li>
+                            <li>Sürekli yalan ve gizlilik</li>
+                            <li>Aile içi şiddet riski</li>
+                            <li>Boşanma ve ayrılıklar</li>
+                            <li>Sosyal izolasyon</li>
+                        </ul>
+                    </div>
+
+                    <div class="problem-card">
+                        <div class="problem-icon">🧠</div>
+                        <h3>Psikolojik Tahribat</h3>
+                        <p>Zihinsel ve duygusal sağlık bozulur:</p>
+                        <ul>
+                            <li>Depresyon ve anksiyete</li>
+                            <li>Sürekli stres ve gerilim</li>
+                            <li>Uyku bozuklukları</li>
+                            <li>İntihar düşünceleri</li>
+                            <li>Öfke kontrolü kaybı</li>
+                        </ul>
+                    </div>
+
+                    <div class="problem-card">
+                        <div class="problem-icon">💼</div>
+                        <h3>Kariyer Kaybı</h3>
+                        <p>Profesyonel hayatınız tehlikede:</p>
+                        <ul>
+                            <li>İş performansında düşüş</li>
+                            <li>İş yerinde kumar oynama</li>
+                            <li>İşten çıkarılma</li>
+                            <li>Yeni iş bulamama</li>
+                            <li>Meslek itibarının kaybı</li>
+                        </ul>
+                    </div>
+
+                    <div class="problem-card">
+                        <div class="problem-icon">⚖️</div>
+                        <h3>Hukuki Sorunlar</h3>
+                        <p>Yasalarla karşı karşıya kalabilirsiniz:</p>
+                        <ul>
+                            <li>Zimmete para geçirme</li>
+                            <li>Dolandırıcılık suçlamaları</li>
+                            <li>Hırsızlık ve sahtecilik</li>
+                            <li>Cezai işlemler</li>
+                            <li>Hapis cezası riski</li>
+                        </ul>
+                    </div>
+
+                    <div class="problem-card">
+                        <div class="problem-icon">❤️</div>
+                        <h3>Fiziksel Sağlık Sorunları</h3>
+                        <p>Bedeniniz de etkilenir:</p>
+                        <ul>
+                            <li>Kalp hastalıkları riski</li>
+                            <li>Mide ve bağırsak sorunları</li>
+                            <li>Baş ağrıları ve migren</li>
+                            <li>Bağışıklık sisteminde zayıflama</li>
+                            <li>Kronik yorgunluk</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ÇÖZÜMLER -->
+        <div id="cozumler" class="tab-content">
+            <section class="section">
+                <h2>Çözümler ve İyileşme Yolları</h2>
+                <p class="section-intro">Kumar bağımlılığından kurtulmak mümkündür. İşte size yardımcı olabilecek kanıtlanmış çözümler:</p>
+                
+                <div class="solutions-grid">
+                    <div class="solution-card">
+                        <div class="solution-icon">👨‍⚕️</div>
+                        <h3>Profesyonel Terapi</h3>
+                        <p>Uzman psikolog ve psikiyatristlerle düzenli görüşmeler, bağımlılığın altında yatan nedenleri keşfetmenize yardımcı olur. Bilişsel davranışçı terapi (BDT) özellikle etkili sonuçlar verir.</p>
+                    </div>
+
+                    <div class="solution-card">
+                        <div class="solution-icon">👥</div>
+                        <h3>Destek Grupları</h3>
+                        <p>Kumar Bağımlıları Anonim gibi destek gruplarında benzer deneyimlere sahip insanlarla bir araya gelmek, yalnız olmadığınızı hissetmenizi sağlar ve motivasyonunuzu artırır.</p>
+                    </div>
+
+                    <div class="solution-card">
+                        <div class="solution-icon">🏥</div>
+                        <h3>Klinik Tedavi Programları</h3>
+                        <p>Yatılı veya gündüzlü tedavi merkezlerinde yoğun bakım ve 24 saat destek alabilirsiniz. Profesyonel ekipler tarafından hazırlanan programlar iyileşme sürecinizi hızlandırır.</p>
+                    </div>
+
+                    <div class="solution-card">
+                        <div class="solution-icon">💊</div>
+                        <h3>İlaç Tedavisi</h3>
+                        <p>Eşlik eden depresyon, anksiyete gibi durumlar için psikiyatrist gözetiminde ilaç tedavisi uygulanabilir. Bu, psikolojik dengenizi sağlamaya yardımcı olur.</p>
+                    </div>
+
+                    <div class="solution-card">
+                        <div class="solution-icon">🚫</div>
+                        <h3>Kumar Sitelerine Erişim Engelleme</h3>
+                        <p>Kumar sitelerini bloklamak için yazılımlar ve tarayıcı eklentileri kullanın. BTK'nın (Bilgi Teknolojileri ve İletişim Kurumu) İYS sistemine başvurarak kendinizi kumar sitelerinden uzak tutabilirsiniz.</p>
+                    </div>
+
+                    <div class="solution-card">
+                        <div class="solution-icon">💳</div>
+                        <h3>Mali Kontrol Sistemleri</h3>
+                        <p>Banka kartlarınızı güvenilir bir aile ferdine emanet edin. Online işlemleri kapatın. Mali danışman yardımıyla bütçe planı yapın ve borç yapılandırma seçeneklerini değerlendirin.</p>
+                    </div>
+
+                    <div class="solution-card">
+                        <div class="solution-icon">📱</div>
+                        <h3>Mobil Destek Uygulamaları</h3>
+                        <p>Kumar bloklama uygulamaları, günlük motivasyon mesajları ve takip araçları kullanın. Bu uygulamalar tetikleyici anlarda size destek olur.</p>
+                    </div>
+
+                    <div class="solution-card">
+                        <div class="solution-icon">👨‍👩‍👧</div>
+                        <h3>Aile Terapisi</h3>
+                        <p>Bağımlılıktan etkilenen tüm aile bireylerinin katıldığı terapi seansları, ilişkileri onarmaya ve sağlıklı iletişim kurmaya yardımcı olur.</p>
+                    </div>
+
+                    <div class="solution-card">
+                        <div class="solution-icon">🎯</div>
+                        <h3>Alternatif Aktiviteler</h3>
+                        <p>Spor, sanat, müzik gibi sağlıklı hobiler edinin. Boş zamanlarınızı yapıcı aktivitelerle doldurun. Sosyal çevrenizi genişletin ve yeni arkadaşlıklar kurun.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- İLETİŞİM -->
+        <div id="iletisim" class="tab-content">
+            <section class="section" style="background: #e6fffa;">
+                <h2>Bizimle İletişime Geçin</h2>
+                <p class="section-intro">Yardım almak için cesaret edin. Biz her zaman buradayız.</p>
+                
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <div class="contact-icon">📞</div>
+                        <h3>Yardım Hattı</h3>
+                        <p>7/24 Ücretsiz Destek</p>
+                        <div class="contact-info">182</div>
+                        <p>Anında danışman desteği</p>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">📧</div>
+                        <h3>E-posta</h3>
+                        <p>Yazılı iletişim için</p>
+                        <div class="contact-info">yardim@kumarsızhayat.org</div>
+                        <p>24 saat içinde yanıt</p>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">💬</div>
+                        <h3>WhatsApp Destek</h3>
+                        <p>Mesajlaşma desteği</p>
+                        <div class="contact-info">0850 123 45 67</div>
+                        <p>Hızlı ve gizli iletişim</p>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h3 style="text-align: center; color: #2c5282; margin-bottom: 1.5rem;">İletişim Formu</h3>
+                    <div class="form-group">
+                        <label for="name">Adınız Soyadınız</label>
+                        <input type="text" id="name" placeholder="Adınız (İsteğe bağlı, anonim kalabilirsiniz)">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">E-posta Adresiniz</label>
+                        <input type="email" id="email" placeholder="ornek@email.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Telefon Numaranız</label>
+                        <input type="tel" id="phone" placeholder="0555 123 45 67 (İsteğe bağlı)">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Mesajınız</label>
+                        <textarea id="message" placeholder="Lütfen durumunuzu anlatın. Gizliliğiniz bizim için önemlidir."></textarea>
+                    </div>
+
+                    <button type="button" class="submit-btn" onclick="handleSubmit()">Gönder</button>
+                </div>
+
+                <p style="text-align: center; margin-top: 2rem; color: #666;">
+                    <strong>Not:</strong> Tüm iletişimleriniz gizli tutulur. Kişisel bilgileriniz hiçbir şekilde üçüncü kişilerle paylaşılmaz.
+                </p>
+            </section>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <h3 style="color: #48bb78; margin-bottom: 1rem;">🛡️ Kumarsız Hayat</h3>
+            <p>Kumar ve bahis bağımlılığıyla mücadelede yanınızdayız.</p>
+            <p style="margin-top: 1.5rem;">Acil Durum: <strong>182</strong> | E-posta: yardim@kumarsızhayat.org</p>
+            <p style="margin-top: 1.5rem; font-size: 0.9rem;">&copy; 2024 Kumarsız Hayat. İyileşme mümkündür.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.85rem;">Bu site bilgilendirme amaçlıdır. Acil durumlarda 112 veya en yakın sağlık kuruluşuna başvurunuz.</p>
+        </div>
+    </footer>
+
+    <script>
+        const navBtns = document.querySelectorAll('.nav-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        navBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const targetTab = btn.getAttribute('data-tab');
+                
+                navBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                tabContents.forEach(content => {
+                    content.classList.remove('active');
+                });
+                
+                document.getElementById(targetTab).classList.add('active');
+                
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+
+        function handleSubmit() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const message = document.getElementById('message').value;
+
+            if (!email && !phone) {
+                alert('Lütfen size ulaşabileceğimiz bir e-posta veya telefon numarası girin.');
+                return;
+            }
+
+            if (!message) {
+                alert('Lütfen mesajınızı yazın.');
+                return;
+            }
+
+            alert('Mesajınız alındı. En kısa sürede size dönüş yapacağız. Acil durumlarda lütfen 182 numaralı yardım hattımızı arayın.');
+            
+            document.getElementById('name').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('phone').value = '';
+            document.getElementById('message').value = '';
+        }
+    </script>
+</body>
+</html>
