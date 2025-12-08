@@ -3,45 +3,364 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hedeflerimiz | Sanal Farkındalık</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Kumarsız Hayat - Hedeflerimiz</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c5282 0%, #1a365d 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 0;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: background 0.3s;
+            border-radius: 5px;
+            display: block;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        .nav-links a.active {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .emergency-banner {
+            background: #e53e3e;
+            color: white;
+            padding: 1.5rem 2rem;
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        .emergency-banner a {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .content-wrapper {
+            margin-top: 120px;
+            min-height: calc(100vh - 200px);
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, #2c5282 0%, #1a365d 100%);
+            color: white;
+            padding: 60px 2rem;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .section {
+            padding: 80px 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #2c5282;
+        }
+
+        .section-intro {
+            text-align: center;
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            color: #666;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .goals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .goal-card {
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-left: 4px solid #2c5282;
+            transition: transform 0.3s;
+        }
+
+        .goal-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .goal-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .goal-card h3 {
+            color: #2c5282;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .vision-box {
+            background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 15px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .vision-box h2 {
+            color: white;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .vision-box p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        footer {
+            background: #1a202c;
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-content p {
+            margin: 0.5rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .page-header p {
+                font-size: 1rem;
+            }
+
+            .nav-links {
+                gap: 0;
+            }
+
+            .nav-links a {
+                padding: 0.5rem 0.75rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
 </head>
 <body>
+    <div class="emergency-banner">
+        🆘 Acil Durum Yardım Hattı: <a href="tel:182">182</a> | 7/24 Ücretsiz Destek
+    </div>
+
     <header>
-        <div class="kutu">
-            <div id="logo"><h1>SANAL FARKINDALIK</h1></div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Ana Sayfa</a></li>
-                    <li><a href="hedef.html" style="text-decoration: underline;">Hedef</a></li>
-                    <li><a href="sorunlar.html">Sorunlar</a></li>
-                    <li><a href="cozumler.html">Çözümler</a></li>
-                    <li><a href="universite.html">Üniversite</a></li>
-                </ul>
-            </nav>
-        </div>
+        <nav>
+            <div class="logo">🛡️ Kumarsız Hayat</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="hedef.html" class="active">Hedef</a></li>
+                <li><a href="sorunlar.html">Sorunlar</a></li>
+                <li><a href="cozumler.html">Çözümler</a></li>
+                <li><a href="universite.html">Üniversite</a></li>
+                <li><a href="iletisim.html">İletişim</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <section id="banner" style="min-height: 200px;">
-        <div class="kutu">
-            <h1>AMACIMIZ VE HEDEFİMİZ</h1>
+    <div class="content-wrapper">
+        <div class="page-header">
+            <h1>Hedeflerimiz ve Vizyonumuz</h1>
+            <p>Kumar bağımlılığı ile mücadelede güçlü bir toplum oluşturmak için çalışıyoruz</p>
         </div>
-    </section>
 
-    <section class="kutu" style="background:white; padding:20px; margin-top:20px; border-radius:5px;">
-        <h2>Projenin Amacı</h2>
-        <p>Bu proje, üniversite öğrencileri arasında giderek yaygınlaşan sanal bahis bağımlılığına dikkat çekmek için hazırlanmıştır.</p>
-        
-        <h3>SKA Hedef 3: Sağlık ve Kaliteli Yaşam</h3>
-        <p>Birleşmiş Milletler Sürdürülebilir Kalkınma Amaçları'nın 3. maddesi, her yaşta sağlıklı bir yaşamı güvence altına almayı hedefler. Kumar bağımlılığı, bu hedefi tehdit eden ciddi bir ruh sağlığı sorunudur.</p>
+        <section class="section">
+            <h2>Misyonumuz</h2>
+            <p class="section-intro">Kumar bağımlılığıyla mücadele eden bireylere ve ailelerine destek sağlamak, toplumsal farkındalığı artırmak ve iyileşme yolunda umut olmaktır.</p>
 
-        <div class="gorsel-alani">
-            <p>[Buraya SKA 3 Logosu veya İlgili Görsel Gelecek]</p>
-        </div>
-    </section>
+            <div class="goals-grid">
+                <div class="goal-card">
+                    <div class="goal-icon">🎯</div>
+                    <h3>Farkındalık Oluşturmak</h3>
+                    <p>Kumar bağımlılığının ciddi bir hastalık olduğu konusunda toplumsal farkındalık yaratmak ve önyargıları kırmak. Özellikle gençler ve risk gruplarına ulaşarak erken müdahaleyi sağlamak.</p>
+                </div>
+
+                <div class="goal-card">
+                    <div class="goal-icon">🤝</div>
+                    <h3>Destek Ağı Kurmak</h3>
+                    <p>Kumar bağımlısı bireyler ve aileleri için güçlü bir destek ağı oluşturmak. Profesyonel yardım, akran desteği ve aile danışmanlığı ile kapsamlı bir sistem kurmak.</p>
+                </div>
+
+                <div class="goal-card">
+                    <div class="goal-icon">📚</div>
+                    <h3>Eğitim ve Bilgilendirme</h3>
+                    <p>Kumar bağımlılığının nedenleri, belirtileri ve tedavi yöntemleri hakkında kapsamlı eğitim materyalleri hazırlamak. Online ve yüz yüze eğitim programları düzenlemek.</p>
+                </div>
+
+                <div class="goal-card">
+                    <div class="goal-icon">🏥</div>
+                    <h3>Erişilebilir Tedavi</h3>
+                    <p>Her gelir seviyesinden insanın profesyonel tedaviye erişimini kolaylaştırmak. Ücretsiz danışmanlık hizmetleri ve tedavi programları sağlamak.</p>
+                </div>
+
+                <div class="goal-card">
+                    <div class="goal-icon">🎓</div>
+                    <h3>Gençleri Korumak</h3>
+                    <p>Özellikle üniversite öğrencileri ve gençler arasında kumar bağımlılığı riskini azaltmak. Okullarda ve üniversitelerde önleyici programlar yürütmek.</p>
+                </div>
+
+                <div class="goal-card">
+                    <div class="goal-icon">📊</div>
+                    <h3>Araştırma ve Geliştirme</h3>
+                    <p>Kumar bağımlılığı ile ilgili bilimsel araştırmaları desteklemek. Türkiye'deki kumar bağımlılığı verilerini toplamak ve analiz etmek.</p>
+                </div>
+
+                <div class="goal-card">
+                    <div class="goal-icon">⚖️</div>
+                    <h3>Politika Savunuculuğu</h3>
+                    <p>Kumar bağımlılığını önlemeye yönelik yasal düzenlemeler için çalışmak. Yasadışı kumar sitelerine karşı etkin mücadele için politika önerileri geliştirmek.</p>
+                </div>
+
+                <div class="goal-card">
+                    <div class="goal-icon">💪</div>
+                    <h3>İyileşme Desteği</h3>
+                    <p>İyileşme sürecindeki bireylere sürekli destek sağlamak. Tekrar etmeyi önlemek için uzun vadeli takip ve motivasyon programları sunmak.</p>
+                </div>
+
+                <div class="goal-card">
+                    <div class="goal-icon">🌐</div>
+                    <h3>Uluslararası İşbirliği</h3>
+                    <p>Dünya genelinde kumar bağımlılığı ile mücadele eden kuruluşlarla işbirliği yapmak. En iyi uygulamaları Türkiye'ye adapte etmek.</p>
+                </div>
+            </div>
+
+            <div class="vision-box">
+                <h2>🌟 Vizyonumuz</h2>
+                <p>Kumar bağımlılığından arınmış, sağlıklı ve umutlu bir toplum yaratmak. Her bireyin bağımlılıktan kurtulma gücüne sahip olduğunu bilerek, onlara bu yolda rehberlik etmek. Türkiye'de kumar bağımlılığının bir halk sağlığı sorunu olarak kabul edildiği ve etkin şekilde ele alındığı bir gelecek inşa etmek.</p>
+            </div>
+        </section>
+
+        <section class="section" style="background: #f7fafc;">
+            <h2>Değerlerimiz</h2>
+            
+            <div class="goals-grid">
+                <div class="goal-card">
+                    <div class="goal-icon">❤️</div>
+                    <h3>Şefkat ve Empati</h3>
+                    <p>Her bireyin hikayesine saygı duyar ve yargılamadan destek sağlarız.</p>
+                </div>
+
+                <div class="goal-card">
+                    <div class="goal-icon">🔒</div>
+                    <h3>Gizlilik</h3>
+                    <p>Tüm bilgiler tamamen gizli tutulur. Mahremiyet bizim için önceliktir.</p>
+                </div>
+
+                <div class="goal-card">
+                    <div class="goal-icon">🎯</div>
+                    <h3>Profesyonellik</h3>
+                    <p>Bilimsel temelli, kanıta dayalı yöntemlerle hizmet sunarız.</p>
+                </div>
+
+                <div class="goal-card">
+                    <div class="goal-icon">🌈</div>
+                    <h3>Umut</h3>
+                    <p>İyileşmenin her zaman mümkün olduğuna inanırız ve bu inancı yaşatırız.</p>
+                </div>
+
+                <div class="goal-card">
+                    <div class="goal-icon">🤲</div>
+                    <h3>Erişilebilirlik</h3>
+                    <p>Hizmetlerimiz herkese açık, ücretsiz ve kolay erişilebilirdir.</p>
+                </div>
+
+                <div class="goal-card">
+                    <div class="goal-icon">🌍</div>
+                    <h3>Toplumsal Sorumluluk</h3>
+                    <p>Daha sağlıklı bir toplum için aktif rol alır ve sorumluluklarımızı yerine getiririz.</p>
+                </div>
+            </div>
+        </section>
+    </div>
 
     <footer>
-        <p>Sanal Bahis Farkındalık Projesi &copy; 2024</p>
+        <div class="footer-content">
+            <h3 style="color: #48bb78; margin-bottom: 1rem;">🛡️ Kumarsız Hayat</h3>
+            <p>Kumar ve bahis bağımlılığıyla mücadelede yanınızdayız.</p>
+            <p style="margin-top: 1.5rem;">Acil Durum: <strong>182</strong> | E-posta: yardim@kumarsızhayat.org</p>
+            <p style="margin-top: 1.5rem; font-size: 0.9rem;">&copy; 2024 Kumarsız Hayat. İyileşme mümkündür.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.85rem;">Bu site bilgilendirme amaçlıdır. Acil durumlarda 112 veya en yakın sağlık kuruluşuna başvurunuz.</p>
+        </div>
     </footer>
 </body>
 </html>
