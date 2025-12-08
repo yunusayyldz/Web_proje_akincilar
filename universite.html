@@ -1,57 +1,58 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="tr"> <!-- Sayfanın dili Türkçe olarak ayarlanmıştır; tarayıcı ve arama motorları için önemlidir. -->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Üniversitemizde Durum | Sanal Farkındalık</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8"> <!-- Türkçe karakter sorunu yaşanmaması için UTF-8 karakter seti kullanılır. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Mobil cihazlarda doğru ölçeklendirme için responsive görünüm ayarı. -->
+    <title>Üniversitemizde Durum | Sanal Farkındalık</title> <!-- Tarayıcı sekmesinde görüntülenen sayfa başlığı. -->
+    <link rel="stylesheet" href="style.css"> <!-- Sayfanın tasarımını düzenleyen harici CSS dosyası. -->
 </head>
 <body>
-    <header>
-        <div class="kutu">
-            <div id="logo"><h1>SANAL FARKINDALIK</h1></div>
-            <nav>
+    <header> <!-- Sayfanın üst kısmı: logo ve menü içerir. -->
+        <div class="kutu"> <!-- İçerik hizalama için kullanılan kapsayıcı kutu yapısı. -->
+            <div id="logo"><h1>SANAL FARKINDALIK</h1></div> <!-- Projenin adı ve kimliğini gösteren logo alanı. -->
+            <nav> <!-- Site içerisindeki sayfalar arası geçişi sağlayan navigasyon menüsü. -->
                 <ul>
-                    <li><a href="index.html">Ana Sayfa</a></li>
-                    <li><a href="hedef.html">Hedef</a></li>
-                    <li><a href="sorunlar.html">Sorunlar</a></li>
-                    <li><a href="cozumler.html">Çözümler</a></li>
-                    <li><a href="universite.html" style="text-decoration: underline;">Üniversite</a></li>
+                    <!-- Menü bağlantıları burada listelenir. -->
+                    <li><a href="index.html">Ana Sayfa</a></li> <!-- Projenin ana açılış sayfası. -->
+                    <li><a href="hedef.html">Hedef</a></li> <!-- Projenin amacı ve hedeflerinin açıklandığı bölüm. -->
+                    <li><a href="sorunlar.html">Sorunlar</a></li> <!-- Sanal bahis ile ilgili karşılaşılan sorunlar. -->
+                    <li><a href="cozumler.html">Çözümler</a></li> <!-- Sorunlara yönelik çözüm önerilerinin bulunduğu sayfa. -->
+                    <li><a href="universite.html" style="text-decoration: underline;">Üniversite</a></li> <!-- Aktif sayfa olduğu için altı çizili yapıldı. -->
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section id="banner" style="min-height: 200px;">
-        <div class="kutu">
-            <h1>ÜNİVERSİTEMİZDE DURUM</h1>
+    <section id="banner" style="min-height: 200px;"> <!-- Sayfa başlığı için geniş ve dikkat çekici banner alanı. -->
+        <div class="kutu"> <!-- İçerikle hizalanmış kutu yapısı. -->
+            <h1>ÜNİVERSİTEMİZDE DURUM</h1> <!-- Üniversite özelindeki araştırma sonuçlarının başlığı. -->
         </div>
     </section>
 
-    <section class="kutu" style="background:white; padding:20px; margin-top:20px; border-radius:5px;">
-        <h2>Anket ve Röportaj Sonuçları</h2>
-        <p>Üniversitemiz kampüsünde yaptığımız araştırmalar sonucunda elde edilen veriler aşağıdadır.</p>
+    <section class="kutu" style="background:white; padding:20px; margin-top:20px; border-radius:5px;"> <!-- Sayfanın ana içerik bölümünü kapsayan kart tasarımı. -->
+        <h2>Anket ve Röportaj Sonuçları</h2> <!-- Araştırma çıktılarının sunulduğu bölüm başlığı. -->
+        <p>Üniversitemiz kampüsünde yaptığımız araştırmalar sonucunda elde edilen veriler aşağıdadır.</p> <!-- Kısa açıklama metni. -->
         
-        <h3>Öğrenci Anketi Sonuçları</h3>
-        <div class="gorsel-alani">
+        <h3>Öğrenci Anketi Sonuçları</h3> <!-- Öğrencilerle yapılan anket çalışmasının sonuç bölümü. -->
+        <div class="gorsel-alani"> <!-- Anket grafiklerinin yerleştirileceği özel görsel alanı. -->
             <p>[Buraya Google Forms Anket Grafikleri Gelecek]</p>
         </div>
 
-        <h3>Röportajlar</h3>
-        <p><strong>Öğrenci A:</strong> "Arkadaş grubumda herkes oynuyordu, ben de meraktan başladım..."</p>
+        <h3>Röportajlar</h3> <!-- Öğrencilerle yapılan görüşmelerin yer aldığı bölüm. -->
+        <p><strong>Öğrenci A:</strong> "Arkadaş grubumda herkes oynuyordu, ben de meraktan başladım..."</p> <!-- Bir öğrenciden alınmış röportaj örneği. -->
         
-        <div style="background:#eee; padding:15px; margin-top:20px; border-radius:5px;">
-            <h3>Siz Ne Düşünüyorsunuz?</h3>
-            <form>
-                <input type="text" placeholder="Adınız (İsteğe bağlı)" style="width:100%; margin-bottom:10px; padding:5px;">
-                <textarea rows="4" placeholder="Görüşlerinizi yazın..." style="width:100%; margin-bottom:10px; padding:5px;"></textarea>
-                <button type="button" style="background:#4C9F38; color:white; border:none; padding:10px; cursor:pointer;">Gönder</button>
+        <div style="background:#eee; padding:15px; margin-top:20px; border-radius:5px;"> <!-- Kullanıcı geri bildirim formunun bulunduğu kutu alanı. -->
+            <h3>Siz Ne Düşünüyorsunuz?</h3> <!-- Geri bildirim bölümünün başlığı. -->
+            <form> <!-- Ziyaretçilerin görüşlerini yazabilecekleri form yapısı. -->
+                <input type="text" placeholder="Adınız (İsteğe bağlı)" style="width:100%; margin-bottom:10px; padding:5px;"> <!-- Kullanıcının isteğe bağlı isim girebileceği alan. -->
+                <textarea rows="4" placeholder="Görüşlerinizi yazın..." style="width:100%; margin-bottom:10px; padding:5px;"></textarea> <!-- Kullanıcının düşüncelerini yazdığı metin alanı. -->
+                <button type="button" style="background:#4C9F38; color:white; border:none; padding:10px; cursor:pointer;">Gönder</button> <!-- Form gönderim butonu (şu anda yalnızca görsel amaçlıdır). -->
             </form>
         </div>
     </section>
 
-    <footer>
-        <p>Sanal Bahis Farkındalık Projesi &copy; 2024</p>
+    <footer> <!-- Sayfanın alt bilgi bölümü; proje adı ve telif bilgisi içerir. -->
+        <p>Sanal Bahis Farkındalık Projesi &copy; 2024</p> <!-- Telif ve proje tanımlayıcı bilgi. -->
     </footer>
 </body>
 </html>
