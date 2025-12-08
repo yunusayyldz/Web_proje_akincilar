@@ -3,55 +3,380 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Çözümler | Sanal Farkındalık</title>
-    <link rel="stylesheet" href="style.css"> <!-- Sayfanın tasarımını düzenleyen harici CSS dosyası burada bağlanmıştır; tüm stil düzenlemeleri style.css üzerinden yönetilir. -->
+    <title>Kumarsız Hayat - Çözümler</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c5282 0%, #1a365d 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 0;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: background 0.3s;
+            border-radius: 5px;
+            display: block;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        .nav-links a.active {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .emergency-banner {
+            background: #e53e3e;
+            color: white;
+            padding: 1.5rem 2rem;
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        .emergency-banner a {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .content-wrapper {
+            margin-top: 120px;
+            min-height: calc(100vh - 200px);
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+            color: white;
+            padding: 60px 2rem;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .section {
+            padding: 80px 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #2c5282;
+        }
+
+        .section-intro {
+            text-align: center;
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            color: #666;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .solution-card {
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-left: 4px solid #48bb78;
+            transition: transform 0.3s;
+        }
+
+        .solution-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .solution-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .solution-card h3 {
+            color: #48bb78;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        footer {
+            background: #1a202c;
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-content p {
+            margin: 0.5rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .page-header p {
+                font-size: 1rem;
+            }
+
+            .nav-links {
+                gap: 0;
+            }
+
+            .nav-links a {
+                padding: 0.5rem 0.75rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
 </head>
 <body>
+    <div class="emergency-banner">
+        🆘 Acil Durum Yardım Hattı: <a href="tel:182">182</a> | 7/24 Ücretsiz Destek
+    </div>
+
     <header>
-        <div class="kutu">
-            <div id="logo"><h1>SANAL FARKINDALIK</h1></div> <!-- Sitenin üst kısmında markayı veya proje adını temsil eden logo ve başlık alanı bulunmaktadır. -->
-            <nav>
-                <ul>
-                    <!-- Ziyaretçilerin site içinde farklı sayfalara kolayca erişebilmesini sağlayan ana navigasyon menüsüdür. -->
-                    <li><a href="index.html">Ana Sayfa</a></li>
-                    <li><a href="hedef.html">Hedef</a></li>
-                    <li><a href="sorunlar.html">Sorunlar</a></li>
-                    <!-- Kullanıcının şu anda bulunduğu sayfa olduğundan, menüde görsel olarak belirginleştirilmesi için altı çizili stil uygulanmıştır. -->
-                    <li><a href="cozumler.html" style="text-decoration: underline;">Çözümler</a></li>
-                    <li><a href="universite.html">Üniversite</a></li>
-                </ul>
-            </nav>
-        </div>
+        <nav>
+            <div class="logo">🛡️ Kumarsız Hayat</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="hedef.html">Hedef</a></li>
+                <li><a href="sorunlar.html">Sorunlar</a></li>
+                <li><a href="cozumler.html" class="active">Çözümler</a></li>
+                <li><a href="universite.html">Üniversite</a></li>
+                <li><a href="iletisim.html">İletişim</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <!-- Sayfanın üst kısmında büyük bir başlık gösteren banner bölümüdür; kullanıcıya sayfanın konusu hakkında ilk izlenimi verir. -->
-    <section id="banner" style="min-height: 200px;">
-        <div class="kutu">
-            <h1>ÇÖZÜM YOLLARI</h1>
+    <div class="content-wrapper">
+        <div class="page-header">
+            <h1>Çözümler ve İyileşme Yolları</h1>
+            <p>Kumar bağımlılığından kurtulmak mümkündür. İşte size yardımcı olabilecek kanıtlanmış çözümler.</p>
         </div>
-    </section>
 
-    <!-- Sayfanın ana metin, açıklamalar ve liste gibi içeriklerinin yer aldığı temel bölüm. -->
-    <section class="kutu" style="background:white; padding:20px; margin-top:20px; border-radius:5px;">
-        <h2>Nasıl Kurtulabiliriz?</h2> <!-- Bu bölüm bağımlılıktan kurtuluş yollarını anlatan içerik için kullanılan ana başlıktır. -->
-        <p>Bağımlılık bir hastalıktır ve tedavisi mümkündür. İlk adım kabul etmektir.</p>
-        
-        <!-- Bağımlılıktan kurtulmaya yardımcı olan yöntemlerin sıralı şekilde listelendiği bölümdür. -->
-        <ol>
-            <li><strong>Profesyonel Destek:</strong> Yeşilay (YEDAM) gibi kurumlardan ücretsiz destek alın.</li>
-            <li><strong>Teknolojik Kısıtlama:</strong> Bahis sitelerine erişimi engelleyen yazılımlar kullanın.</li>
-            <li><strong>Sosyal Aktivite:</strong> Boş zamanları spor ve sanat ile doldurun.</li>
-        </ol>
+        <section class="section">
+            <h2>Profesyonel Tedavi Yöntemleri</h2>
+            <p class="section-intro">Bilimsel temelli tedavi yöntemleriyle iyileşme sürecinize başlayın.</p>
+            
+            <div class="solutions-grid">
+                <div class="solution-card">
+                    <div class="solution-icon">👨‍⚕️</div>
+                    <h3>Profesyonel Terapi</h3>
+                    <p>Uzman psikolog ve psikiyatristlerle düzenli görüşmeler, bağımlılığın altında yatan nedenleri keşfetmenize yardımcı olur. Bilişsel davranışçı terapi (BDT) özellikle etkili sonuçlar verir. Terapide olumsuz düşünce kalıpları değiştirilir ve sağlıklı başa çıkma mekanizmaları geliştirilir.</p>
+                </div>
 
-        <!-- Konuyu destekleyecek çözüm odaklı bir görsel eklenmesi için ayrılmış özel görsel alanıdır. -->
-        <div class="gorsel-alani">
-            <p>[Buraya Çözüm Odaklı Bir Görsel Gelecek]</p>
-        </div>
-    </section>
+                <div class="solution-card">
+                    <div class="solution-icon">👥</div>
+                    <h3>Destek Grupları</h3>
+                    <p>Kumar Bağımlıları Anonim (GA) gibi destek gruplarında benzer deneyimlere sahip insanlarla bir araya gelmek, yalnız olmadığınızı hissetmenizi sağlar. Grup üyeleri deneyimlerini paylaşır, birbirlerine destek olur ve motivasyon sağlar. 12 adım programı ile yapılandırılmış bir iyileşme yolculuğuna çıkarsınız.</p>
+                </div>
 
-    <!-- Sayfanın en altında yer alan footer bölümüdür; proje adı ve telif bilgileri burada gösterilir. -->
+                <div class="solution-card">
+                    <div class="solution-icon">🏥</div>
+                    <h3>Klinik Tedavi Programları</h3>
+                    <p>Yatılı veya gündüzlü tedavi merkezlerinde yoğun bakım ve 24 saat destek alabilirsiniz. Profesyonel ekipler tarafından hazırlanan programlar iyileşme sürecinizi hızlandırır. Detoksifikasyon, grup terapileri, bireysel danışmanlık ve aile terapisi gibi kapsamlı hizmetler sunulur.</p>
+                </div>
+
+                <div class="solution-card">
+                    <div class="solution-icon">💊</div>
+                    <h3>İlaç Tedavisi</h3>
+                    <p>Eşlik eden depresyon, anksiyete, obsesif-kompulsif bozukluk gibi durumlar için psikiyatrist gözetiminde ilaç tedavisi uygulanabilir. Bu, psikolojik dengenizi sağlamaya yardımcı olur. Bazı ilaçlar kumar oynama dürtülerini azaltmada etkilidir. Mutlaka doktor kontrolünde kullanılmalıdır.</p>
+                </div>
+
+                <div class="solution-card">
+                    <div class="solution-icon">👨‍👩‍👧</div>
+                    <h3>Aile Terapisi</h3>
+                    <p>Bağımlılıktan etkilenen tüm aile bireylerinin katıldığı terapi seansları, ilişkileri onarmaya ve sağlıklı iletişim kurmaya yardımcı olur. Ailenin iyileşme sürecinde aktif rol alması, başarı şansını artırır. Güven yeniden inşa edilir ve aile dinamikleri iyileştirilir.</p>
+                </div>
+
+                <div class="solution-card">
+                    <div class="solution-icon">🧘</div>
+                    <h3>Bilinçli Farkındalık ve Meditasyon</h3>
+                    <p>Mindfulness teknikleri, kumar oynama dürtüleriyle başa çıkmada etkilidir. Meditasyon, stres seviyesini düşürür ve duygusal kontrolü artırır. Nefes egzersizleri ve yoga gibi aktiviteler, zihinsel dengeyi sağlamaya yardımcı olur ve tetikleyici anları daha iyi yönetmenizi sağlar.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="background: #f7fafc;">
+            <h2>Pratik Çözümler ve Araçlar</h2>
+            <p class="section-intro">Günlük hayatınızda uygulayabileceğiniz somut adımlar.</p>
+            
+            <div class="solutions-grid">
+                <div class="solution-card">
+                    <div class="solution-icon">🚫</div>
+                    <h3>Kumar Sitelerine Erişim Engelleme</h3>
+                    <p>Kumar sitelerini bloklamak için yazılımlar ve tarayıcı eklentileri kullanın. Gamban, Betfilter gibi uygulamalar tüm cihazlarınızda kumar sitelerine erişimi engeller. BTK'nın İYS sistemine başvurarak yasal olarak kendinizi kumar sitelerinden uzak tutabilirsiniz. DNS ayarlarınızı değiştirerek ek güvenlik katmanı ekleyin.</p>
+                </div>
+
+                <div class="solution-card">
+                    <div class="solution-icon">💳</div>
+                    <h3>Mali Kontrol Sistemleri</h3>
+                    <p>Banka kartlarınızı güvenilir bir aile ferdine emanet edin. Online işlemleri kapatın. Mali danışman yardımıyla bütçe planı yapın ve borç yapılandırma seçeneklerini değerlendirin. Aylık harcama limitleri belirleyin. Nakit kullanımını minimuma indirin. Tüm finansal işlemlerde şeffaf olun.</p>
+                </div>
+
+                <div class="solution-card">
+                    <div class="solution-icon">📱</div>
+                    <h3>Mobil Destek Uygulamaları</h3>
+                    <p>Kumar bloklama uygulamaları, günlük motivasyon mesajları ve takip araçları kullanın. Bu uygulamalar tetikleyici anlarda size destek olur. Kumarsız geçen günleri sayar, hedeflerinizi takip eder ve acil yardım hatlarına hızlı erişim sağlar. Nomo, I Am Sober gibi uygulamaları deneyin.</p>
+                </div>
+
+                <div class="solution-card">
+                    <div class="solution-icon">🎯</div>
+                    <h3>Alternatif Aktiviteler</h3>
+                    <p>Spor, sanat, müzik gibi sağlıklı hobiler edinin. Boş zamanlarınızı yapıcı aktivitelerle doldurun. Sosyal çevrenizi genişletin ve yeni arkadaşlıklar kurun. Gönüllü çalışmalara katılın. Yeni beceriler öğrenin. Doğa yürüyüşleri, kitap kulüpleri, sanat kursları gibi aktiviteler kumar düşüncelerinden uzaklaşmanıza yardımcı olur.</p>
+                </div>
+
+                <div class="solution-card">
+                    <div class="solution-icon">📝</div>
+                    <h3>Günlük Tutma</h3>
+                    <p>Duygularınızı, düşüncelerinizi ve tetikleyici durumları bir günlüğe yazın. Bu, kendi örüntülerinizi anlamanıza yardımcı olur. Kumar oynama dürtüsü hissettiğiniz anları, hislerinizi ve alternatif davranışları kaydedin. Zaman içinde gelişiminizi görebilirsiniz.</p>
+                </div>
+
+                <div class="solution-card">
+                    <div class="solution-icon">⏰</div>
+                    <h3>Yapılandırılmış Günlük Rutinler</h3>
+                    <p>Düzenli bir günlük program oluşturun. Belirli saatlerde uyanma, yemek yeme, çalışma ve uyku düzeni kumar oynama fırsatlarını azaltır. Boş zaman bloklarını önceden planlayın. Rutinler güvenlik hissi verir ve kontrolü geri kazanmanıza yardımcı olur.</p>
+                </div>
+
+                <div class="solution-card">
+                    <div class="solution-icon">🤝</div>
+                    <h3>Sorumluluk Ortağı Bulma</h3>
+                    <p>Size güvendiğiniz bir arkadaş veya aile ferdi ile düzenli olarak iletişim halinde olun. Bu kişiyle açık sözlü olmayı taahhüt edin. Haftalık görüşmeler yapın, ilerlemenizi paylaşın. Zorlu anlarda arayabileceğiniz birinin olması büyük fark yaratır.</p>
+                </div>
+
+                <div class="solution-card">
+                    <div class="solution-icon">🎓</div>
+                    <h3>Eğitim ve Bilgi</h3>
+                    <p>Kumar bağımlılığı hakkında kendinizi eğitin. Kitaplar, makaleler, belgeseller izleyin. Bağımlılığın beyin üzerindeki etkilerini anlamak, durumunuzu daha iyi kavramanızı sağlar. Bilgi güçtür ve iyileşme sürecinde önemli bir araçtır.</p>
+                </div>
+
+                <div class="solution-card">
+                    <div class="solution-icon">💪</div>
+                    <h3>Fiziksel Aktivite</h3>
+                    <p>Düzenli egzersiz, stresi azaltır ve ruh halinizi iyileştirir. Yürüyüş, koşu, yüzme, yoga gibi aktiviteler beyin kimyasını olumlu yönde etkiler. Endorfin salınımı kumar oynama isteğini azaltabilir. Haftada en az 3-4 kez 30 dakika egzersiz hedefleyin.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>İyileşme Aşamaları</h2>
+            <p class="section-intro">İyileşme doğrusal bir süreç değildir. Her aşama önemlidir ve sabır gerektirir.</p>
+            
+            <div class="solutions-grid">
+                <div class="solution-card">
+                    <div class="solution-icon">1️⃣</div>
+                    <h3>Farkındalık Aşaması</h3>
+                    <p>Sorunun farkına varmak ilk adımdır. Kumar oynamanın hayatınıza verdiği zararı kabul etmek ve değişim ihtiyacını hissetmek önemlidir. Bu aşamada kendinize karşı dürüst olmak gerekir.</p>
+                </div>
+
+                <div class="solution-card">
+                    <div class="solution-icon">2️⃣</div>
+                    <h3>Karar Verme Aşaması</h3>
+                    <p>Değişmek için bilinçli bir karar vermek. Yardım aramaya hazır olmak ve bağımlılıktan kurtulmak için gereken adımları atmaya istekli olmak. Bu aşamada umut ve kararlılık önemlidir.</p>
+                </div>
+
+                <div class="solution-card">
+                    <div class="solution-icon">3️⃣</div>
+                    <h3>Aktif Tedavi Aşaması</h3>
+                    <p>Profesyonel yardım almak, destek gruplarına katılmak ve tedavi planını uygulamak. Kumar oynamayı bırakmak ve yeni başa çıkma mekanizmaları geliştirmek. En yoğun ve zorlu aşamadır.</p>
+                </div>
+
+                <div class="solution-card">
+                    <div class="solution-icon">4️⃣</div>
+                    <h3>Sürdürme Aşaması</h3>
+                    <p>Kumarsız yaşamı sürdürmek, tetikleyicilerden uzak durmak ve sağlıklı alışkanlıkları korumak. Destek sistemini aktif tutmak ve kendini geliştirmeye devam etmek önemlidir.</p>
+                </div>
+
+                <div class="solution-card">
+                    <div class="solution-icon">5️⃣</div>
+                    <h3>İyileşme ve Büyüme Aşaması</h3>
+                    <p>Hayatın yeniden anlamını bulmak, ilişkileri onarmak ve geleceğe umutla bakmak. Deneyimlerinizi başkalarıyla paylaşarak onlara da ilham vermek. Tam bir iyileşme ve yeni bir yaşam tarzı.</p>
+                </div>
+
+                <div class="solution-card">
+                    <div class="solution-icon">🔄</div>
+                    <h3>Nüks Durumunda</h3>
+                    <p>Nüks (tekrar kumar oynama) iyileşme sürecinin bir parçası olabilir. Kendinizi suçlamak yerine, neyi tetiklediğini anlamak ve hemen destek almak önemlidir. Her gün yeni bir başlangıçtır.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
     <footer>
-        <p>Sanal Bahis Farkındalık Projesi &copy; 2024</p>
+        <div class="footer-content">
+            <h3 style="color: #48bb78; margin-bottom: 1rem;">🛡️ Kumarsız Hayat</h3>
+            <p>Kumar ve bahis bağımlılığıyla mücadelede yanınızdayız.</p>
+            <p style="margin-top: 1.5rem;">Acil Durum: <strong>182</strong> | E-posta: yardim@kumarsızhayat.org</p>
+            <p style="margin-top: 1.5rem; font-size: 0.9rem;">&copy; 2024 Kumarsız Hayat. İyileşme mümkündür.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.85rem;">Bu site bilgilendirme amaçlıdır. Acil durumlarda 112 veya en yakın sağlık kuruluşuna başvurunuz.</p>
+        </div>
     </footer>
 </body>
 </html>
