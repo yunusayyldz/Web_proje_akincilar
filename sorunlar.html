@@ -1,433 +1,51 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kumarsız Hayat - Sorunlar</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-        }
-
-        header {
-            background: linear-gradient(135deg, #2c5282 0%, #1a365d 100%);
-            color: white;
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 0;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            padding: 0.75rem 1.5rem;
-            font-size: 1rem;
-            font-weight: 500;
-            transition: background 0.3s;
-            border-radius: 5px;
-            display: block;
-        }
-
-        .nav-links a:hover {
-            background: rgba(255,255,255,0.1);
-        }
-
-        .nav-links a.active {
-            background: rgba(255,255,255,0.2);
-        }
-
-        .emergency-banner {
-            background: #e53e3e;
-            color: white;
-            padding: 1.5rem 2rem;
-            text-align: center;
-            font-size: 1.1rem;
-            font-weight: bold;
-        }
-
-        .emergency-banner a {
-            color: white;
-            text-decoration: underline;
-        }
-
-        .content-wrapper {
-            margin-top: 120px;
-            min-height: calc(100vh - 200px);
-        }
-
-        .page-header {
-            background: linear-gradient(135deg, #e53e3e 0%, #c53030 100%);
-            color: white;
-            padding: 60px 2rem;
-            text-align: center;
-        }
-
-        .page-header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .page-header p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .section {
-            padding: 80px 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: #2c5282;
-        }
-
-        .section-intro {
-            text-align: center;
-            font-size: 1.1rem;
-            margin-bottom: 3rem;
-            color: #666;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .problems-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .problem-card {
-            padding: 2rem;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            border-left: 4px solid #e53e3e;
-            transition: transform 0.3s;
-        }
-
-        .problem-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .problem-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .problem-card h3 {
-            color: #e53e3e;
-            margin-bottom: 1rem;
-            font-size: 1.4rem;
-        }
-
-        .problem-card ul {
-            margin-left: 1.5rem;
-            margin-top: 1rem;
-        }
-
-        .problem-card li {
-            margin-bottom: 0.5rem;
-        }
-
-        footer {
-            background: #1a202c;
-            color: white;
-            padding: 3rem 2rem;
-            text-align: center;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .footer-content p {
-            margin: 0.5rem 0;
-        }
-
-        @media (max-width: 768px) {
-            .page-header h1 {
-                font-size: 2rem;
-            }
-
-            .page-header p {
-                font-size: 1rem;
-            }
-
-            .nav-links {
-                gap: 0;
-            }
-
-            .nav-links a {
-                padding: 0.5rem 0.75rem;
-                font-size: 0.9rem;
-            }
-        }
-    </style>
+    <meta charset="UTF-8"> <!-- Sayfanın karakter kodlaması UTF-8 olarak belirlenmiştir; Türkçe karakterlerin sorunsuz görünmesini sağlar. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Mobil uyumluluk için görünüm ayarları yapılmıştır. -->
+    <title>Sorunlar | Sanal Farkındalık</title> <!-- Tarayıcı sekmesinde görünen sayfa başlığıdır. -->
+    <link rel="stylesheet" href="style.css"> <!-- Tüm tasarım ve stil düzenlemeleri için harici CSS dosyası bağlanmıştır. -->
 </head>
 <body>
-    <div class="emergency-banner">
-        🆘 Acil Durum Yardım Hattı: <a href="tel:182">182</a> | 7/24 Ücretsiz Destek
-    </div>
-
-    <header>
-        <nav>
-            <div class="logo">🛡️ Kumarsız Hayat</div>
-            <ul class="nav-links">
-                <li><a href="index.html">Ana Sayfa</a></li>
-                <li><a href="hedef.html">Hedef</a></li>
-                <li><a href="sorunlar.html" class="active">Sorunlar</a></li>
-                <li><a href="cozumler.html">Çözümler</a></li>
-                <li><a href="universite.html">Üniversite</a></li>
-                <li><a href="iletisim.html">İletişim</a></li>
-            </ul>
-        </nav>
+    <header> <!-- Sayfanın üst kısmında logo ve menü içeren başlık bölümü. -->
+        <div class="kutu"> <!-- İçeriği hizalamak için kullanılan kapsayıcı div. -->
+            <div id="logo"><h1>SANAL FARKINDALIK</h1></div> <!-- Site logosu ve proje adı başlığı. -->
+            <nav> <!-- Kullanıcının diğer sayfalara geçiş yapabilmesini sağlayan navigasyon menüsü. -->
+                <ul>
+                    <!-- Menü bağlantıları listesi başlangıcı. -->
+                    <li><a href="index.html">Ana Sayfa</a></li> <!-- Ana sayfaya yönlendiren bağlantı. -->
+                    <li><a href="hedef.html">Hedef</a></li> <!-- Hedef sayfasına yönlendiren bağlantı. -->
+                    <li><a href="sorunlar.html" style="text-decoration: underline;">Sorunlar</a></li> <!-- İçinde bulunulan sayfa olduğu için altı çizili yapılmıştır. -->
+                    <li><a href="cozumler.html">Çözümler</a></li> <!-- Çözümler sayfasına yönlendiren bağlantı. -->
+                    <li><a href="universite.html">Üniversite</a></li> <!-- Üniversite temalı sayfaya yönlendirme. -->
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <div class="content-wrapper">
-        <div class="page-header">
-            <h1>Kumar Bağımlılığının Yarattığı Sorunlar</h1>
-            <p>Kumar ve bahis bağımlılığı sadece mali bir sorun değildir. Hayatın her alanını etkileyen ciddi bir hastalıktır.</p>
+    <section id="banner" style="min-height: 200px;"> <!-- Sayfa başlığı için geniş bir banner alanı. -->
+        <div class="kutu"> <!-- İçerik hizalama kapsayıcısı. -->
+            <h1>KARŞILAŞILAN SORUNLAR</h1> <!-- Bu sayfada ele alınan ana başlık. -->
         </div>
+    </section>
 
-        <section class="section" style="background: #f7fafc;">
-            <div class="problems-grid">
-                <div class="problem-card">
-                    <div class="problem-icon">💸</div>
-                    <h3>Mali Yıkım</h3>
-                    <p>Kumar bağımlılığı ciddi ekonomik sonuçlara yol açar:</p>
-                    <ul>
-                        <li>Tüm birikimlerinin kaybı</li>
-                        <li>Borçların kontrolsüz artışı</li>
-                        <li>Kredi kartı limitleri dolması</li>
-                        <li>Ev, araba gibi varlıkların kaybı</li>
-                        <li>İflas ve haciz süreçleri</li>
-                        <li>Tefecilere başvurma</li>
-                        <li>Aileden ve arkadaşlardan borç alma</li>
-                    </ul>
-                </div>
+    <section class="kutu" style="background:white; padding:20px; margin-top:20px; border-radius:5px;"> <!-- İçeriğin yer aldığı kart biçimli bölüm. -->
+        <h2>Sessiz Tehlike: Sanal Kumar</h2> <!-- Bölüm başlığı; sorunların genel tanımı yapılır. -->
+        <p>Sanal bahis, bireylerde sadece ekonomik değil, psikolojik yıkımlara da yol açar.</p> <!-- Sorunun giriş açıklaması. -->
+        
+        <ul> <!-- Sorunların maddeler hâlinde sıralandığı liste. -->
+            <li><strong>Ekonomik Kayıplar:</strong> KYK kredilerinin kaybedilmesi, borçlanma.</li> <!-- Maddi zararlarla ilgili sorun. -->
+            <li><strong>Psikolojik Etkiler:</strong> Anksiyete, depresyon ve intihar eğilimi.</li> <!-- Psikolojik sonuçlara dair açıklama. -->
+            <li><strong>Akademik Başarısızlık:</strong> Derse odaklanamama ve okul bırakma.</li> <!-- Eğitim hayatına etkileri. -->
+        </ul>
 
-                <div class="problem-card">
-                    <div class="problem-icon">👨‍👩‍👧‍👦</div>
-                    <h3>Aile ve İlişkilerde Çöküş</h3>
-                    <p>En yakın ilişkileriniz zarar görür:</p>
-                    <ul>
-                        <li>Eş ve çocuklarla güven kaybı</li>
-                        <li>Sürekli yalan ve gizlilik</li>
-                        <li>Aile içi şiddet riski</li>
-                        <li>Boşanma ve ayrılıklar</li>
-                        <li>Sosyal izolasyon</li>
-                        <li>Çocukların psikolojik travma yaşaması</li>
-                        <li>Aile içi iletişimin kopması</li>
-                    </ul>
-                </div>
-
-                <div class="problem-card">
-                    <div class="problem-icon">🧠</div>
-                    <h3>Psikolojik Tahribat</h3>
-                    <p>Zihinsel ve duygusal sağlık bozulur:</p>
-                    <ul>
-                        <li>Depresyon ve anksiyete</li>
-                        <li>Sürekli stres ve gerilim</li>
-                        <li>Uyku bozuklukları</li>
-                        <li>İntihar düşünceleri</li>
-                        <li>Öfke kontrolü kaybı</li>
-                        <li>Düşük özgüven</li>
-                        <li>Konsantrasyon bozukluğu</li>
-                        <li>Karar verme yetisinin zayıflaması</li>
-                    </ul>
-                </div>
-
-                <div class="problem-card">
-                    <div class="problem-icon">💼</div>
-                    <h3>Kariyer Kaybı</h3>
-                    <p>Profesyonel hayatınız tehlikede:</p>
-                    <ul>
-                        <li>İş performansında düşüş</li>
-                        <li>İş yerinde kumar oynama</li>
-                        <li>İşten çıkarılma</li>
-                        <li>Yeni iş bulamama</li>
-                        <li>Meslek itibarının kaybı</li>
-                        <li>Devamsızlık ve gecikme sorunları</li>
-                        <li>İş arkadaşlarıyla çatışma</li>
-                        <li>Kariyer hedeflerinden vazgeçme</li>
-                    </ul>
-                </div>
-
-                <div class="problem-card">
-                    <div class="problem-icon">⚖️</div>
-                    <h3>Hukuki Sorunlar</h3>
-                    <p>Yasalarla karşı karşıya kalabilirsiniz:</p>
-                    <ul>
-                        <li>Zimmete para geçirme</li>
-                        <li>Dolandırıcılık suçlamaları</li>
-                        <li>Hırsızlık ve sahtecilik</li>
-                        <li>Cezai işlemler</li>
-                        <li>Hapis cezası riski</li>
-                        <li>Çek ve senet suçları</li>
-                        <li>İcra takipleri</li>
-                        <li>Sabıka kaydı</li>
-                    </ul>
-                </div>
-
-                <div class="problem-card">
-                    <div class="problem-icon">❤️</div>
-                    <h3>Fiziksel Sağlık Sorunları</h3>
-                    <p>Bedeniniz de etkilenir:</p>
-                    <ul>
-                        <li>Kalp hastalıkları riski</li>
-                        <li>Mide ve bağırsak sorunları</li>
-                        <li>Baş ağrıları ve migren</li>
-                        <li>Bağışıklık sisteminde zayıflama</li>
-                        <li>Kronik yorgunluk</li>
-                        <li>Yüksek tansiyon</li>
-                        <li>Uyku apnesi</li>
-                        <li>Beslenme bozuklukları</li>
-                    </ul>
-                </div>
-
-                <div class="problem-card">
-                    <div class="problem-icon">🎓</div>
-                    <h3>Eğitim Hayatında Aksaklıklar</h3>
-                    <p>Öğrenciler için özel riskler:</p>
-                    <ul>
-                        <li>Ders notlarında düşüş</li>
-                        <li>Devamsızlık artışı</li>
-                        <li>Okulu bırakma riski</li>
-                        <li>Öğrenci kredisinin kumarda kullanılması</li>
-                        <li>Sosyal aktivitelerden uzaklaşma</li>
-                        <li>Mezuniyet hedeflerinin aksaması</li>
-                        <li>Gelecek planlarının çökmesi</li>
-                    </ul>
-                </div>
-
-                <div class="problem-card">
-                    <div class="problem-icon">🌐</div>
-                    <h3>Sosyal Hayatta Çöküş</h3>
-                    <p>Sosyal çevreniz küçülür:</p>
-                    <ul>
-                        <li>Arkadaşlıkların bozulması</li>
-                        <li>Sosyal etkinliklerden kaçınma</li>
-                        <li>İzolasyon ve yalnızlık</li>
-                        <li>Hobilerden uzaklaşma</li>
-                        <li>Sosyal statü kaybı</li>
-                        <li>Güvenilirliğin kaybolması</li>
-                        <li>Toplumsal dışlanma</li>
-                    </ul>
-                </div>
-
-                <div class="problem-card">
-                    <div class="problem-icon">⏰</div>
-                    <h3>Zaman ve Fırsat Kaybı</h3>
-                    <p>Hayatınızdan çalınan zamanlar:</p>
-                    <ul>
-                        <li>Saatlerce kumar oynama</li>
-                        <li>Aile ile geçirilecek zamanın kaybı</li>
-                        <li>Kişisel gelişim fırsatlarını kaçırma</li>
-                        <li>Önemli anları kaçırma</li>
-                        <li>Geri dönüşü olmayan kayıplar</li>
-                        <li>Üretkenliğin sıfırlanması</li>
-                        <li>Hayallerden vazgeçme</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2>Uyarı İşaretleri</h2>
-            <p class="section-intro">Kumar bağımlılığının erken belirtilerini fark etmek çok önemlidir. Kendinizde veya sevdiklerinizde bu işaretleri görüyorsanız, hemen yardım alın.</p>
-            
-            <div class="problems-grid">
-                <div class="problem-card">
-                    <div class="problem-icon">⚠️</div>
-                    <h3>Davranışsal Belirtiler</h3>
-                    <ul>
-                        <li>Kumara gittikçe daha fazla zaman ayırma</li>
-                        <li>Kumar için yalan söyleme ve gizlilik</li>
-                        <li>Kayıpları telafi etme çabası</li>
-                        <li>Bırakmaya çalışıp başarısız olma</li>
-                        <li>Kumar oynamadığında sinirlilik</li>
-                        <li>Diğer aktivitelere ilgi kaybı</li>
-                    </ul>
-                </div>
-
-                <div class="problem-card">
-                    <div class="problem-icon">💭</div>
-                    <h3>Düşünce Örüntüleri</h3>
-                    <ul>
-                        <li>Sürekli kumar düşünceleri</li>
-                        <li>"Bu sefer kazanacağım" inancı</li>
-                        <li>Kayıpları inkâr etme</li>
-                        <li>Gerçekçi olmayan umutlar</li>
-                        <li>Kumar stratejileri düşünme</li>
-                        <li>Diğer sorunları görmezden gelme</li>
-                    </ul>
-                </div>
-
-                <div class="problem-card">
-                    <div class="problem-icon">💰</div>
-                    <h3>Mali Belirtiler</h3>
-                    <ul>
-                        <li>Açıklanamayan para kaybı</li>
-                        <li>Sürekli borç talepleri</li>
-                        <li>Faturaların ödenmemesi</li>
-                        <li>Değerli eşyaların satılması</li>
-                        <li>Banka hesaplarının boşalması</li>
-                        <li>Gizli kredi kartları</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <footer>
-        <div class="footer-content">
-            <h3 style="color: #48bb78; margin-bottom: 1rem;">🛡️ Kumarsız Hayat</h3>
-            <p>Kumar ve bahis bağımlılığıyla mücadelede yanınızdayız.</p>
-            <p style="margin-top: 1.5rem;">Acil Durum: <strong>182</strong> | E-posta: yardim@kumarsızhayat.org</p>
-            <p style="margin-top: 1.5rem; font-size: 0.9rem;">&copy; 2024 Kumarsız Hayat. İyileşme mümkündür.</p>
-            <p style="margin-top: 0.5rem; font-size: 0.85rem;">Bu site bilgilendirme amaçlıdır. Acil durumlarda 112 veya en yakın sağlık kuruluşuna başvurunuz.</p>
+        <div class="gorsel-alani"> <!-- Sorunları temsil eden grafik veya görselin yerleştirileceği alan. -->
+            <p>[Buraya Sorunları Gösteren Bir Grafik Gelecek]</p>
         </div>
+    </section>
+
+    <footer> <!-- Sayfanın alt bilgi (footer) bölümü. -->
+        <p>Sanal Bahis Farkındalık Projesi &copy; 2024</p> <!-- Proje adı ve telif ibaresi. -->
     </footer>
 </body>
 </html>
