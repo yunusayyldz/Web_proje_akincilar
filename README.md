@@ -30,12 +30,11 @@ w3schools --> html arka plan kod örnekleri
 
 ## 💡 Proje Hakkında
 
-Sanal bahis ve şans oyunları, günümüzde özellikle gençler ve üniversite öğrencileri arasında hızla yayılan ciddi bir bağımlılık türüdür. **LODECI-AROMAN** modeli veya benzeri akademik yaklaşımlardan ilham alarak hazırladığımız bu proje; sadece problemleri değil, çözüm yollarını da sunmayı hedefler.
+Sanal bahis ve şans oyunları, günümüzde özellikle gençler ve üniversite öğrencileri arasında hızla yayılan ciddi bir bağımlılık türüdür.
 
 ### 🎯 Temel Hedeflerimiz:
 * **Farkındalık:** Kumarın "kazanç" değil "kayıp" sistemi olduğunu matematiksel ve psikolojik gerçeklerle anlatmak.
 * **Destek:** Bağımlılık döngüsüne giren bireylere `cozumler.html` sayfası üzerinden çıkış yolları sunmak.
-* **Akademik Başarı:** Öğrencilerin eğitim hayatlarını sabote eden bu alışkanlığın etkilerini `universite.html` ile gözler önüne sermek.
 
 ---
 
@@ -53,7 +52,7 @@ Projemiz şu anda **Aşama 1 (HTML İskelet)** seviyesindedir. Görsel tasarım 
 
 ## 📅 Proje Takvimi (Roadmap)
 
-Ders kapsamında Fatih Hoca'nın belirlediği takvime sadık kalarak ilerliyoruz.
+Ders kapsamında hocamızın belirlediği takvime sadık kalarak ilerliyoruz.
 
 - [x] **2 Aralık 🗓️**
     - [x] Tasarım dosyalarının (mockup) hazırlanması.
@@ -62,12 +61,12 @@ Ders kapsamında Fatih Hoca'nın belirlediği takvime sadık kalarak ilerliyoruz
     - [x] Tüm HTML sayfalarının oluşturulması (`.html`).
     - [x] Sayfa içeriklerinin, metinlerin ve görsellerin girilmesi.
 - [ ] **23 Aralık 🎨**
-    - [ ] `style.css` dosyasının detaylandırılması.
+    - [ ] `styl.css`dosyasının detaylandırılması.
     - [ ] Responsive (Mobil Uyumlu) tasarımın yapılması.
 - [ ] **30 Aralık 🎤**
     - [ ] Sınıf sunumu ve demosu.
 - [ ] **Final Haftası 🏁**
-    - [ ] Proje Raporu ve Bireysel Yansıma Raporları.
+    - [ ] Proje Raporu.
 
 ---
 
@@ -84,8 +83,8 @@ Sanal bahisin bireyde yarattığı **maddi iflas, depresyon ve sosyal izolasyon*
 ### 🛡️ `cozumler.html` (Çıkış Yolu)
 Bağımlılıktan kurtulmak için atılması gereken adımlar, profesyonel destek kanalları (Yeşilay vb.) ve "Dopamin Detoksu" yöntemleri.
 
-### 🎓 `universite.html` (Akademik Etkiler)
-Üniversite öğrencilerine özel vaka analizleri. Ders başarısızlığı ve kampüs yaşamına etkileri.
+### 🎓 `universite.html` (Üniversite)
+Ders başarısızlığı ve kampüs yaşamına etkileri.
 
 ### 🎯 `hedef.html` (Misyonumuz)
 Projenin sosyal sorumluluk boyutu ve ulaşmak istediğimiz kitle analizi.
@@ -99,9 +98,9 @@ Kullanıcı geri bildirim formu ve iletişim bilgileri.
 
 | Avatar | İsim Soyad | Görev Tanımı | GitHub |
 | :---: | :--- | :--- | :--- |
-| <img src="https://github.com/yunusayyldz.png" width="40px" style="border-radius:50%"> | **Yunus Ayyıldız** | Proje Yöneticisi & Frontend | [@yunusayyldz](https://github.com/yunusayyldz) |
-| <img src="https://github.com/ismailckr.png" width="40px" style="border-radius:50%"> | **İsmail Ç.** | İçerik Geliştirme & Araştırma | [@ismailckr](https://github.com/ismailckr) |
-| <img src="https://github.com/elifcgungor.png" width="40px" style="border-radius:50%"> | **Elif C. Güngör** | Tasarım & CSS Düzenleme | [@elifcgungor](https://github.com/elifcgungor) |
+| <img src="https://github.com/yunusayyldz.png" width="40px" style="border-radius:50%"> | **Yunus Ayyıldız** | Proje Yöneticisi | [@yunusayyldz](https://github.com/yunusayyldz) |
+| <img src="https://github.com/ismailckr.png" width="40px" style="border-radius:50%"> | **İsmail Çakır** | İçerik Geliştirme  | [@ismailckr](https://github.com/ismailckr) |
+| <img src="https://github.com/elifcgungor.png" width="40px" style="border-radius:50%"> | **Elif C. Güngör** | Tasarım | [@elifcgungor](https://github.com/elifcgungor) |
 
 ---
 
@@ -116,7 +115,7 @@ Bu proje şu an statik HTML dosyalarından oluşmaktadır. Bilgisayarınızda g�
 ---
 <div align="center">
   
-  **© 2025 Akıncılar Grubu - Tüm Hakları Saklıdır.**
+  **© 2025 Akıncılar Grubu.**
   <br>
   *Web Tasarım Dersi Final Projesidir.*
 
