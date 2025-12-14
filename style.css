@@ -1,98 +1,137 @@
 /* --- GENEL AYARLAR --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif; /* Yazı tipi */
-    background-color: #f4f4f4; /* Sayfa arka planı (açık gri) */
+    font-family: 'Poppins', sans-serif; /* Modern Font */
+    /* Modern Koyu Mavi Arka Plan */
+    background: linear-gradient(135deg, #1c2b36 0%, #2c3e50 100%);
+    color: #333;
+    min-height: 100vh;
 }
 
 .kutu {
-    width: 80%; /* İçerikler ekranın %80'ini kaplasın */
-    margin: auto; /* Ortala */
+    width: 80%;
+    max-width: 1100px; /* İçeriğin çok yayılmasını engeller */
+    margin: auto;
     overflow: hidden;
 }
 
 /* --- MENÜ TASARIMI --- */
 header {
-    background-color: #4C9F38; /* İstenen SKA YEŞİLİ Rengi */
+    background-color: rgba(76, 159, 56, 0.95); /* SKA Yeşili - Hafif Saydam */
     color: #ffffff;
     padding-top: 30px;
     min-height: 70px;
-    border-bottom: 5px solid #285720; /* Altına koyu yeşil çizgi */
+    border-bottom: 4px solid #285720;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2); /* Gölge Eklendi */
 }
 
 header a {
     color: #ffffff;
-    text-decoration: none; /* Linklerin alt çizgisini kaldır */
-    text-transform: uppercase; /* Yazıları büyük harf yap */
-    font-size: 16px;
-    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+header a:hover {
+    color: #dcedc8; /* Hover rengi */
 }
 
 header li {
     float: left;
-    display: inline; /* Yan yana diz */
+    display: inline;
     padding: 0 20px;
 }
 
 header #logo {
-    float: left; /* Logo solda */
+    float: left;
+}
+
+header #logo h1 {
+    margin: 0;
+    font-size: 1.5rem;
 }
 
 header nav {
-    float: right; /* Menü sağda */
+    float: right;
     margin-top: 5px;
 }
 
 /* --- ORTA SLOGAN ALANI (BANNER) --- */
 #banner {
-    min-height: 300px;
-    background-color: #333; /* Koyu gri zemin */
+    min-height: 250px;
+    background: rgba(255, 255, 255, 0.05); /* Modern Cam Efekti */
+    backdrop-filter: blur(5px);
     color: white;
     text-align: center;
-    display: flex; /* İçeriği tam ortalamak için modern yöntem */
+    display: flex;
     flex-direction: column;
-    justify-content: center; 
+    justify-content: center;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 #banner h1 {
-    font-size: 40px;
+    font-size: 45px;
     margin-bottom: 10px;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    letter-spacing: 1px;
 }
 
-/* --- İÇERİK ALANI --- */
-#ana-icerik {
+/* --- İÇERİK ALANI (KARTLAR) --- */
+/* Standart içerik kutuları için */
+section.kutu, #ana-icerik {
     background: #ffffff;
-    padding: 20px;
-    margin-top: 20px; /* Üstten boşluk */
-    border-radius: 5px; /* Köşeleri yuvarla */
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.1); /* Hafif gölge */
+    padding: 40px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    border-radius: 15px; /* Yuvarlatılmış köşeler */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Derin gölge */
+    line-height: 1.6;
 }
 
+h2, h3 {
+    color: #2c3e50;
+}
+
+/* Görsel Alanları */
 .gorsel-alani {
-    background-color: #ddd;
+    background-color: #f0f2f5;
     text-align: center;
     padding: 50px;
-    margin: 20px 0;
-    border: 2px dashed #4C9F38; /* Yeşil kesik çizgili çerçeve */
+    margin: 30px 0;
+    border: 2px dashed #4C9F38;
+    border-radius: 10px;
+    color: #777;
 }
 
-/* --- ALT BİLGİ (FOOTER) --- */
+/* --- FOOTER --- */
 footer {
-    background-color: #4C9F38; /* SKA Yeşili */
-    color: white;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #bbb;
     text-align: center;
     padding: 20px;
-    margin-top: 20px;
+    margin-top: 40px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.9rem;
 }
 
-/* --- MOBİL UYUMLULUK (Responsive) --- */
-/* Ekran küçülürse (Telefon vb.) menüyü alt alta al */
+/* --- MOBİL UYUMLULUK --- */
 @media(max-width: 768px) {
     header #logo, header nav {
         float: none;
         text-align: center;
         width: 100%;
     }
+    header nav {
+        margin-top: 20px;
+    }
+    header li {
+        display: block;
+        padding: 10px;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
 }
-
