@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canlı Sonuçlar | Sanal Farkındalık</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* DASHBOARD GRID YAPISI */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .chart-card {
+            background-color: #ffffff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+        
+        .chart-card:hover { transform: translateY(-7px); }
+
+        .card-header-stripe {
+            height: 6px;
+            background: linear-gradient(90deg, #e74c3c, #c0392b);
+        }
+
+        .chart-card h3 {
+            text-align: center;
+            color: #2c3e50;
+            margin: 20px 0 10px;
+            font-size: 1.2rem;
+        }
+
+        .iframe-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 20px;
+            min-height: 250px;
+        }
+        
+        @media (max-width: 768px) {
+            .dashboard-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="kutu">
+            <div id="logo"><h1>SANAL FARKINDALIK</h1></div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="universite.html">Üniversite</a></li>
+                    <li><a href="anket.html">Anket</a></li>
+                    <li><a href="sonuclar.html" style="text-decoration: underline;">Sonuçlar</a></li>
+                    <li><a href="cozumler.html">Çözümler</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="banner" style="min-height: 200px;">
+        <div class="kutu">
+            <h1>CANLI SONUÇLAR</h1>
+            <p>Üniversite öğrencilerinden toplanan güncel veriler.</p>
+        </div>
+    </section>
+
+    <section class="kutu" style="background: transparent; box-shadow: none; padding: 0;">
+        <div class="dashboard-grid">
+
+            <div class="chart-card">
+                <div class="card-header-stripe"></div>
+                <h3>📊 Oynama Oranları</h3>
+                <div class="iframe-container">
+                    <p style="color:#aaa;">Grafik Yükleniyor...</p>
+                </div>
+            </div>
+
+            <div class="chart-card">
+                <div class="card-header-stripe"></div>
+                <h3>❓ Başlama Sebepleri</h3>
+                <div class="iframe-container">
+                    <p style="color:#aaa;">Grafik Yükleniyor...</p>
+                </div>
+            </div>
+
+            <div class="chart-card">
+                <div class="card-header-stripe"></div>
+                <h3>📉 Akademik Etki</h3>
+                <div class="iframe-container">
+                    <p style="color:#aaa;">Grafik Yükleniyor...</p>
+                </div>
+            </div>
+
+            <div class="chart-card">
+                <div class="card-header-stripe"></div>
+                <h3>🔮 Gelecek Algısı</h3>
+                <div class="iframe-container">
+                    <p style="color:#aaa;">Grafik Yükleniyor...</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>Sanal Bahis Farkındalık Projesi &copy; 2025</p>
+    </footer>
+
+</body>
+</html>
