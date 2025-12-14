@@ -14,11 +14,14 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
             max-width: 800px;
             margin: 0 auto; /* Ortala */
+            overflow: hidden; /* Taşmaları engelle */
         }
+        
+        /* Iframe'in mobilde ekran dışına taşmasını engellemek için */
         iframe {
-            width: 100%; /* Mobilde taşmayı önler */
-            min-height: 800px; /* Formun boyuna göre ayarla */
+            width: 100% !important; /* Genişliği zorla %100 yap */
             border: none;
+            display: block; /* Alt boşluk oluşmasını engelle */
         }
     </style>
 </head>
@@ -31,7 +34,9 @@
                 <ul>
                     <li><a href="index.html">Ana Sayfa</a></li>
                     <li><a href="universite.html">Üniversite</a></li>
-                    <li><a href="anket.html" style="text-decoration: underline;">Anket</a></li> <li><a href="sonuclar.html">Sonuçlar</a></li> <li><a href="cozumler.html">Çözümler</a></li>
+                    <li><a href="anket.html" style="text-decoration: underline;">Anket</a></li>
+                    <li><a href="sonuclar.html">Sonuçlar</a></li>
+                    <li><a href="cozumler.html">Çözümler</a></li>
                 </ul>
             </nav>
         </div>
@@ -46,8 +51,7 @@
 
     <section class="kutu" style="background: transparent; box-shadow: none;">
         <div class="form-container">
-            <h3 style="text-align: center; color: #555;">Anket Yükleniyor...</h3>
-            <p style="text-align: center;">(Google Forms "Gönder > Göm (Embed)" kodunu buraya yapıştırın)</p>
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScpzR7DEGIsK_yRXnzqrI3LCgq25_hmcQTS_KYQhPVeypwqPA/viewform?embedded=true" width="640" height="3858" frameborder="0" marginheight="0" marginwidth="0">Yükleniyor…</iframe>
         </div>
     </section>
 
