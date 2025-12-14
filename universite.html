@@ -1,59 +1,90 @@
 <!DOCTYPE html>
-<html lang="tr"> <!-- Sayfanın dili Türkçe olarak ayarlanmıştır; tarayıcı ve arama motorları için önemlidir. -->
+<html lang="tr">
 <head>
-    <meta charset="UTF-8"> <!-- Türkçe karakter sorunu yaşanmaması için UTF-8 karakter seti kullanılır. -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Mobil cihazlarda doğru ölçeklendirme için responsive görünüm ayarı. -->
-    <title>Üniversitemizde Durum | Sanal Farkındalık</title> <!-- Tarayıcı sekmesinde görüntülenen sayfa başlığı. -->
-    <link rel="stylesheet" href="style.css"> <!-- Sayfanın tasarımını düzenleyen harici CSS dosyası. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AKÜ YBS ve Farkındalık | Sanal Bahis</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header> <!-- Sayfanın üst kısmı: logo ve menü içerir. -->
-        <div class="kutu"> <!-- İçerik hizalama için kullanılan kapsayıcı kutu yapısı. -->
-            <div id="logo"><h1>SANAL FARKINDALIK</h1></div> <!-- Projenin adı ve kimliğini gösteren logo alanı. -->
-            <nav> <!-- Site içerisindeki sayfalar arası geçişi sağlayan navigasyon menüsü. -->
+
+    <header>
+        <div class="kutu">
+            <div id="logo"><h1>SANAL FARKINDALIK</h1></div>
+            <nav>
                 <ul>
-                    <!-- Menü bağlantıları burada listelenir. -->
-                    <li><a href="index.html">Ana Sayfa</a></li> <!-- Projenin ana açılış sayfası. -->
-                    <li><a href="anket.html">Veriler</a></li>
-                    <li><a href="hedef.html">Hedef</a></li> <!-- Projenin amacı ve hedeflerinin açıklandığı bölüm. -->
-                    <li><a href="sorunlar.html">Sorunlar</a></li> <!-- Sanal bahis ile ilgili karşılaşılan sorunlar. -->
-                    <li><a href="cozumler.html">Çözümler</a></li> <!-- Sorunlara yönelik çözüm önerilerinin bulunduğu sayfa. -->
-                    <li><a href="universite.html" style="text-decoration: underline;">Üniversite</a></li> <!-- Aktif sayfa olduğu için altı çizili yapıldı. -->
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="hedef.html">Hedef</a></li>
+                    <li><a href="sorunlar.html">Sorunlar</a></li>
+                    <li><a href="cozumler.html">Çözümler</a></li>
+                    <li><a href="universite.html" style="text-decoration: underline;">Üniversite</a></li>
+                    <li><a href="anket.html">Anket</a></li>
+                    <li><a href="sonuclar.html">Sonuçlar</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section id="banner" style="min-height: 200px;"> <!-- Sayfa başlığı için geniş ve dikkat çekici banner alanı. -->
-        <div class="kutu"> <!-- İçerikle hizalanmış kutu yapısı. -->
-            <h1>ÜNİVERSİTEMİZDE DURUM</h1> <!-- Üniversite özelindeki araştırma sonuçlarının başlığı. -->
+    <section id="banner" style="min-height: 280px;">
+        <div class="kutu">
+            <h1>AFYON KOCATEPE ÜNİVERSİTESİ</h1>
+            <p style="opacity: 0.9; letter-spacing: 1px;">Yönetim Bilişim Sistemleri Bölümü olarak dijital tehditlerin farkındayız.</p>
         </div>
     </section>
 
-    <section class="kutu" style="background:white; padding:20px; margin-top:20px; border-radius:5px;"> <!-- Sayfanın ana içerik bölümünü kapsayan kart tasarımı. -->
-        <h2>Anket ve Röportaj Sonuçları</h2> <!-- Araştırma çıktılarının sunulduğu bölüm başlığı. -->
-        <p>Üniversitemiz kampüsünde yaptığımız araştırmalar sonucunda elde edilen veriler aşağıdadır.</p> <!-- Kısa açıklama metni. -->
+    <section class="kutu">
         
-        <h3>Öğrenci Anketi Sonuçları</h3> <!-- Öğrencilerle yapılan anket çalışmasının sonuç bölümü. -->
-        <div class="gorsel-alani"> <!-- Anket grafiklerinin yerleştirileceği özel görsel alanı. -->
-            <p>[Buraya Google Forms Anket Grafikleri Gelecek]</p>
+        <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 40px;">
+            <div style="flex: 1; min-width: 300px;">
+                <h2 style="margin-top: 0;">AKÜ İİBF Kampüsünde Durum</h2>
+                <p>Afyon Kocatepe Üniversitesi İktisadi ve İdari Bilimler Fakültesi (İİBF) öğrencileri, özellikle ekonomi ve finans dersleri almaları sebebiyle "para yönetimi" konusunda bilinçli olsalar da, dijital dünyanın getirdiği risklere karşı en açık gruptur.</p>
+                <p>Yönetim Bilişim Sistemleri (YBS) öğrencileri olarak bizler, algoritmaların insan psikolojisini nasıl manipüle ettiğini derslerimizde (Veri Madenciliği, Web Tasarım) görüyoruz. Bu proje, teorik bilgimizi toplumsal bir sorunu çözmek için kullandığımız pratik bir adımdır.</p>
+            </div>
+            <div style="flex: 1; min-width: 300px;">
+                <div class="gorsel-alani" style="margin: 0; height: 100%; display: flex; align-items: center; justify-content: center; background: #e3e8ee; border: none;">
+                    <p style="color: #555; font-weight: bold;">[Görsel: AKÜ İİBF Binası veya Kampüs Girişi]</p>
+                </div>
+            </div>
         </div>
 
-        <h3>Röportajlar</h3> <!-- Öğrencilerle yapılan görüşmelerin yer aldığı bölüm. -->
-        <p><strong>Öğrenci A:</strong> "Arkadaş grubumda herkes oynuyordu, ben de meraktan başladım..."</p> <!-- Bir öğrenciden alınmış röportaj örneği. -->
+        <hr style="border: 0; border-top: 1px solid #eee; margin: 40px 0;">
+
+        <h3>💻 YBS Gözüyle: "Kasa Her Zaman Kazanır"</h3>
+        <p>Yönetim Bilişim Sistemleri öğrencileri olarak sanal bahis sitelerinin arka planını incelediğimizde şu teknik gerçekleri görüyoruz:</p>
+        <ul style="line-height: 1.8; margin-bottom: 30px;">
+            <li><strong>Algoritmik Manipülasyon:</strong> Siteler, kullanıcıyı oyunda tutmak için "Kaybetmeye Yakın (Near Miss)" algoritmaları kullanır.</li>
+            <li><strong>Veri Analizi:</strong> Kullanıcının tıklama alışkanlıklarına göre kişiselleştirilmiş "Bonus Bildirimleri" gönderilir.</li>
+            <li><strong>Siber Güvenlik Riski:</strong> Yasadışı siteler, öğrencilerin kimlik ve banka bilgilerini Dark Web'de satmaktadır.</li>
+        </ul>
+
+        <h3 style="margin-top: 40px;">🗣️ Kampüsten Sesler (Röportajlar)</h3>
         
-        <div style="background:#eee; padding:15px; margin-top:20px; border-radius:5px;"> <!-- Kullanıcı geri bildirim formunun bulunduğu kutu alanı. -->
-            <h3>Siz Ne Düşünüyorsunuz?</h3> <!-- Geri bildirim bölümünün başlığı. -->
-            <form> <!-- Ziyaretçilerin görüşlerini yazabilecekleri form yapısı. -->
-                <input type="text" placeholder="Adınız (İsteğe bağlı)" style="width:100%; margin-bottom:10px; padding:5px;"> <!-- Kullanıcının isteğe bağlı isim girebileceği alan. -->
-                <textarea rows="4" placeholder="Görüşlerinizi yazın..." style="width:100%; margin-bottom:10px; padding:5px;"></textarea> <!-- Kullanıcının düşüncelerini yazdığı metin alanı. -->
-                <button type="button" style="background:#4C9F38; color:white; border:none; padding:10px; cursor:pointer;">Gönder</button> <!-- Form gönderim butonu (şu anda yalnızca görsel amaçlıdır). -->
-            </form>
+        <div class="dashboard-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 20px;">
+            
+            <div style="background: #f9f9f9; padding: 20px; border-left: 5px solid #e74c3c; border-radius: 5px;">
+                <h4 style="margin-top: 0; color: #c0392b;">YBS 2. Sınıf Öğrencisi</h4>
+                <p><em>"Web Tasarım dersinde öğrendiğimiz arayüz hilelerini (Dark Patterns) bahis sitelerinde çok net görüyorum. 'Hemen Oyna' butonları parlak ve büyükken, 'Hesabı Kapat' butonları gizlenmiş durumda. Bu bir yazılım tuzağı."</em></p>
+            </div>
+
+            <div style="background: #f9f9f9; padding: 20px; border-left: 5px solid #3498db; border-radius: 5px;">
+                <h4 style="margin-top: 0; color: #2980b9;">Maliye 3. Sınıf Öğrencisi</h4>
+                <p><em>"Finans derslerinde paranın zaman değerini görüyoruz ama arkadaşlarım kripto paradan veya bahisten 'bir gecede zengin olma' hayali kuruyor. İİBF kantininde en çok konuşulan konu maalesef iddaa oranları."</em></p>
+            </div>
+
         </div>
+
+        <div style="text-align: center; margin-top: 50px;">
+            <p style="font-size: 1.1rem;">Kampüsümüzdeki gerçek verileri görmek ister misiniz?</p>
+            <a href="sonuclar.html" style="background: linear-gradient(90deg, #e74c3c, #c0392b); color: white; padding: 15px 40px; text-decoration: none; border-radius: 30px; font-weight: bold; box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4); transition: transform 0.2s;">
+                Anket Sonuçlarını İncele &rarr;
+            </a>
+        </div>
+
     </section>
 
-    <footer> <!-- Sayfanın alt bilgi bölümü; proje adı ve telif bilgisi içerir. -->
-        <p>Sanal Bahis Farkındalık Projesi &copy; 2024</p> <!-- Telif ve proje tanımlayıcı bilgi. -->
+    <footer>
+        <p>Sanal Bahis Farkındalık Projesi &copy; 2025 | Afyon Kocatepe Üniversitesi - YBS Akıncılar Grubu</p>
     </footer>
+
 </body>
 </html>
