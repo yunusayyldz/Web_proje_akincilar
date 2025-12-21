@@ -1,62 +1,74 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="tr"> <!-- Sayfanın dili Türkçe olarak ayarlanmıştır -->
 <head>
+    <!-- Türkçe karakterlerin doğru görüntülenmesi için UTF-8 karakter seti -->
     <meta charset="UTF-8">
+
+    <!-- Sayfanın mobil cihazlarda duyarlı (responsive) görünmesini sağlar -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Tarayıcı sekmesinde görünen sayfa başlığı -->
     <title>Ankete Katıl | Sanal Farkındalık</title>
+
+    <!-- Genel site tasarımını içeren harici CSS dosyası -->
     <link rel="stylesheet" href="style.css">
+
     <style>
         /* Formun ortalanması ve şık görünmesi için özel ayarlar */
         .form-container {
-            background: white;
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            max-width: 800px;
-            margin: 0 auto; /* Ortala */
-            overflow: hidden; /* Taşmaları engelle */
+            background: white; /* Form arka plan rengi */
+            padding: 20px; /* İç boşluk */
+            border-radius: 15px; /* Kenarların yuvarlatılması */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3); /* Gölgelendirme efekti */
+            max-width: 800px; /* Maksimum genişlik */
+            margin: 0 auto; /* Formu yatayda ortalar */
+            overflow: hidden; /* Taşan içerikleri gizler */
         }
         
         /* Iframe'in mobilde ekran dışına taşmasını engellemek için */
         iframe {
-            width: 100% !important; /* Genişliği zorla %100 yap */
-            border: none;
-            display: block; /* Alt boşluk oluşmasını engelle */
+            width: 100% !important; /* Genişliği zorla %100 yapar */
+            border: none; /* Kenarlık kaldırılır */
+            display: block; /* Alt boşluk oluşmasını engeller */
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="kutu">
-            <div id="logo"><h1>SANAL FARKINDALIK</h1></div>
-            <nav>
+    <header> <!-- Sayfanın üst kısmı: logo ve navigasyon menüsü -->
+        <div class="kutu"> <!-- İçeriği hizalamak için kapsayıcı -->
+            <div id="logo"><h1>SANAL FARKINDALIK</h1></div> <!-- Proje logosu / başlığı -->
+            <nav> <!-- Sayfalar arası geçiş menüsü -->
                 <ul>
-                    <li><a href="index.html">Ana Sayfa</a></li>
-                    <li><a href="universite.html">Üniversite</a></li>
-                    <li><a href="anket.html" style="text-decoration: underline;">Anket</a></li>
-                    <li><a href="sonuclar.html">Sonuçlar</a></li>
-                    <li><a href="cozumler.html">Çözümler</a></li>
+                    <!-- Menü bağlantıları -->
+                    <li><a href="index.html">Ana Sayfa</a></li> <!-- Ana sayfa bağlantısı -->
+                    <li><a href="universite.html">Üniversite</a></li> <!-- Üniversite sayfası -->
+                    <li><a href="anket.html" style="text-decoration: underline;">Anket</a></li> <!-- Aktif sayfa -->
+                    <li><a href="sonuclar.html">Sonuçlar</a></li> <!-- Anket sonuçları -->
+                    <li><a href="cozumler.html">Çözümler</a></li> <!-- Çözüm önerileri -->
                 </ul>
             </nav>
         </div>
     </header>
 
+    <!-- Üst banner alanı -->
     <section id="banner" style="min-height: 200px;">
-        <div class="kutu">
-            <h1>SÖZ SİZDE</h1>
-            <p style="opacity: 0.9;">Birkaç dakikanızı ayırarak çalışmamıza destek olun.</p>
+        <div class="kutu"> <!-- Banner içeriği kapsayıcısı -->
+            <h1>SÖZ SİZDE</h1> <!-- Sayfanın ana başlığı -->
+            <p style="opacity: 0.9;">Birkaç dakikanızı ayırarak çalışmamıza destek olun.</p> <!-- Açıklayıcı alt metin -->
         </div>
     </section>
 
+    <!-- Anket formunun bulunduğu ana bölüm -->
     <section class="kutu" style="background: transparent; box-shadow: none;">
-        <div class="form-container">
+        <div class="form-container"> <!-- Google Form'u saran kutu -->
+            <!-- Google Forms üzerinden alınan anket iframe'i -->
             <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScpzR7DEGIsK_yRXnzqrI3LCgq25_hmcQTS_KYQhPVeypwqPA/viewform?embedded=true" width="640" height="3858" frameborder="0" marginheight="0" marginwidth="0">Yükleniyor…</iframe>
         </div>
     </section>
 
-    <footer>
-        <p>Sanal Bahis Farkındalık Projesi &copy; 2025</p>
+    <footer> <!-- Sayfanın alt bilgi bölümü -->
+        <p>Sanal Bahis Farkındalık Projesi &copy; 2025</p> <!-- Telif ve proje bilgisi -->
     </footer>
 
 </body>
