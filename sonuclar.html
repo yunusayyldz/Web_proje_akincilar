@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Canlı Sonuçlar | Sanal Farkındalık</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <style>
         /* DASHBOARD GRID YAPISI */
         .dashboard-grid {
@@ -12,6 +14,7 @@
             grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
             gap: 30px;
             margin-top: 30px;
+            margin-bottom: 50px;
         }
 
         .chart-card {
@@ -20,6 +23,8 @@
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
         }
         
         .chart-card:hover { transform: translateY(-7px); }
@@ -37,15 +42,18 @@
         }
 
         .iframe-container {
+            position: relative;
+            padding: 20px;
+            height: 300px; /* Grafiklerin yüksekliği */
+            width: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding-bottom: 20px;
-            min-height: 250px;
         }
         
         @media (max-width: 768px) {
             .dashboard-grid { grid-template-columns: 1fr; }
+            .iframe-container { height: 250px; }
         }
     </style>
 </head>
@@ -62,7 +70,7 @@
                     <li><a href="cozumler.html">Çözümler</a></li>
                     <li><a href="universite.html">Üniversite</a></li>
                 	<li><a href="anket.html">Anket</a></li> 
-                    <li><a href="sonuclar.html">Sonuçlar</a></li> </ul>
+                    <li><a href="sonuclar.html">Sonuçlar</a></li> 
                 </ul>
             </nav>
         </div>
@@ -71,7 +79,7 @@
     <section id="banner" style="min-height: 200px;">
         <div class="kutu">
             <h1>CANLI SONUÇLAR</h1>
-            <p>Üniversite öğrencilerinden toplanan güncel veriler.</p>
+            <p>Üniversite öğrencilerinden toplanan güncel anket verileri.</p>
         </div>
     </section>
 
@@ -82,7 +90,7 @@
                 <div class="card-header-stripe"></div>
                 <h3>📊 Oynama Oranları</h3>
                 <div class="iframe-container">
-                    <p style="color:#aaa;">Grafik Yükleniyor...</p>
+                    <canvas id="chartOynama"></canvas>
                 </div>
             </div>
 
@@ -90,7 +98,7 @@
                 <div class="card-header-stripe"></div>
                 <h3>❓ Başlama Sebepleri</h3>
                 <div class="iframe-container">
-                    <p style="color:#aaa;">Grafik Yükleniyor...</p>
+                    <canvas id="chartSebepler"></canvas>
                 </div>
             </div>
 
@@ -98,7 +106,7 @@
                 <div class="card-header-stripe"></div>
                 <h3>📉 Akademik Etki</h3>
                 <div class="iframe-container">
-                    <p style="color:#aaa;">Grafik Yükleniyor...</p>
+                    <canvas id="chartAkademik"></canvas>
                 </div>
             </div>
 
@@ -106,7 +114,7 @@
                 <div class="card-header-stripe"></div>
                 <h3>🔮 Gelecek Algısı</h3>
                 <div class="iframe-container">
-                    <p style="color:#aaa;">Grafik Yükleniyor...</p>
+                    <canvas id="chartGelecek"></canvas>
                 </div>
             </div>
 
@@ -116,6 +124,84 @@
     <footer>
         <p>Sanal Bahis Farkındalık Projesi &copy; 2025</p>
     </footer>
+
+    <script>
+        // Renk Paletleri
+        const colors = {
+            red: 'rgba(231, 76, 60, 0.7)',
+            blue: 'rgba(52, 152, 219, 0.7)',
+            yellow: 'rgba(241, 196, 15, 0.7)',
+            green: 'rgba(46, 204, 113, 0.7)',
+            purple: 'rgba(155, 89, 182, 0.7)',
+            grey: 'rgba(149, 165, 166, 0.7)'
+        };
+
+        // 1. GRAFİK: Oynama Oranları (Pasta Grafik)
+        const ctx1 = document.getElementById('chartOynama').getContext('2d');
+        new Chart(ctx1, {
+            type: 'pie',
+            data: {
+                labels: ['Hiç Oynamadım', 'Denedim', 'Aktif Oynuyorum', 'Bağımlı Hissediyorum'],
+                datasets: [{
+                    data: [65, 20, 10, 5], // BURADAKİ SAYILARI PDF'TEKİ VERİLERLE GÜNCELLE
+                    backgroundColor: [colors.green, colors.yellow, colors.blue, colors.red],
+                    borderWidth: 1
+                }]
+            },
+            options: { responsive: true, maintainAspectRatio: false }
+        });
+
+        // 2. GRAFİK: Başlama Sebepleri (Bar Grafik)
+        const ctx2 = document.getElementById('chartSebepler').getContext('2d');
+        new Chart(ctx2, {
+            type: 'bar',
+            data: {
+                labels: ['Merak', 'Arkadaş Çevresi', 'Para Kazanma Hırsı', 'Heyecan/Adrenalin', 'Reklamlar'],
+                datasets: [{
+                    label: 'Katılımcı Sayısı',
+                    data: [30, 45, 60, 25, 15], // BURADAKİ SAYILARI GÜNCELLE
+                    backgroundColor: colors.blue,
+                    borderWidth: 1
+                }]
+            },
+            options: { responsive: true, maintainAspectRatio: false, scales: { y: { beginAtZero: true } } }
+        });
+
+        // 3. GRAFİK: Akademik Etki (Doughnut Grafik)
+        const ctx3 = document.getElementById('chartAkademik').getContext('2d');
+        new Chart(ctx3, {
+            type: 'doughnut',
+            data: {
+                labels: ['Etkilemedi', 'Ders Notlarım Düştü', 'Devamsızlığım Arttı', 'Okulu Bırakmayı Düşündüm'],
+                datasets: [{
+                    data: [50, 30, 15, 5], // BURADAKİ SAYILARI GÜNCELLE
+                    backgroundColor: [colors.blue, colors.yellow, colors.red, colors.purple],
+                    borderWidth: 1
+                }]
+            },
+            options: { responsive: true, maintainAspectRatio: false }
+        });
+
+        // 4. GRAFİK: Gelecek Algısı (Line Grafik veya Bar)
+        const ctx4 = document.getElementById('chartGelecek').getContext('2d');
+        new Chart(ctx4, {
+            type: 'bar',
+            data: {
+                labels: ['Umutlu', 'Kaygılı', 'Kararsız', 'Umutsuz'],
+                datasets: [{
+                    label: 'Öğrenci Görüşü',
+                    data: [40, 35, 15, 10], // BURADAKİ SAYILARI GÜNCELLE
+                    backgroundColor: [colors.green, colors.yellow, colors.grey, colors.red],
+                    borderWidth: 1
+                }]
+            },
+            options: { 
+                indexAxis: 'y', // Yatay bar grafik yapar
+                responsive: true, 
+                maintainAspectRatio: false 
+            }
+        });
+    </script>
 
 </body>
 </html>
