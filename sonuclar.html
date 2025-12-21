@@ -1,14 +1,26 @@
 <!DOCTYPE html>
+<!-- HTML5 belgesi olduğunu belirtir -->
 <html lang="tr">
+<!-- Sayfanın dilinin Türkçe olduğunu belirtir -->
 <head>
+    <!-- Türkçe karakter desteği -->
     <meta charset="UTF-8">
+    
+    <!-- Mobil uyumlu (responsive) tasarım için viewport ayarı -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Tarayıcı sekmesinde görünen başlık -->
     <title>Canlı Sonuçlar | Sanal Farkındalık</title>
+    
+    <!-- Harici CSS dosyasının projeye dahil edilmesi -->
     <link rel="stylesheet" href="style.css">
+    
+    <!-- Chart.js kütüphanesi: Grafik çizmek için kullanılır -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <style>
-        /* DASHBOARD GRID YAPISI */
+        /* === DASHBOARD GRID YAPISI === */
+        /* Grafik kartlarının grid (ızgara) düzeninde dizilmesini sağlar */
         .dashboard-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
@@ -17,6 +29,7 @@
             margin-bottom: 50px;
         }
 
+        /* Her bir grafik kartının tasarımı */
         .chart-card {
             background-color: #ffffff;
             border-radius: 15px;
@@ -27,13 +40,16 @@
             flex-direction: column;
         }
         
+        /* Kartın üzerine gelindiğinde yukarı doğru hareket animasyonu */
         .chart-card:hover { transform: translateY(-7px); }
 
+        /* Kartların üst kısmındaki renkli şerit */
         .card-header-stripe {
             height: 6px;
             background: linear-gradient(90deg, #e74c3c, #c0392b);
         }
 
+        /* Grafik başlıklarının stili */
         .chart-card h3 {
             text-align: center;
             color: #2c3e50;
@@ -41,16 +57,18 @@
             font-size: 1.2rem;
         }
 
+        /* Grafiklerin yerleştirildiği alan */
         .iframe-container {
             position: relative;
             padding: 20px;
-            height: 300px; /* Grafiklerin yüksekliği */
+            height: 300px;
             width: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
         }
         
+        /* Mobil cihazlar için responsive ayarlar */
         @media (max-width: 768px) {
             .dashboard-grid { grid-template-columns: 1fr; }
             .iframe-container { height: 250px; }
@@ -59,11 +77,16 @@
 </head>
 <body>
 
+    <!-- === ÜST MENÜ (HEADER) === -->
     <header>
         <div class="kutu">
+            <!-- Site logosu / başlığı -->
             <div id="logo"><h1>SANAL FARKINDALIK</h1></div>
+            
+            <!-- Navigasyon menüsü -->
             <nav>
                 <ul>
+                    <!-- Aktif sayfa altı çizili gösterilir -->
                     <li><a href="index.html" style="text-decoration: underline;">Ana Sayfa</a></li>
                     <li><a href="hedef.html">Hedef</a></li>
                     <li><a href="sorunlar.html">Sorunlar</a></li>
@@ -76,6 +99,7 @@
         </div>
     </header>
 
+    <!-- === BANNER ALANI === -->
     <section id="banner" style="min-height: 200px;">
         <div class="kutu">
             <h1>CANLI SONUÇLAR</h1>
@@ -83,37 +107,46 @@
         </div>
     </section>
 
+    <!-- === ANA İÇERİK: GRAFİKLER === -->
     <section class="kutu" style="background: transparent; box-shadow: none; padding: 0;">
         <div class="dashboard-grid">
 
+            <!-- 1. Grafik Kartı -->
             <div class="chart-card">
                 <div class="card-header-stripe"></div>
                 <h3>📊 Oynama Oranları</h3>
                 <div class="iframe-container">
+                    <!-- Pasta grafik burada çizilecek -->
                     <canvas id="chartOynama"></canvas>
                 </div>
             </div>
 
+            <!-- 2. Grafik Kartı -->
             <div class="chart-card">
                 <div class="card-header-stripe"></div>
                 <h3>❓ Başlama Sebepleri</h3>
                 <div class="iframe-container">
+                    <!-- Bar grafik -->
                     <canvas id="chartSebepler"></canvas>
                 </div>
             </div>
 
+            <!-- 3. Grafik Kartı -->
             <div class="chart-card">
                 <div class="card-header-stripe"></div>
                 <h3>📉 Akademik Etki</h3>
                 <div class="iframe-container">
+                    <!-- Doughnut grafik -->
                     <canvas id="chartAkademik"></canvas>
                 </div>
             </div>
 
+            <!-- 4. Grafik Kartı -->
             <div class="chart-card">
                 <div class="card-header-stripe"></div>
                 <h3>🔮 Gelecek Algısı</h3>
                 <div class="iframe-container">
+                    <!-- Yatay bar grafik -->
                     <canvas id="chartGelecek"></canvas>
                 </div>
             </div>
@@ -121,12 +154,14 @@
         </div>
     </section>
 
+    <!-- === ALT BİLGİ (FOOTER) === -->
     <footer>
         <p>Sanal Bahis Farkındalık Projesi &copy; 2025</p>
     </footer>
 
+    <!-- === GRAFİKLERİ OLUŞTURAN JAVASCRIPT KODLARI === -->
     <script>
-        // Renk Paletleri
+        // Grafiklerde kullanılacak renk paleti
         const colors = {
             red: 'rgba(231, 76, 60, 0.7)',
             blue: 'rgba(52, 152, 219, 0.7)',
@@ -136,14 +171,14 @@
             grey: 'rgba(149, 165, 166, 0.7)'
         };
 
-        // 1. GRAFİK: Oynama Oranları (Pasta Grafik)
+        // 1. Grafik: Oynama Oranları (Pasta Grafik)
         const ctx1 = document.getElementById('chartOynama').getContext('2d');
         new Chart(ctx1, {
             type: 'pie',
             data: {
                 labels: ['Hiç Oynamadım', 'Denedim', 'Aktif Oynuyorum', 'Bağımlı Hissediyorum'],
                 datasets: [{
-                    data: [65, 20, 10, 5], // BURADAKİ SAYILARI PDF'TEKİ VERİLERLE GÜNCELLE
+                    data: [65, 20, 10, 5],
                     backgroundColor: [colors.green, colors.yellow, colors.blue, colors.red],
                     borderWidth: 1
                 }]
@@ -151,7 +186,7 @@
             options: { responsive: true, maintainAspectRatio: false }
         });
 
-        // 2. GRAFİK: Başlama Sebepleri (Bar Grafik)
+        // 2. Grafik: Başlama Sebepleri (Dikey Bar Grafik)
         const ctx2 = document.getElementById('chartSebepler').getContext('2d');
         new Chart(ctx2, {
             type: 'bar',
@@ -159,7 +194,7 @@
                 labels: ['Merak', 'Arkadaş Çevresi', 'Para Kazanma Hırsı', 'Heyecan/Adrenalin', 'Reklamlar'],
                 datasets: [{
                     label: 'Katılımcı Sayısı',
-                    data: [30, 45, 60, 25, 15], // BURADAKİ SAYILARI GÜNCELLE
+                    data: [30, 45, 60, 25, 15],
                     backgroundColor: colors.blue,
                     borderWidth: 1
                 }]
@@ -167,14 +202,14 @@
             options: { responsive: true, maintainAspectRatio: false, scales: { y: { beginAtZero: true } } }
         });
 
-        // 3. GRAFİK: Akademik Etki (Doughnut Grafik)
+        // 3. Grafik: Akademik Etki (Doughnut Grafik)
         const ctx3 = document.getElementById('chartAkademik').getContext('2d');
         new Chart(ctx3, {
             type: 'doughnut',
             data: {
                 labels: ['Etkilemedi', 'Ders Notlarım Düştü', 'Devamsızlığım Arttı', 'Okulu Bırakmayı Düşündüm'],
                 datasets: [{
-                    data: [50, 30, 15, 5], // BURADAKİ SAYILARI GÜNCELLE
+                    data: [50, 30, 15, 5],
                     backgroundColor: [colors.blue, colors.yellow, colors.red, colors.purple],
                     borderWidth: 1
                 }]
@@ -182,7 +217,7 @@
             options: { responsive: true, maintainAspectRatio: false }
         });
 
-        // 4. GRAFİK: Gelecek Algısı (Line Grafik veya Bar)
+        // 4. Grafik: Gelecek Algısı (Yatay Bar Grafik)
         const ctx4 = document.getElementById('chartGelecek').getContext('2d');
         new Chart(ctx4, {
             type: 'bar',
@@ -190,13 +225,13 @@
                 labels: ['Umutlu', 'Kaygılı', 'Kararsız', 'Umutsuz'],
                 datasets: [{
                     label: 'Öğrenci Görüşü',
-                    data: [40, 35, 15, 10], // BURADAKİ SAYILARI GÜNCELLE
+                    data: [40, 35, 15, 10],
                     backgroundColor: [colors.green, colors.yellow, colors.grey, colors.red],
                     borderWidth: 1
                 }]
             },
             options: { 
-                indexAxis: 'y', // Yatay bar grafik yapar
+                indexAxis: 'y',
                 responsive: true, 
                 maintainAspectRatio: false 
             }
