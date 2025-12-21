@@ -1,52 +1,68 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="tr"> <!-- Sayfanın dili Türkçe olarak tanımlanmıştır -->
 <head>
+    <!-- Türkçe karakterlerin doğru görüntülenmesi için UTF-8 karakter seti -->
     <meta charset="UTF-8">
+
+    <!-- Mobil cihazlar ve farklı ekran boyutları için duyarlı tasarım ayarı -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Tarayıcı sekmesinde görünecek ana sayfa başlığı -->
     <title>Sanal Bahis Farkındalık</title>
+
+    <!-- Sitenin genel tasarımını belirleyen harici CSS dosyası -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <div class="kutu">
+    <header> <!-- Sayfanın üst kısmı: logo ve navigasyon menüsü -->
+        <div class="kutu"> <!-- İçeriği ortalamak ve hizalamak için kullanılan kapsayıcı -->
             <div id="logo">
-                <h1>SANAL FARKINDALIK</h1>
+                <h1>SANAL FARKINDALIK</h1> <!-- Projenin adı / logosu -->
             </div>
-            <nav>
+            <nav> <!-- Site içi sayfa geçişlerini sağlayan menü -->
                 <ul>
+                    <!-- Aktif sayfa olduğu için Ana Sayfa bağlantısı altı çizili -->
                     <li><a href="index.html" style="text-decoration: underline;">Ana Sayfa</a></li>
-                    <li><a href="hedef.html">Hedef</a></li>
-                    <li><a href="sorunlar.html">Sorunlar</a></li>
-                    <li><a href="cozumler.html">Çözümler</a></li>
-                    <li><a href="universite.html">Üniversite</a></li>
-                    <li><a href="anket.html">Anket</a></li> <li><a href="sonuclar.html">Sonuçlar</a></li> </ul>
+                    <li><a href="hedef.html">Hedef</a></li> <!-- Projenin amacı ve hedefleri -->
+                    <li><a href="sorunlar.html">Sorunlar</a></li> <!-- Sanal bahisle ilgili sorunlar -->
+                    <li><a href="cozumler.html">Çözümler</a></li> <!-- Çözüm yolları -->
+                    <li><a href="universite.html">Üniversite</a></li> <!-- Üniversite özelindeki çalışmalar -->
+                    <li><a href="anket.html">Anket</a></li> <!-- Katılımcı anketi -->
+                    <li><a href="sonuclar.html">Sonuçlar</a></li> <!-- Anket ve çalışma sonuçları -->
+                </ul>
             </nav>
         </div>
     </header>
 
+    <!-- Üst banner alanı: ana slogan ve dikkat çekici mesaj -->
     <section id="banner" style="min-height: 300px;">
-        <div class="kutu">
-            <h1>KUMARA DEĞİL, GELECEĞE YATIRIM YAP</h1>
-            <p style="opacity: 0.9; font-size: 1.3rem; letter-spacing: 1px;">Sanal bahis bir oyun değil, bağımlılıktır.</p>
+        <div class="kutu"> <!-- Banner içeriğini ortalayan kapsayıcı -->
+            <h1>KUMARA DEĞİL, GELECEĞE YATIRIM YAP</h1> <!-- Ana slogan -->
+            <p style="opacity: 0.9; font-size: 1.3rem; letter-spacing: 1px;">Sanal bahis bir oyun değil, bağımlılıktır.</p> <!-- Alt slogan -->
         </div>
     </section>
 
+    <!-- Ana içerik bölümü -->
     <section id="ana-icerik" class="kutu">
-        <h2>Hoş Geldiniz</h2>
+        <h2>Hoş Geldiniz</h2> <!-- Ziyaretçileri karşılayan başlık -->
+
+        <!-- Sitenin amacı ve kapsamını açıklayan metin -->
         <p>Bu site, Sanal Bahis ve Kumar Bağımlılığına karşı farkındalık oluşturmak ve Sürdürülebilir Kalkınma Amaçları (Madde 3: Sağlık) kapsamında bilgilendirme yapmak için hazırlanmıştır.</p>
         
+        <!-- Ana sayfa görsel alanı -->
         <div class="anasayfa.png">
-            <img src="anasayfa.png" alt="Görsel" width="500" style="display:block; margin:auto; border-radius:30px;">
-            
+            <img src="anasayfa.png" alt="Görsel" width="500" style="display:block; margin:auto; border-radius:30px;"> <!-- Bilgilendirici görsel -->
         </div>
 
-        <h3>Neden Bu Site Var?</h3>
+        <h3>Neden Bu Site Var?</h3> <!-- Alt başlık -->
+
+        <!-- Projenin ortaya çıkış nedenini açıklayan paragraf -->
         <p>Üniversite gençliği arasında yayılan bu sessiz tehlikeye dur demek, sorunları ve çözüm yollarını konuşmak için buradayız.</p>
     </section>
 
-    <footer>
-        <p>Sanal Bahis Farkındalık Projesi &copy; 2025 | SKA Hedef 3</p>
+    <footer> <!-- Sayfanın alt bilgi (footer) bölümü -->
+        <p>Sanal Bahis Farkındalık Projesi &copy; 2025 | SKA Hedef 3</p> <!-- Telif ve proje bilgisi -->
     </footer>
 
 </body>
