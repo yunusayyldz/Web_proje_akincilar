@@ -1,242 +1,290 @@
 <!DOCTYPE html>
-<!-- HTML5 belgesi olduğunu belirtir -->
 <html lang="tr">
-<!-- Sayfanın dilinin Türkçe olduğunu belirtir -->
 <head>
-    <!-- Türkçe karakter desteği -->
     <meta charset="UTF-8">
-    
-    <!-- Mobil uyumlu (responsive) tasarım için viewport ayarı -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canlı Sonuçlar | Sanal Bahis Ve Kumar Bağımlığı</title>
     
-    <!-- Tarayıcı sekmesinde görünen başlık -->
-    <title>Canlı Sonuçlar | Sanal Farkındalık</title>
-    
-    <!-- Harici CSS dosyasının projeye dahil edilmesi -->
-    <link rel="stylesheet" href="style.css">
-    
-    <!-- Chart.js kütüphanesi: Grafik çizmek için kullanılır -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <style>
-        /* === DASHBOARD GRID YAPISI === */
-        /* Grafik kartlarının grid (ızgara) düzeninde dizilmesini sağlar */
-        .dashboard-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
-            margin-bottom: 50px;
+        /* Temel Stil Ayarları */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 0;
         }
 
-        /* Her bir grafik kartının tasarımı */
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .kutu {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        #logo h1 { margin: 0; font-size: 24px; letter-spacing: 2px; }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 14px;
+        }
+
+        #banner {
+            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://images.unsplash.com/photo-1518186239717-2e9b1104c81f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        /* === DASHBOARD GRID YAPISI === */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-top: -40px; /* Banner içine hafifçe girsin */
+            padding-bottom: 50px;
+        }
+
         .chart-card {
             background-color: #ffffff;
-            border-radius: 15px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
             display: flex;
             flex-direction: column;
+            border: 1px solid #eee;
         }
         
-        /* Kartın üzerine gelindiğinde yukarı doğru hareket animasyonu */
-        .chart-card:hover { transform: translateY(-7px); }
+        .chart-card:hover { transform: translateY(-5px); }
 
-        /* Kartların üst kısmındaki renkli şerit */
         .card-header-stripe {
-            height: 6px;
-            background: linear-gradient(90deg, #e74c3c, #c0392b);
+            height: 5px;
+            background: #e74c3c;
         }
 
-        /* Grafik başlıklarının stili */
         .chart-card h3 {
             text-align: center;
-            color: #2c3e50;
-            margin: 20px 0 10px;
-            font-size: 1.2rem;
+            color: #34495e;
+            margin: 15px 0;
+            font-size: 1.1rem;
+            padding: 0 10px;
         }
 
-        /* Grafiklerin yerleştirildiği alan */
         .iframe-container {
-            position: relative;
-            padding: 20px;
-            height: 300px;
-            width: 100%;
+            padding: 15px;
+            height: 280px;
             display: flex;
             justify-content: center;
             align-items: center;
         }
-        
-        /* Mobil cihazlar için responsive ayarlar */
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
         @media (max-width: 768px) {
             .dashboard-grid { grid-template-columns: 1fr; }
-            .iframe-container { height: 250px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- === ÜST MENÜ (HEADER) === -->
     <header>
         <div class="kutu">
-            <!-- Site logosu / başlığı -->
-            <div id="logo"><h1>SANAL FARKINDALIK</h1></div>
-            
-            <!-- Navigasyon menüsü -->
+            <div id="logo"><h1>Sanal Bahis Ve Kumar Bağımlığı</h1></div>
             <nav>
                 <ul>
-                    <!-- Aktif sayfa altı çizili gösterilir -->
-                    <li><a href="index.html" style="text-decoration: underline;">Ana Sayfa</a></li>
+                    <li><a href="index.html">Ana Sayfa</a></li>
                     <li><a href="hedef.html">Hedef</a></li>
                     <li><a href="sorunlar.html">Sorunlar</a></li>
                     <li><a href="cozumler.html">Çözümler</a></li>
                     <li><a href="universite.html">Üniversite</a></li>
-                	<li><a href="anket.html">Anket</a></li> 
-                    <li><a href="sonuclar.html">Sonuçlar</a></li> 
+                    <li><a href="anket.html">Anket</a></li> 
+                    <li><a href="sonuclar.html" style="text-decoration: underline; font-weight: bold;">Sonuçlar</a></li> 
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- === BANNER ALANI === -->
-    <section id="banner" style="min-height: 200px;">
+    <section id="banner">
         <div class="kutu">
-            <h1>CANLI SONUÇLAR</h1>
-            <p>Üniversite öğrencilerinden toplanan güncel anket verileri.</p>
+            <h1>ANKET ANALİZ PANELİ</h1>
+            <p>Üniversite öğrencilerinden toplanan 49 farklı yanıtın gerçek verileri.</p>
         </div>
     </section>
 
-    <!-- === ANA İÇERİK: GRAFİKLER === -->
-    <section class="kutu" style="background: transparent; box-shadow: none; padding: 0;">
+    <section class="kutu">
         <div class="dashboard-grid">
 
-            <!-- 1. Grafik Kartı -->
             <div class="chart-card">
-                <div class="card-header-stripe"></div>
-                <h3>📊 Oynama Oranları</h3>
-                <div class="iframe-container">
-                    <!-- Pasta grafik burada çizilecek -->
-                    <canvas id="chartOynama"></canvas>
-                </div>
+                <div class="card-header-stripe" style="background: #3498db;"></div>
+                <h3>📊 Katılımcı Cinsiyeti</h3>
+                <div class="iframe-container"><canvas id="chartCinsiyet"></canvas></div>
             </div>
 
-            <!-- 2. Grafik Kartı -->
             <div class="chart-card">
-                <div class="card-header-stripe"></div>
-                <h3>❓ Başlama Sebepleri</h3>
-                <div class="iframe-container">
-                    <!-- Bar grafik -->
-                    <canvas id="chartSebepler"></canvas>
-                </div>
+                <div class="card-header-stripe" style="background: #e67e22;"></div>
+                <h3>🎮 Bahis Oynama Oranı</h3>
+                <div class="iframe-container"><canvas id="chartDurum"></canvas></div>
             </div>
 
-            <!-- 3. Grafik Kartı -->
             <div class="chart-card">
-                <div class="card-header-stripe"></div>
-                <h3>📉 Akademik Etki</h3>
-                <div class="iframe-container">
-                    <!-- Doughnut grafik -->
-                    <canvas id="chartAkademik"></canvas>
-                </div>
+                <div class="card-header-stripe" style="background: #e74c3c;"></div>
+                <h3>🤝 Arkadaş Çevresi Etkisi</h3>
+                <div class="iframe-container"><canvas id="chartSosyal"></canvas></div>
             </div>
 
-            <!-- 4. Grafik Kartı -->
             <div class="chart-card">
-                <div class="card-header-stripe"></div>
-                <h3>🔮 Gelecek Algısı</h3>
-                <div class="iframe-container">
-                    <!-- Yatay bar grafik -->
-                    <canvas id="chartGelecek"></canvas>
-                </div>
+                <div class="card-header-stripe" style="background: #2ecc71;"></div>
+                <h3>💰 Gelir Kaynağı Algısı</h3>
+                <div class="iframe-container"><canvas id="chartGelir"></canvas></div>
+            </div>
+
+            <div class="chart-card">
+                <div class="card-header-stripe" style="background: #9b59b2;"></div>
+                <h3>📩 Günlük Mesaj/Mail Maruziyeti</h3>
+                <div class="iframe-container"><canvas id="chartMesaj"></canvas></div>
+            </div>
+
+            <div class="chart-card">
+                <div class="card-header-stripe" style="background: #34495e;"></div>
+                <h3>⚖️ Yasal Durum Bilinci</h3>
+                <div class="iframe-container"><canvas id="chartYasal"></canvas></div>
             </div>
 
         </div>
     </section>
 
-    <!-- === ALT BİLGİ (FOOTER) === -->
     <footer>
-        <p>Sanal Bahis Farkındalık Projesi &copy; 2025</p>
+        <p>Sanal Bahis Ve Kumar Bağımlığı Projesi &copy; 2025 | Veriler gerçek anket sonuçlarından derlenmiştir.</p>
     </footer>
 
-    <!-- === GRAFİKLERİ OLUŞTURAN JAVASCRIPT KODLARI === -->
     <script>
-        // Grafiklerde kullanılacak renk paleti
+        // Renk Paleti
         const colors = {
-            red: 'rgba(231, 76, 60, 0.7)',
-            blue: 'rgba(52, 152, 219, 0.7)',
-            yellow: 'rgba(241, 196, 15, 0.7)',
-            green: 'rgba(46, 204, 113, 0.7)',
-            purple: 'rgba(155, 89, 182, 0.7)',
-            grey: 'rgba(149, 165, 166, 0.7)'
+            blue: '#3498db',
+            red: '#e74c3c',
+            orange: '#e67e22',
+            green: '#2ecc71',
+            purple: '#9b59b2',
+            dark: '#34495e',
+            yellow: '#f1c40f',
+            grey: '#bdc3c7'
         };
 
-        // 1. Grafik: Oynama Oranları (Pasta Grafik)
-        const ctx1 = document.getElementById('chartOynama').getContext('2d');
-        new Chart(ctx1, {
+        // Chart.js Ayarları
+        const commonOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { position: 'bottom', labels: { boxWidth: 12, font: { size: 11 } } }
+            }
+        };
+
+        // 1. Grafik: Cinsiyet
+        new Chart(document.getElementById('chartCinsiyet'), {
             type: 'pie',
             data: {
-                labels: ['Hiç Oynamadım', 'Denedim', 'Aktif Oynuyorum', 'Bağımlı Hissediyorum'],
+                labels: ['Erkek', 'Kadın', 'Diğer'],
                 datasets: [{
-                    data: [65, 20, 10, 5],
-                    backgroundColor: [colors.green, colors.yellow, colors.blue, colors.red],
-                    borderWidth: 1
+                    data: [49, 46.9, 4.1],
+                    backgroundColor: [colors.blue, colors.red, colors.yellow]
                 }]
             },
-            options: { responsive: true, maintainAspectRatio: false }
+            options: commonOptions
         });
 
-        // 2. Grafik: Başlama Sebepleri (Dikey Bar Grafik)
-        const ctx2 = document.getElementById('chartSebepler').getContext('2d');
-        new Chart(ctx2, {
-            type: 'bar',
-            data: {
-                labels: ['Merak', 'Arkadaş Çevresi', 'Para Kazanma Hırsı', 'Heyecan/Adrenalin', 'Reklamlar'],
-                datasets: [{
-                    label: 'Katılımcı Sayısı',
-                    data: [30, 45, 60, 25, 15],
-                    backgroundColor: colors.blue,
-                    borderWidth: 1
-                }]
-            },
-            options: { responsive: true, maintainAspectRatio: false, scales: { y: { beginAtZero: true } } }
-        });
-
-        // 3. Grafik: Akademik Etki (Doughnut Grafik)
-        const ctx3 = document.getElementById('chartAkademik').getContext('2d');
-        new Chart(ctx3, {
+        // 2. Grafik: Oynama Durumu (Soru 3)
+        new Chart(document.getElementById('chartDurum'), {
             type: 'doughnut',
             data: {
-                labels: ['Etkilemedi', 'Ders Notlarım Düştü', 'Devamsızlığım Arttı', 'Okulu Bırakmayı Düşündüm'],
+                labels: ['Oynamıyorum', 'Oynuyorum', 'Düşünüyorum'],
                 datasets: [{
-                    data: [50, 30, 15, 5],
-                    backgroundColor: [colors.blue, colors.yellow, colors.red, colors.purple],
-                    borderWidth: 1
+                    data: [89.8, 8.2, 2.0],
+                    backgroundColor: [colors.green, colors.orange, colors.red]
                 }]
             },
-            options: { responsive: true, maintainAspectRatio: false }
+            options: commonOptions
         });
 
-        // 4. Grafik: Gelecek Algısı (Yatay Bar Grafik)
-        const ctx4 = document.getElementById('chartGelecek').getContext('2d');
-        new Chart(ctx4, {
+        // 3. Grafik: Sosyal Çevre (Soru 5)
+        new Chart(document.getElementById('chartSosyal'), {
             type: 'bar',
             data: {
-                labels: ['Umutlu', 'Kaygılı', 'Kararsız', 'Umutsuz'],
+                labels: ['Birkaçı Oynuyor', 'Kimse Oynamıyor', 'Çoğu Oynuyor'],
                 datasets: [{
-                    label: 'Öğrenci Görüşü',
-                    data: [40, 35, 15, 10],
-                    backgroundColor: [colors.green, colors.yellow, colors.grey, colors.red],
-                    borderWidth: 1
+                    label: 'Yanıt Oranı %',
+                    data: [49, 40.8, 10.2],
+                    backgroundColor: colors.orange
                 }]
             },
-            options: { 
-                indexAxis: 'y',
-                responsive: true, 
-                maintainAspectRatio: false 
-            }
+            options: { ...commonOptions, scales: { y: { beginAtZero: true, max: 100 } } }
+        });
+
+        // 4. Grafik: Gelir Kaynağı (Soru 12)
+        new Chart(document.getElementById('chartGelir'), {
+            type: 'pie',
+            data: {
+                labels: ['Hayır (Görmüyorum)', 'Evet (Görüyorum)'],
+                datasets: [{
+                    data: [87.8, 12.2],
+                    backgroundColor: [colors.blue, colors.red]
+                }]
+            },
+            options: commonOptions
+        });
+
+        // 5. Grafik: Mesaj Sayısı (Soru 7)
+        new Chart(document.getElementById('chartMesaj'), {
+            type: 'bar',
+            data: {
+                labels: ['Hiç Gelmiyor', '1-5 Arası', '5\'ten Fazla'],
+                datasets: [{
+                    label: 'Yanıt Oranı %',
+                    data: [65.3, 28.6, 6.1],
+                    backgroundColor: colors.purple
+                }]
+            },
+            options: { ...commonOptions, indexAxis: 'y', scales: { x: { beginAtZero: true, max: 100 } } }
+        });
+
+        // 6. Grafik: Yasal Farkındalık (Soru 10)
+        new Chart(document.getElementById('chartYasal'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Evet, Biliyorum', 'Hayır, Bilmiyordum', 'Umursamıyorum'],
+                datasets: [{
+                    data: [75.5, 14.3, 10.2],
+                    backgroundColor: [colors.dark, colors.red, colors.grey]
+                }]
+            },
+            options: commonOptions
         });
     </script>
-
 </body>
 </html>
