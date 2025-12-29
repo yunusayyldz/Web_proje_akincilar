@@ -1,19 +1,42 @@
 <!DOCTYPE html>
+<!--
+    HTML5 belge türü bildirimi.
+    Tarayıcıya bu dosyanın HTML5 standartlarında yazıldığını belirtir.
+-->
 <html lang="tr">
+<!--
+    Sayfa dili Türkçe olarak ayarlanmıştır.
+    Arama motorları ve ekran okuyucular için önemlidir.
+-->
 <head>
+    <!-- Türkçe karakterlerin doğru görüntülenmesi için karakter seti -->
     <meta charset="UTF-8">
+
+    <!--
+        Responsive tasarım için viewport ayarı.
+        Sayfanın mobil, tablet ve masaüstü cihazlara uyumlu olmasını sağlar.
+    -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Tarayıcı sekmesinde görünen sayfa başlığı -->
     <title>Sorunlar | Sanal Bahis Ve Sanal Kumar bağımlılığı</title>
+
+    <!-- Harici CSS dosyasının projeye dahil edilmesi -->
     <link rel="stylesheet" href="style.css">
+
     <style>
-        /* Timeline için özel stil ayarları */
+        /* =====================================================
+           TIMELINE (ZAMAN ÇİZELGESİ) İÇİN ÖZEL STİL AYARLARI
+           ===================================================== */
+
+        /* Timeline ana kapsayıcı */
         .timeline {
             position: relative;
             max-width: 1000px;
             margin: 50px auto;
         }
 
-        /* Ortadaki dikey çizgi */
+        /* Timeline'ın ortasındaki dikey çizgi */
         .timeline::after {
             content: '';
             position: absolute;
@@ -25,6 +48,7 @@
             margin-left: -2px;
         }
 
+        /* Timeline içindeki her bir içerik kutusu */
         .konteynir {
             padding: 10px 40px;
             position: relative;
@@ -33,7 +57,7 @@
             box-sizing: border-box;
         }
 
-        /* Çizgi üzerindeki noktalar */
+        /* Zaman çizelgesi üzerindeki yuvarlak noktalar */
         .konteynir::after {
             content: '';
             position: absolute;
@@ -47,11 +71,24 @@
             z-index: 1;
         }
 
-        .sol { left: 0; text-align: right; }
-        .sag { left: 50%; text-align: left; }
+        /* Sol tarafta yer alan timeline elemanları */
+        .sol { 
+            left: 0; 
+            text-align: right; 
+        }
 
-        .sag::after { left: -10px; }
+        /* Sağ tarafta yer alan timeline elemanları */
+        .sag { 
+            left: 50%; 
+            text-align: left; 
+        }
 
+        /* Sağ taraftaki noktaların hizalanması */
+        .sag::after { 
+            left: -10px; 
+        }
+
+        /* Timeline içeriğinin görsel tasarımı */
         .icerik {
             padding: 20px;
             background-color: #fff;
@@ -60,24 +97,45 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
-        /* Mobil cihazlar için uyumluluk */
+        /* =====================================================
+           MOBİL CİHAZLAR İÇİN DUYARLI TASARIM AYARLARI
+           ===================================================== */
         @media screen and (max-width: 768px) {
             .timeline::after { left: 31px; }
-            .konteynir { width: 100%; padding-left: 70px; padding-right: 25px; text-align: left; }
+            .konteynir { 
+                width: 100%; 
+                padding-left: 70px; 
+                padding-right: 25px; 
+                text-align: left; 
+            }
             .konteynir::after { left: 21px; }
             .sag { left: 0; }
         }
     </style>
 </head>
 <body>
+
+    <!-- ===========================
+         SAYFA ÜST ALANI (HEADER)
+         =========================== -->
     <header>
         <div class="kutu">
+            <!-- Proje başlığı -->
             <div id="logo"><h1>Sanal Bahis ve Kumar Bağımlılığı</h1></div>
+
+            <!-- Navigasyon menüsü -->
             <nav>
                 <ul>
                     <li><a href="index.html">Ana Sayfa</a></li>
                     <li><a href="hedef.html">Hedef</a></li>
-                    <li><a href="sorunlar.html" style="font-weight: bold; border-bottom: 2px solid #e74c3c;">Sorunlar</a></li>
+
+                    <!-- Aktif sayfa (Sorunlar) vurgulanmıştır -->
+                    <li>
+                        <a href="sorunlar.html" style="font-weight: bold; border-bottom: 2px solid #e74c3c;">
+                            Sorunlar
+                        </a>
+                    </li>
+
                     <li><a href="cozumler.html">Çözümler</a></li>
                     <li><a href="universite.html">Üniversite</a></li>
                     <li><a href="sonuclar.html">Sonuçlar</a></li>
@@ -86,6 +144,9 @@
         </div>
     </header>
 
+    <!-- ===========================
+         BANNER (ÜST BAŞLIK) ALANI
+         =========================== -->
     <section id="banner" style="min-height: 200px;">
         <div class="kutu">
             <h1>KARŞILAŞILAN SORUNLAR</h1>
@@ -93,50 +154,87 @@
         </div>
     </section>
 
+    <!-- ===========================
+         ANA İÇERİK ALANI
+         =========================== -->
     <section class="kutu" id="ana-icerik">
+
+        <!-- Giriş açıklama metni -->
         <div style="text-align: center; max-width: 800px; margin: 0 auto;">
             <h2>Sessiz Tehlike: Tahribatın Boyutları</h2>
-            <p>Sanal kumar bağımlılığı, bireyin hayatında domino etkisi yaratarak tüm yaşam alanlarını çökertir. Bu yıkım süreci genellikle şu adımlarla gerçekleşir:</p>
+            <p>
+                Sanal kumar bağımlılığı, bireyin hayatında domino etkisi yaratarak
+                tüm yaşam alanlarını çökertir. Bu yıkım süreci genellikle şu adımlarla gerçekleşir:
+            </p>
         </div>
 
+        <!-- ===========================
+             ZAMAN ÇİZELGESİ (TIMELINE)
+             =========================== -->
         <div class="timeline">
+
+            <!-- 1. Aşama: Ekonomik Yıkım -->
             <div class="konteynir sol">
                 <div class="icerik" style="border-top: 4px solid #e74c3c;">
                     <h3 style="color: #e74c3c;">📉 Ekonomik Yıkım</h3>
-                    <p>KYK kredilerinin bir gecede kaybedilmesi, tefecilik ağlarına düşme ve yıllarca sürecek borç sarmalı en büyük maddi yaradır.</p>
+                    <p>
+                        KYK kredilerinin bir gecede kaybedilmesi, tefecilik ağlarına düşme
+                        ve yıllarca sürecek borç sarmalı en büyük maddi yaradır.
+                    </p>
                 </div>
             </div>
 
+            <!-- 2. Aşama: Psikolojik Çöküş -->
             <div class="konteynir sag">
                 <div class="icerik" style="border-top: 4px solid #3498db;">
                     <h3 style="color: #3498db;">🧠 Psikolojik Çöküş</h3>
-                    <p>Beyindeki dopamin dengesinin bozulması sonucu oluşan derin depresyon, kronik anksiyete ve geri dönülemez uyku bozuklukları.</p>
+                    <p>
+                        Beyindeki dopamin dengesinin bozulması sonucu oluşan derin depresyon,
+                        kronik anksiyete ve geri dönülemez uyku bozuklukları.
+                    </p>
                 </div>
             </div>
 
+            <!-- 3. Aşama: Akademik Başarısızlık -->
             <div class="konteynir sol">
                 <div class="icerik" style="border-top: 4px solid #f1c40f;">
                     <h3 style="color: #f1c40f;">🎓 Akademik Başarısızlık</h3>
-                    <p>Sürekli ekran başında olma isteği, odaklanma yetisinin tamamen kaybı, ders devamsızlıkları ve okuldan uzaklaşma riski.</p>
+                    <p>
+                        Sürekli ekran başında olma isteği, odaklanma yetisinin tamamen kaybı,
+                        ders devamsızlıkları ve okuldan uzaklaşma riski.
+                    </p>
                 </div>
             </div>
 
+            <!-- 4. Aşama: Sosyal İzolasyon -->
             <div class="konteynir sag">
                 <div class="icerik" style="border-top: 4px solid #9b59b2;">
                     <h3 style="color: #9b59b2;">🤝 Sosyal İzolasyon</h3>
-                    <p>En yakınlardan gizlenen sırlar, sürekli yalan söyleme ihtiyacı, güven kaybı ve nihayetinde toplumdan tamamen kopuş.</p>
+                    <p>
+                        En yakınlardan gizlenen sırlar, sürekli yalan söyleme ihtiyacı,
+                        güven kaybı ve nihayetinde toplumdan tamamen kopuş.
+                    </p>
                 </div>
             </div>
         </div>
+
+        <!-- Sorunları görsel olarak destekleyen resim -->
         <div style="margin-top: 60px; text-align: center;">
-            <img src="img/sorunlar.png" alt="Sorunlar Görseli" width="600" style="max-width:100%; border-radius:15px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+            <img src="img/sorunlar.png" alt="Sorunlar Görseli" width="600"
+                 style="max-width:100%; border-radius:15px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
         </div>
         
+        <!-- Uyarı ve farkındalık mesajı -->
         <div style="background: #fff5f5; padding: 30px; border-radius: 15px; margin-top: 50px; text-align: center; border: 1px dashed #e74c3c;">
-            <p style="color: #c0392b; font-weight: bold; margin: 0;">Unutmayın: Kaybedilen sadece para değildir; zamandır, sağlıktır ve gelecektir.</p>
+            <p style="color: #c0392b; font-weight: bold; margin: 0;">
+                Unutmayın: Kaybedilen sadece para değildir; zamandır, sağlıktır ve gelecektir.
+            </p>
         </div>
     </section>
 
+    <!-- ===========================
+         SAYFA ALT BİLGİSİ (FOOTER)
+         =========================== -->
     <footer>
         <p>Sanal Bahis Ve Sanal Kumar Bağımlılığı Projesi &copy; 2025 | SKA Hedef 3</p>
     </footer>
