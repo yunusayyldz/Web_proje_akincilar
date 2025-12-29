@@ -1,15 +1,44 @@
 <!DOCTYPE html>
+<!--
+    HTML5 doküman türü bildirimi.
+    Tarayıcıya bu dosyanın modern HTML standartlarında yazıldığını söyler.
+-->
 <html lang="tr">
+<!--
+    Sayfa dili Türkçe olarak belirtilmiştir.
+    Erişilebilirlik ve arama motorları için önemlidir.
+-->
 <head>
+    <!-- Karakter seti: Türkçe karakterlerin düzgün görünmesini sağlar -->
     <meta charset="UTF-8">
+
+    <!--
+        Responsive (duyarlı) tasarım için gereklidir.
+        Sayfanın mobil, tablet ve masaüstü ekranlara uyum sağlamasını sağlar.
+    -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Tarayıcı sekmesinde görünen sayfa başlığı -->
     <title>Sonuçlar | Sanal Bahis Ve Sanal Kumar Bağımlığı</title>
     
+    <!--
+        Google Fonts üzerinden Poppins yazı tipi projeye dahil ediliyor.
+        Farklı font ağırlıkları (300, 400, 600) kullanılabilir.
+    -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!--
+        Chart.js kütüphanesi CDN üzerinden projeye dahil edilir.
+        Grafik ve veri görselleştirme işlemleri için kullanılır.
+    -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <style>
-        /* Temel Stil Ayarları */
+        /* ===========================
+           GENEL (TEMEL) STİL AYARLARI
+           =========================== */
+
+        /* Tüm sayfa için yazı tipi, arka plan ve boşluk ayarları */
         body {
             font-family: 'Poppins', sans-serif;
             background-color: #f4f7f6;
@@ -17,6 +46,7 @@
             padding: 0;
         }
 
+        /* Üst kısım (header) arka plan ve yazı rengi */
         header {
             background-color: #2c3e50;
             color: white;
@@ -24,14 +54,21 @@
             text-align: center;
         }
 
+        /* İçeriği ortalamak ve sayfa genişliğini sınırlamak için kullanılan kutu */
         .kutu {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
 
-        #logo h1 { margin: 0; font-size: 24px; letter-spacing: 2px; }
+        /* Logo başlığı için özel stil */
+        #logo h1 { 
+            margin: 0; 
+            font-size: 24px; 
+            letter-spacing: 2px; 
+        }
 
+        /* Menü listesi ayarları */
         nav ul {
             list-style: none;
             padding: 0;
@@ -41,6 +78,7 @@
             margin-top: 15px;
         }
 
+        /* Menü bağlantı (link) stilleri */
         nav ul li a {
             color: white;
             text-decoration: none;
@@ -48,23 +86,33 @@
             font-size: 14px;
         }
 
+        /* Banner (üst görsel alanı) tasarımı */
         #banner {
-            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://images.unsplash.com/photo-1518186239717-2e9b1104c81f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background: linear-gradient(
+                rgba(44, 62, 80, 0.8), 
+                rgba(44, 62, 80, 0.8)
+            ), 
+            url('https://images.unsplash.com/photo-1518186239717-2e9b1104c81f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
             color: white;
             text-align: center;
             padding: 60px 20px;
         }
 
-        /* === DASHBOARD GRID YAPISI === */
+        /* ===========================
+           DASHBOARD GRID YAPISI
+           =========================== */
+
+        /* Grafik kartlarını ızgara (grid) şeklinde yerleştirir */
         .dashboard-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 25px;
-            margin-top: -40px; /* Banner içine hafifçe girsin */
+            margin-top: -40px; /* Banner alanının içine doğru taşır */
             padding-bottom: 50px;
         }
 
+        /* Her grafik için kart tasarımı */
         .chart-card {
             background-color: #ffffff;
             border-radius: 12px;
@@ -76,13 +124,18 @@
             border: 1px solid #eee;
         }
         
-        .chart-card:hover { transform: translateY(-5px); }
+        /* Kartın üzerine gelince yukarı doğru hafif hareket */
+        .chart-card:hover { 
+            transform: translateY(-5px); 
+        }
 
+        /* Kart üstündeki renkli şerit */
         .card-header-stripe {
             height: 5px;
             background: #e74c3c;
         }
 
+        /* Grafik başlıkları */
         .chart-card h3 {
             text-align: center;
             color: #34495e;
@@ -91,6 +144,7 @@
             padding: 0 10px;
         }
 
+        /* Grafiklerin yer aldığı alan */
         .iframe-container {
             padding: 15px;
             height: 280px;
@@ -99,6 +153,7 @@
             align-items: center;
         }
 
+        /* Alt bilgi (footer) tasarımı */
         footer {
             background-color: #2c3e50;
             color: white;
@@ -107,6 +162,7 @@
             margin-top: 40px;
         }
 
+        /* Mobil uyumluluk ayarı */
         @media (max-width: 768px) {
             .dashboard-grid { grid-template-columns: 1fr; }
         }
@@ -114,9 +170,15 @@
 </head>
 <body>
 
+    <!-- ===========================
+         SAYFA ÜST KISMI (HEADER)
+         =========================== -->
     <header>
         <div class="kutu">
+            <!-- Proje başlığı -->
             <div id="logo"><h1>Sanal Bahis Ve Kumar Bağımlığı</h1></div>
+
+            <!-- Navigasyon menüsü -->
             <nav>
                 <ul>
                     <li><a href="index.html">Ana Sayfa</a></li>
@@ -124,12 +186,16 @@
                     <li><a href="sorunlar.html">Sorunlar</a></li>
                     <li><a href="cozumler.html">Çözümler</a></li>
                     <li><a href="universite.html">Üniversite</a></li>
+                    <!-- Aktif sayfa altı çizili ve kalın gösterilir -->
                     <li><a href="sonuclar.html" style="text-decoration: underline; font-weight: bold;">Sonuçlar</a></li> 
                 </ul>
             </nav>
         </div>
     </header>
 
+    <!-- ===========================
+         BANNER ALANI
+         =========================== -->
     <section id="banner">
         <div class="kutu">
             <h1>ANKET ANALİZ PANELİ</h1>
@@ -137,39 +203,48 @@
         </div>
     </section>
 
+    <!-- ===========================
+         GRAFİKLERİN BULUNDUĞU ALAN
+         =========================== -->
     <section class="kutu">
         <div class="dashboard-grid">
 
+            <!-- Cinsiyet Grafiği -->
             <div class="chart-card">
                 <div class="card-header-stripe" style="background: #3498db;"></div>
                 <h3>📊 Katılımcı Cinsiyeti</h3>
                 <div class="iframe-container"><canvas id="chartCinsiyet"></canvas></div>
             </div>
 
+            <!-- Bahis Oynama Durumu Grafiği -->
             <div class="chart-card">
                 <div class="card-header-stripe" style="background: #e67e22;"></div>
                 <h3>🎮 Bahis Oynama Oranı</h3>
                 <div class="iframe-container"><canvas id="chartDurum"></canvas></div>
             </div>
 
+            <!-- Sosyal Çevre Etkisi Grafiği -->
             <div class="chart-card">
                 <div class="card-header-stripe" style="background: #e74c3c;"></div>
                 <h3>🤝 Arkadaş Çevresi Etkisi</h3>
                 <div class="iframe-container"><canvas id="chartSosyal"></canvas></div>
             </div>
 
+            <!-- Gelir Kaynağı Algısı Grafiği -->
             <div class="chart-card">
                 <div class="card-header-stripe" style="background: #2ecc71;"></div>
                 <h3>💰 Gelir Kaynağı Algısı</h3>
                 <div class="iframe-container"><canvas id="chartGelir"></canvas></div>
             </div>
 
+            <!-- Mesaj Maruziyeti Grafiği -->
             <div class="chart-card">
                 <div class="card-header-stripe" style="background: #9b59b2;"></div>
                 <h3>📩 Günlük Mesaj/Mail Maruziyeti</h3>
                 <div class="iframe-container"><canvas id="chartMesaj"></canvas></div>
             </div>
 
+            <!-- Yasal Bilinç Grafiği -->
             <div class="chart-card">
                 <div class="card-header-stripe" style="background: #34495e;"></div>
                 <h3>⚖️ Yasal Durum Bilinci</h3>
@@ -179,12 +254,18 @@
         </div>
     </section>
 
+    <!-- ===========================
+         SAYFA ALT BİLGİSİ
+         =========================== -->
     <footer>
         <p>Sanal Bahis Ve Kumar Bağımlığı Projesi &copy; 2025 | Veriler gerçek anket sonuçlarından derlenmiştir.</p>
     </footer>
 
     <script>
-        // Renk Paleti
+        // ===========================
+        // RENK PALETİ
+        // Grafiklerde tutarlı renk kullanımı için tanımlanmıştır
+        // ===========================
         const colors = {
             blue: '#3498db',
             red: '#e74c3c',
@@ -196,16 +277,24 @@
             grey: '#bdc3c7'
         };
 
-        // Chart.js Ayarları
+        // ===========================
+        // ORTAK CHART.JS AYARLARI
+        // Tüm grafiklerde kullanılacak genel seçenekler
+        // ===========================
         const commonOptions = {
             responsive: true,
             maintainAspectRatio: false,
             plugins: {
-                legend: { position: 'bottom', labels: { boxWidth: 12, font: { size: 11 } } }
+                legend: { 
+                    position: 'bottom', 
+                    labels: { boxWidth: 12, font: { size: 11 } } 
+                }
             }
         };
 
-        // 1. Grafik: Cinsiyet
+        // ===========================
+        // 1. Grafik: Cinsiyet Dağılımı
+        // ===========================
         new Chart(document.getElementById('chartCinsiyet'), {
             type: 'pie',
             data: {
@@ -218,7 +307,9 @@
             options: commonOptions
         });
 
-        // 2. Grafik: Oynama Durumu (Soru 3)
+        // ===========================
+        // 2. Grafik: Bahis Oynama Durumu
+        // ===========================
         new Chart(document.getElementById('chartDurum'), {
             type: 'doughnut',
             data: {
@@ -231,7 +322,9 @@
             options: commonOptions
         });
 
-        // 3. Grafik: Sosyal Çevre (Soru 5)
+        // ===========================
+        // 3. Grafik: Sosyal Çevre Etkisi
+        // ===========================
         new Chart(document.getElementById('chartSosyal'), {
             type: 'bar',
             data: {
@@ -242,10 +335,15 @@
                     backgroundColor: colors.orange
                 }]
             },
-            options: { ...commonOptions, scales: { y: { beginAtZero: true, max: 100 } } }
+            options: { 
+                ...commonOptions, 
+                scales: { y: { beginAtZero: true, max: 100 } } 
+            }
         });
 
-        // 4. Grafik: Gelir Kaynağı (Soru 12)
+        // ===========================
+        // 4. Grafik: Gelir Kaynağı Algısı
+        // ===========================
         new Chart(document.getElementById('chartGelir'), {
             type: 'pie',
             data: {
@@ -258,7 +356,9 @@
             options: commonOptions
         });
 
-        // 5. Grafik: Mesaj Sayısı (Soru 7)
+        // ===========================
+        // 5. Grafik: Mesaj Maruziyeti
+        // ===========================
         new Chart(document.getElementById('chartMesaj'), {
             type: 'bar',
             data: {
@@ -269,10 +369,16 @@
                     backgroundColor: colors.purple
                 }]
             },
-            options: { ...commonOptions, indexAxis: 'y', scales: { x: { beginAtZero: true, max: 100 } } }
+            options: { 
+                ...commonOptions, 
+                indexAxis: 'y', 
+                scales: { x: { beginAtZero: true, max: 100 } } 
+            }
         });
 
-        // 6. Grafik: Yasal Farkındalık (Soru 10)
+        // ===========================
+        // 6. Grafik: Yasal Farkındalık
+        // ===========================
         new Chart(document.getElementById('chartYasal'), {
             type: 'doughnut',
             data: {
