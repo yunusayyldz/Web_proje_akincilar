@@ -1,89 +1,31 @@
-<!DOCTYPE html>
-<!-- HTML5 standartlarında bir belge olduğunu belirtir -->
-<html lang="tr">
-<!-- Sayfanın dilinin Türkçe olduğunu belirtir -->
-<head>
-    <!-- Türkçe karakterlerin (ç, ğ, ş vb.) düzgün görünmesini sağlar -->
-    <meta charset="UTF-8">
+<section id="hero-bolumu">
+    <div class="kapsayici">
+        <h1>Karşılaşılan Sorunlar</h1>
+        <p>Bu bir oyun değil, algoritmik bir tuzaktır.</p>
+    </div>
+</section>
+
+<main class="kapsayici icerik-alani">
+    <h2 class="alt-baslik">Sanal Bahisin Görünmeyen Yüzü</h2>
+    <p>Sanal kumar bağımlılığı, bireyi sadece finansal olarak değil, aynı zamanda bilişsel ve sosyal olarak da izole eder. İşte temel tehlikeler:</p>
     
-    <!-- Mobil cihazlarda sayfanın ölçeklenmesini ve uyumlu görünmesini sağlar -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Tarayıcı sekmesinde görünen başlık -->
-    <title>Sorunlar | Sanal Bahis Ve Sanal Kumar Bağımlığı</title>
-    
-    <!-- Harici CSS dosyasını HTML dosyasına bağlar -->
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <!-- === ÜST KISIM (HEADER) === -->
-    <header>
-        <div class="kutu">
-            <!-- Site logosu / proje başlığı -->
-            <div id="logo"><h1>Sanal Bahis Ve Sanal Kumar Bağımlığı</h1></div>
-            
-            <!-- Navigasyon menüsü -->
-            <nav>
-                <ul>
-                    <!-- Menü bağlantıları -->
-                    <!-- Aktif sayfa altı çizili gösterilir -->
-                    <li><a href="index.html">Ana Sayfa</a></li>
-                    <li><a href="hedef.html">Hedef</a></li>
-                    <li><a href="sorunlar.html" style="text-decoration: underline;">Sorunlar</a></li>
-                    <li><a href="cozumler.html">Çözümler</a></li>
-                    <li><a href="universite.html">Üniversite</a></li>
-                    <li><a href="anket.html">Anket</a></li>
-                    <li><a href="sonuclar.html">Sonuçlar</a></li>
-                </ul>
-            </nav>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px;">
+        <div>
+            <h3>1. Ekonomik Çöküş ve Borç Döngüsü</h3>
+            <p>Öğrenciler genellikle KYK kredilerini veya ailelerinden gelen eğitim bütçelerini bu platformlarda kaybetmektedir. "Kayıpları geri kazanma" psikolojisi, bireyi daha büyük borç batağına ve tefecilik ağlarına sürüklemektedir.</p>
         </div>
-    </header>
-
-    <!-- === SAYFA BANNER ALANI === -->
-    <section id="banner" style="min-height: 200px;">
-        <div class="kutu">
-            <!-- Sayfanın ana başlığı -->
-            <h1>KARŞILAŞILAN SORUNLAR</h1>
-            
-            <!-- Başlık altında dikkat çekici slogan -->
-            <p style="opacity: 0.9;">Bu sadece bir oyun değil, geleceğinizi çalan bir tuzaktır.</p>
+        <div>
+            <h3>2. Akademik ve Bilişsel Gerileme</h3>
+            <p>Odaklanma süresinin azalması, derslere karşı ilgisizlik ve sürekli bahis oranlarını takip etme dürtüsü, üniversite başarısını doğrudan etkilemekte, öğrencinin mezuniyet hedeflerinden sapmasına neden olmaktadır.</p>
         </div>
-    </section>
-
-    <!-- === ANA İÇERİK ALANI === -->
-    <section class="kutu">
-        <!-- Alt başlık -->
-        <h2>Sessiz Tehlike: Sanal Kumar</h2>
-        
-        <!-- Açıklayıcı paragraf -->
-        <p>Sanal bahis, bireylerde sadece ekonomik değil, psikolojik yıkımlara da yol açar. İşte temel sorunlar:</p>
-        
-        <!-- Sorunların maddeler halinde listelendiği alan -->
-        <ul style="line-height: 2; margin-top: 20px;">
-            <!-- Ekonomik zararları açıklayan madde -->
-            <li><strong>Ekonomik Kayıplar:</strong> KYK kredilerinin kaybedilmesi, kontrolsüz borçlanma ve tefecilik ağlarına düşme riski.</li>
-            
-            <!-- Psikolojik etkileri açıklayan madde -->
-            <li><strong>Psikolojik Etkiler:</strong> Sürekli kaygı (anksiyete), derin depresyon, uykusuzluk ve ileri seviyede intihar eğilimi.</li>
-            
-            <!-- Akademik hayata etkileri açıklayan madde -->
-            <li><strong>Akademik Başarısızlık:</strong> Odaklanma sorunu, derslere ilgisizlik, devamsızlık ve okulu bırakma riski.</li>
-            
-            <!-- Sosyal hayattaki olumsuz sonuçları açıklayan madde -->
-            <li><strong>Sosyal İzolasyon:</strong> Aile ve arkadaş çevresinden uzaklaşma, borç isteme yüzünden ilişkilerin bozulması ve yalan söyleme alışkanlığı.</li>
-        </ul>
-
-        <!-- Sorunları görsel olarak destekleyen resim alanı -->
-        <div class="sorunlar.png">
-            <!-- Görsel ortalanmış ve köşeleri yuvarlatılmıştır -->
-            <img src="img/sorunlar.png" alt="Görsel" width="600" style="display:block; margin:auto; border-radius:30px;">
+        <div>
+            <h3>3. Psikolojik Tahribat</h3>
+            <p>Sanal bahis, beyindeki dopamin dengesini bozar. Bu durum sürekli kaygı (anksiyete), derin depresyon ve sosyal hayattan kopuşla sonuçlanır. Birey, gerçek başarılar yerine sanal sayılara hapsolur.</p>
         </div>
-    </section>
-
-    <!-- === ALT BİLGİ (FOOTER) === -->
-    <footer>
-        <!-- Telif bilgisi -->
-        <p>Sanal Bahis Ve Sanal Kumar Bağımlığı Projesi &copy; 2025</p>
-    </footer>
-</body>
-</html>
+        <div>
+            <h3>4. Veri Güvenliği Tehditleri</h3>
+            <p>Yasadışı sitelere verilen kimlik ve banka bilgileri, siber suç örgütleri tarafından Dark Web platformlarında satılmakta, öğrencileri hukuki ve güvenlik riskleriyle baş başa bırakmaktadır.</p>
+        </div>
+    </div>
+    <img src="img/sorunlar.png" alt="Sorunlar" style="width:100%; border-radius:15px; margin-top:30px;">
+</main>
