@@ -1,69 +1,49 @@
 <!DOCTYPE html>
-<html lang="tr"> <!-- Sayfanın dili Türkçe olarak tanımlanmıştır -->
+<html lang="tr">
 <head>
-    <!-- Türkçe karakterlerin doğru görüntülenmesi için UTF-8 karakter seti -->
     <meta charset="UTF-8">
-
-    <!-- Mobil cihazlar ve farklı ekran boyutları için duyarlı tasarım ayarı -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Tarayıcı sekmesinde görünecek ana sayfa başlığı -->
-    <title>Sanal Bahis ve Sanal Kumar Bağımlılığı</title>
-
-    <!-- Sitenin genel tasarımını belirleyen harici CSS dosyası -->
+    <title>Sanal Bahis Farkındalık Projesi | Akıncılar</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <header> <!-- Sayfanın üst kısmı: logo ve navigasyon menüsü -->
-        <div class="kutu"> <!-- İçeriği ortalamak ve hizalamak için kullanılan kapsayıcı -->
-            <div id="logo">
-                <h1>Sanal Bahis ve Sanal Kumar Bağımlılığı </h1> <!-- Projenin adı / logosu -->
-            </div>
-            <nav> <!-- Site içi sayfa geçişlerini sağlayan menü -->
+    <header>
+        <div class="kapsayici nav-bar">
+            <div class="logo"><h1>Akıncılar Grubu</h1></div>
+            <nav>
                 <ul>
-                    <!-- Aktif sayfa olduğu için Ana Sayfa bağlantısı altı çizili -->
-                    <li><a href="index.html" style="text-decoration: underline;">Ana Sayfa</a></li>
-                    <li><a href="hedef.html">Hedef</a></li> <!-- Projenin amacı ve hedefleri -->
-                    <li><a href="sorunlar.html">Sorunlar</a></li> <!-- Sanal bahisle ilgili sorunlar -->
-                    <li><a href="cozumler.html">Çözümler</a></li> <!-- Çözüm yolları -->
-                    <li><a href="universite.html">Üniversite</a></li> <!-- Üniversite özelindeki çalışmalar -->
-                    <li><a href="anket.html">Anket</a></li> <!-- Katılımcı anketi -->
-                    <li><a href="sonuclar.html">Sonuçlar</a></li> <!-- Anket ve çalışma sonuçları -->
+                    <li><a href="index.html" class="aktif-link">Ana Sayfa</a></li>
+                    <li><a href="hedef.html">Hedef</a></li>
+                    <li><a href="sorunlar.html">Sorunlar</a></li>
+                    <li><a href="cozumler.html">Çözümler</a></li>
+                    <li><a href="universite.html">Üniversite</a></li>
+                    <li><a href="anket.html">Anket</a></li>
+                    <li><a href="sonuclar.html">Sonuçlar</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Üst banner alanı: ana slogan ve dikkat çekici mesaj -->
-    <section id="banner" style="min-height: 300px;">
-        <div class="kutu"> <!-- Banner içeriğini ortalayan kapsayıcı -->
-            <h1>KUMARA DEĞİL, GELECEĞE YATIRIM YAP</h1> <!-- Ana slogan -->
-            <p style="opacity: 0.9; font-size: 1.3rem; letter-spacing: 1px;">Sanal bahis bir oyun değil, bağımlılıktır.</p> <!-- Alt slogan -->
+    <section id="hero-bolumu">
+        <div class="kapsayici">
+            <h1>Kumara Değil, Geleceğe Yatırım Yap</h1>
+            <p>Sanal dünyanın labirentlerinde kaybolmadan önce gerçeği fark et.</p>
         </div>
     </section>
 
-    <!-- Ana içerik bölümü -->
-    <section id="ana-icerik" class="kutu">
-        <h2>Hoş Geldiniz</h2> <!-- Ziyaretçileri karşılayan başlık -->
-
-        <!-- Sitenin amacı ve kapsamını açıklayan metin -->
-        <p>Bu site, Sanal Bahis ve Kumar Bağımlılığına karşı farkındalık oluşturmak ve Sürdürülebilir Kalkınma Amaçları (Madde 3: Sağlık) kapsamında bilgilendirme yapmak için hazırlanmıştır.</p>
+    <main class="kapsayici icerik-alani">
+        <h2 class="alt-baslik">Farkındalık Projemize Hoş Geldiniz</h2>
+        <p>Dijital dönüşümün hızlandığı günümüzde, sanal kumar ve bahis platformları sadece birer eğlence aracı değil, bireyin ekonomik bağımsızlığını ve ruh sağlığını tehdit eden sistemli bir yapıya dönüşmüştür. Bu portal, Afyon Kocatepe Üniversitesi öğrencileri başta olmak üzere tüm gençleri bu sessiz tehlikeye karşı uyarmak için kurulmuştur.</p>
         
-        <!-- Ana sayfa görsel alanı -->
-        <div class="anasayfa.png">
-            <img src="img/anasayfa.png" alt="Görsel" width="500" style="display:block; margin:auto; border-radius:30px;"> <!-- Bilgilendirici görsel -->
+        <p><strong>Neden Sanal Bahis?</strong> Çünkü teknolojiye en yakın olan kitle olan biz üniversite öğrencileri, algoritmaların ve sahte kazanç vaatlerinin en büyük hedefiyiz. SKA 3 (Sağlık ve Kaliteli Yaşam) hedefleri doğrultusunda, zihinsel sağlığımızı korumak için buradayız.</p>
+        
+        <div style="text-align: center; margin: 30px 0;">
+            <img src="img/anasayfa.png" alt="Sanal Bahis Görsel" style="max-width: 80%; border-radius: 15px; border: 1px solid #ddd;">
         </div>
+    </main>
 
-        <h3>Neden Bu Site Var?</h3> <!-- Alt başlık -->
-
-        <!-- Projenin ortaya çıkış nedenini açıklayan paragraf -->
-        <p>Üniversite gençliği arasında yayılan bu sessiz tehlikeye dur demek, sorunları ve çözüm yollarını konuşmak için buradayız.</p>
-    </section>
-
-    <footer> <!-- Sayfanın alt bilgi (footer) bölümü -->
-        <p>Sanal Bahis Farkındalık Projesi &copy; 2025 | SKA Hedef 3</p> <!-- Telif ve proje bilgisi -->
+    <footer>
+        <p>&copy; 2025 Akıncılar Grubu - AKÜ Yönetim Bilişim Sistemleri Bölümü</p>
     </footer>
-
 </body>
 </html>
