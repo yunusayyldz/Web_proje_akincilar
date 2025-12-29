@@ -1,21 +1,48 @@
 <!DOCTYPE html>
+<!-- 
+    Bu dosya HTML5 standartlarına uygun olarak hazırlanmıştır.
+    Sanal bahis ve kumar bağımlılığına yönelik çözüm önerilerini içeren sayfadır.
+-->
 <html lang="tr">
 <head>
+    <!-- Karakter kodlaması: Türkçe karakterlerin sorunsuz görüntülenmesi için UTF-8 kullanılır -->
     <meta charset="UTF-8">
+
+    <!-- Responsive (duyarlı) tasarım için cihaz genişliğini esas alan meta etiketi -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Tarayıcı sekmesinde görünen sayfa başlığı -->
     <title>Çözümler | Sanal Bahis ve Kumar Bağımlılığı</title>
+
+    <!-- Harici CSS dosyası bağlantısı -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- ===================== HEADER (ÜST MENÜ) ===================== -->
     <header>
+        <!-- Sayfa içeriğini ortalamak ve genişliği kontrol etmek için kullanılan kapsayıcı -->
         <div class="kutu">
-            <div id="logo"><h1>Sanal Bahis ve Kumar Bağımlılığı</h1></div>
+            
+            <!-- Logo alanı: Projenin ana başlığı -->
+            <div id="logo">
+                <h1>Sanal Bahis ve Kumar Bağımlılığı</h1>
+            </div>
+
+            <!-- Navigasyon menüsü -->
             <nav>
                 <ul>
+                    <!-- Menü bağlantıları: Site içi sayfalar arası geçiş -->
                     <li><a href="index.html">Ana Sayfa</a></li>
                     <li><a href="hedef.html">Hedef</a></li>
                     <li><a href="sorunlar.html">Sorunlar</a></li>
-                    <li><a href="cozumler.html" style="font-weight: bold; border-bottom: 2px solid #2ecc71;">Çözümler</a></li>
+
+                    <!-- Aktif sayfa vurgusu: Çözümler sayfası -->
+                    <li>
+                        <a href="cozumler.html" style="font-weight: bold; border-bottom: 2px solid #2ecc71;">
+                            Çözümler
+                        </a>
+                    </li>
+
                     <li><a href="universite.html">Üniversite</a></li>
                     <li><a href="sonuclar.html">Sonuçlar</a></li>
                 </ul>
@@ -23,57 +50,98 @@
         </div>
     </header>
 
+    <!-- ===================== BANNER ALANI ===================== -->
     <section id="banner" style="min-height: 200px;">
+        <!-- Banner içeriğini ortalayan kapsayıcı -->
         <div class="kutu">
+            <!-- Sayfanın ana mesajı -->
             <h1>ÇIKIŞ YOLU: ÇÖZÜM ÖNERİLERİ</h1>
+
+            <!-- Alt açıklama metni -->
             <p>Bağımlılık bir tercih değil, tedavi edilebilir bir beyin hastalığıdır.</p>
         </div>
     </section>
 
+    <!-- ===================== ANA İÇERİK ALANI ===================== -->
     <section class="kutu" id="ana-icerik">
+
+        <!-- Giriş metni: Sayfanın amacını özetler -->
         <div style="text-align: center; max-width: 800px; margin: 0 auto 40px auto;">
             <h2>Nasıl Özgürleşebiliriz?</h2>
-            <p>İyileşme süreci doğrusal bir yol değil, bir sabır yolculuğudur. İlk adım durumu kabul etmek ve profesyonel bir destek ağı oluşturmaktır. İşte bu sarmaldan kurtulmanızı sağlayacak bilimsel ve pratik yöntemler:</p>
+            <p>
+                İyileşme süreci doğrusal bir yol değil, bir sabır yolculuğudur. 
+                İlk adım durumu kabul etmek ve profesyonel bir destek ağı oluşturmaktır.
+            </p>
         </div>
         
+        <!-- Çözüm kartlarının yer aldığı grid yapı -->
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 20px;">
+            
+            <!-- Profesyonel destek çözümü -->
             <div style="padding: 25px; background: #e8f5e9; border-radius: 15px; border-top: 4px solid #2ecc71; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
                 <h4 style="color: #2ecc71; margin-top: 0;">📞 Profesyonel Destek</h4>
-                <p style="font-size: 0.95em; line-height: 1.6;"><strong>YEDAM (115)</strong> Danışma Hattı ile tamamen ücretsiz ve anonim destek alarak uzman psikologlarla görüşün. Bilişsel Davranışçı Terapi, bu süreçte en etkili yöntemdir.</p>
+                <p>
+                    <strong>YEDAM (115)</strong> Danışma Hattı ile ücretsiz ve anonim psikolojik destek alınabilir.
+                </p>
             </div>
+
+            <!-- Teknolojik engelleme çözümü -->
             <div style="padding: 25px; background: #e3f2fd; border-radius: 15px; border-top: 4px solid #3498db; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
                 <h4 style="color: #3498db; margin-top: 0;">🖥️ Teknolojik Engel</h4>
-                <p style="font-size: 0.95em; line-height: 1.6;">Cihazlarınıza <strong>Gamban</strong> veya <strong>BetBlocker</strong> gibi yazılımlar kurun. Bu araçlar sadece siteleri engellemekle kalmaz, dürtüsel anlarda size düşünme süresi kazandırır.</p>
+                <p>
+                    Gamban ve BetBlocker gibi yazılımlar, zararlı sitelere erişimi engeller.
+                </p>
             </div>
+
+            <!-- Finansal önlem çözümü -->
             <div style="padding: 25px; background: #fff3e0; border-radius: 15px; border-top: 4px solid #e67e22; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
                 <h4 style="color: #e67e22; margin-top: 0;">💰 Finansal Güvenlik</h4>
-                <p style="font-size: 0.95em; line-height: 1.6;">Banka hesap kontrollerini güvendiğiniz birine devredin. Nakit akışını sınırlandırmak, beynin kumar dürtüsüne yanıt vermesini fiziksel olarak zorlaştırır.</p>
+                <p>
+                    Para kontrolünün sınırlandırılması, dürtüsel davranışları azaltır.
+                </p>
             </div>
         </div>
 
+        <!-- Çözüm yollarını görselleştiren görsel -->
         <div style="margin: 50px 0; text-align: center;">
-            <img src="img/çözümyolları.png" alt="Çözüm Yolları Görseli" width="600" style="max-width:100%; border-radius:15px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
+            <img src="img/çözümyolları.png" alt="Çözüm Yolları Görseli" width="600">
         </div>
 
+        <!-- Sosyal ve psikolojik öneriler -->
         <div style="display: flex; flex-wrap: wrap; gap: 30px; margin-top: 40px;">
-            <div style="flex: 1; min-width: 300px; background: #f8f9fa; padding: 25px; border-radius: 12px;">
-                <h3 style="color: #2c3e50;">Sosyal Çevrenizi Yeniden İnşa Edin</h3>
-                <p>Kumar odaklı arkadaş gruplarından ve sosyal medya mecralarından uzaklaşın. Spor, sanat veya gönüllülük projeleri gibi dopamine sağlıklı yollardan ulaşabileceğiniz yeni hobiler edinin. Boş zaman, bağımlılığın en büyük tetikleyicisidir.</p>
+            
+            <!-- Sosyal çevreyi düzenleme -->
+            <div style="flex: 1; min-width: 300px;">
+                <h3>Sosyal Çevrenizi Yeniden İnşa Edin</h3>
+                <p>
+                    Sağlıklı hobiler ve üretken aktiviteler, bağımlılık döngüsünü kırar.
+                </p>
             </div>
-            <div style="flex: 1; min-width: 300px; background: #f8f9fa; padding: 25px; border-radius: 12px;">
-                <h3 style="color: #2c3e50;">Kriz Anlarıyla Başa Çıkma</h3>
-                <p>Bir dürtü geldiğinde "15 Dakika Kuralı"nı uygulayın. Sadece 15 dakika bekleyin; göreceksiniz ki o yoğun istek dalgası hafifleyecektir. Bu süre zarfında ortam değiştirin veya güvendiğiniz birini arayarak durumunuzu paylaşın.</p>
+
+            <!-- Kriz anlarıyla başa çıkma -->
+            <div style="flex: 1; min-width: 300px;">
+                <h3>Kriz Anlarıyla Başa Çıkma</h3>
+                <p>
+                    15 Dakika Kuralı, dürtülerin azalmasına yardımcı olur.
+                </p>
             </div>
         </div>
 
-        <div style="background: #2ecc71; color: white; padding: 30px; border-radius: 15px; margin-top: 50px; text-align: center; box-shadow: 0 10px 20px rgba(46, 204, 113, 0.2);">
-            <h3 style="margin-top: 0;">Yeni Bir Başlangıç Mümkün</h3>
-            <p>Bugün kumarı bırakmak, sadece para kaybetmeyi durdurmak değil; huzuru, zamanı ve özsaygıyı geri kazanmaktır. Attığınız her küçük adım, sizi daha özgür bir geleceğe bir gün daha yaklaştırır.</p>
+        <!-- Motivasyon mesajı -->
+        <div style="background: #2ecc71; color: white; padding: 30px; border-radius: 15px; margin-top: 50px; text-align: center;">
+            <h3>Yeni Bir Başlangıç Mümkün</h3>
+            <p>
+                Her küçük adım, daha sağlıklı ve özgür bir geleceğe yaklaştırır.
+            </p>
         </div>
     </section>
 
+    <!-- ===================== FOOTER ===================== -->
     <footer style="margin-top: 50px;">
-        <p>Sanal Bahis ve Kumar Bağımlılığı Farkındalığı Projesi&copy; 2025 | SKA Hedef 3: Sağlık ve Kaliteli Yaşam</p>
+        <!-- Proje ve sürdürülebilir kalkınma bilgisi -->
+        <p>
+            Sanal Bahis ve Kumar Bağımlılığı Farkındalığı Projesi&copy; 2025 | SKA Hedef 3
+        </p>
     </footer>
 </body>
 </html>
