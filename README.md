@@ -88,8 +88,6 @@ Ders başarısızlığı ve kampüs yaşamına etkileri.
 ### 🎯 `hedef.html` (Misyonumuz)
 Projenin sosyal sorumluluk boyutu ve ulaşmak istediğimiz kitle analizi.
 
-### 📞 `iletisim.html` (Bize Ulaşın)
-Kullanıcı geri bildirim formu ve iletişim bilgileri.
 
 ---
 
