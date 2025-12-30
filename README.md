@@ -61,10 +61,10 @@ Ders kapsamında hocamızın belirlediği takvime sadık kalarak ilerliyoruz.
     - [x] Tüm HTML sayfalarının oluşturulması (`.html`).
     - [x] Sayfa içeriklerinin, metinlerin ve görsellerin girilmesi.
 - [ ] **23 Aralık 🎨**
-    - [ ] `styl.css`dosyasının detaylandırılması.
+    - [x] `styl.css`dosyasının detaylandırılması.
     - [ ] Responsive (Mobil Uyumlu) tasarımın yapılması.
 - [ ] **30 Aralık 🎤**
-    - [ ] Sınıf sunumu ve demosu.
+    - [ ] Sınıf sunumu ve demosu. Bugün 
 - [ ] **Final Haftası 🏁**
     - [ ] Proje Raporu.
 
