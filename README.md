@@ -2,7 +2,7 @@
 w3schools --> html arka plan kod örnekleri
 <div align="center">
   
-  # 🚫 SANAL BAHİS VE KUMAR BAĞIMLILIĞI İLE MÜCADELE
+  # 🚫 SANAL BAHİS VE SANAL KUMAR BAĞIMLILIĞI İLE MÜCADELE
   ### "Farkında Ol, Özgür Kal"
   
   <img src="https://img.shields.io/badge/Ders-Web%20Tasar%C4%B1m-blue?style=for-the-badge&logo=visual-studio-code" alt="Ders Web Tasarım">
