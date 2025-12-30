@@ -120,3 +120,26 @@ Bu proje şu an statik HTML dosyalarından oluşmaktadır. Bilgisayarınızda g�
   *Web Tasarım Dersi Final Projesidir.*
 
 </div>
+
+graph TD
+    %% Ana Giriş
+    A[index.html <br/><b>Ana Sayfa</b>] --> B[hedef.html <br/><b>Vizyon & SKA 3</b>]
+    A --> C[sorunlar.html <br/><b>Tahribat Boyutları</b>]
+    
+    %% Sorunlardan Derinleşme
+    C --> D[universite.html <br/><b>Kampüs Etkisi & YBS Bakışı</b>]
+    
+    %% Veri ve Analiz
+    D --> E[sonuclar.html <br/><b>Anket Analiz Paneli</b>]
+    C --> E
+    
+    %% Çözüm Odaklılık
+    E --> F[cozumler.html <br/><b>Kurtuluş Yolları & Destek</b>]
+    C --> F
+    
+    %% Alt Detaylar (Styling & Legend)
+    style A fill:#3498db,stroke:#fff,stroke-width:2px,color:#fff
+    style F fill:#2ecc71,stroke:#fff,stroke-width:2px,color:#fff
+    style C fill:#e74c3c,stroke:#fff,stroke-width:2px,color:#fff
+    style E fill:#9b59b2,stroke:#fff,stroke-width:2px,color:#fff
+
