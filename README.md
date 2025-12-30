@@ -1,95 +1,49 @@
-/* Genel Ayarlar */
-body, html {
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f4f4;
-    scroll-behavior: smooth;
-}
+# 🚫 SANAL BAHİS VE KUMAR BAĞIMLILIĞI İLE MÜCADELE PLATFORMU
+### **"Farkında Ol, Özgür Kal" | Akıncılar Proje Grubu**
 
-/* W3Schools Arka Plan Örneği: Sabit Görsel (Parallax Effect) */
-#banner-sorunlar {
-    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('img/banner-bg.jpg');
-    height: 300px;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
+<div align="center">
+  <img src="https://img.shields.io/badge/Hafta-SUNUM%20HAFTASI-red?style=for-the-badge&logo=prezi" alt="Sunum">
+  <img src="https://img.shields.io/badge/Versiyon-V2.0%20(Visual%20Update)-blue?style=for-the-badge" alt="Versiyon">
+  <img src="https://img.shields.io/badge/Grup-AKINCILAR-black?style=for-the-badge" alt="Grup">
+  <br>
+  <img src="https://img.shields.io/badge/Dil-HTML5-orange?style=flat-square&logo=html5">
+  <img src="https://img.shields.io/badge/Stil-CSS3-blue?style=flat-square&logo=css3">
+  <img src="https://img.shields.io/badge/Tasarım-Responsive-green?style=flat-square">
+</div>
+
+---
+
+## 📝 PROJE VİZYONU
+Bu proje, üniversite gençliği arasında sessiz bir pandemi gibi yayılan **sanal bahis ve kumar bağımlılığına** karşı dijital bir set çekmek amacıyla hazırlanmıştır. Hedefimiz, kullanıcıları sadece metinlerle bilgilendirmek değil, görsel bir anlatı ve etkileşimli bir arayüz ile tehlikenin farkına varmalarını sağlamaktır.
+
+---
+
+## 📢 SUNUM HAFTASI RAPORU: BU HAFTA NELERİ BAŞARDIK?
+"Sunum Haftası" kapsamında projemiz, statik bir yapıdan profesyonel bir web platformuna evrilmiştir. Bu hafta odaklandığımız ana başlıklar şunlardır:
+
+### 1. Görsel Derinlik ve Estetik (CSS3)
+* **W3Schools Parallax Tekniği:** Sayfalarımızda `background-attachment: fixed;` özelliğini kullanarak, metinler kayarken arka planın sabit kaldığı modern bir derinlik algısı yarattık.
+* **Renk Psikolojisi:** Bağımlılığın karanlık dünyasını yansıtan koyu gri/siyah tonları ile dikkat çekici uyarı kırmızısını (#e74c3c) birleştirdik.
+
+### 2. İnteraktif "Sorunlar" Çizelgesi (Timeline)
+* **Düz Çizgi Üzerinde Anlatım:** "Sorunlar" sayfasını tamamen yeniledik. Bağımlılığın **Ekonomik, Psikolojik, Akademik ve Sosyal** evrelerini dikey bir çizgi üzerinde sağlı-sollu akan bir kronoloji ile sunduk. Bu yapı sayesinde karmaşık bilgiler çok daha okunabilir hale getirildi.
+
+### 3. Kod Optimizasyonu ve Duyarlılık
+* Tüm sayfalar için merkezi bir `style.css` dosyası oluşturuldu.
+* **Flexbox** yapısı kullanılarak sitenin mobil cihazlarda ve tabletlerde bozulmadan çalışması sağlandı.
+
+---
+
+## 🛠️ TEKNİK MİMARİ VE STANDARTLAR
+
+Projemiz, modern web geliştirme pratiklerini ve W3Schools eğitim materyallerini referans alır:
+
+### **Dinamik Arka Plan Yönetimi**
+Görsellerin okunabilirliği bozmaması için CSS ile "Overlay" (Karartma) katmanı eklendi:
+```css
+/* Görsel üzerine transparan maske uygulaması */
+#banner {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/bg.jpg');
     background-size: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-align: center;
+    background-attachment: fixed; /* Parallax Etkisi */
 }
-
-/* Menü ve Navigasyon */
-header { background: #2c3e50; color: white; padding: 10px 0; }
-.kutu { width: 80%; margin: auto; overflow: hidden; }
-nav ul { padding: 0; list-style: none; display: flex; justify-content: flex-end; }
-nav li { margin-left: 20px; }
-nav a { color: white; text-decoration: none; font-weight: bold; }
-.aktif { border-bottom: 3px solid #e74c3c; }
-
-/* --- TİMELİNE (DÜZ ÇİZGİ) TASARIMI --- */
-.timeline {
-    position: relative;
-    max-width: 1200px;
-    margin: 50px auto;
-}
-
-/* Ortadaki Dikey Çizgi */
-.timeline::after {
-    content: '';
-    position: absolute;
-    width: 6px;
-    background-color: #2c3e50;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    margin-left: -3px;
-}
-
-/* İçerik Kutuları */
-.konteynir {
-    padding: 10px 40px;
-    position: relative;
-    background-color: inherit;
-    width: 50%;
-    box-sizing: border-box;
-}
-
-/* Çizgi Üzerindeki Noktalar */
-.konteynir::after {
-    content: '';
-    position: absolute;
-    width: 25px;
-    height: 25px;
-    right: -17px;
-    background-color: white;
-    border: 4px solid #e74c3c;
-    top: 15px;
-    border-radius: 50%;
-    z-index: 1;
-}
-
-.sol { left: 0; }
-.sag { left: 50%; }
-
-.sag::after { left: -17px; }
-
-.icerik {
-    padding: 20px 30px;
-    background-color: white;
-    position: relative;
-    border-radius: 6px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-/* Mobil Uyumluluk (Ekran küçülünce çizgi sola kayar) */
-@media screen and (max-width: 600px) {
-    .timeline::after { left: 31px; }
-    .konteynir { width: 100%; padding-left: 70px; padding-right: 25px; }
-    .konteynir::after { left: 15px; }
-    .sag { left: 0; }
-}
-
-footer { text-align: center; padding: 20px; background: #2c3e50; color: white; margin-top: 50px; }
