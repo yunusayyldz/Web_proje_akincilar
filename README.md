@@ -1,145 +1,95 @@
-# Web_proje_akincilar
-w3schools --> html arka plan kod örnekleri
-<div align="center">
-  
-  # 🚫 SANAL BAHİS VE KUMAR BAĞIMLILIĞI İLE MÜCADELE
-  ### "Farkında Ol, Özgür Kal"
-  
-  <img src="https://img.shields.io/badge/Ders-Web%20Tasar%C4%B1m-blue?style=for-the-badge&logo=visual-studio-code" alt="Ders Web Tasarım">
-  <img src="https://img.shields.io/badge/Grup-AKINCILAR-red?style=for-the-badge" alt="Grup Akıncılar">
-  <img src="https://img.shields.io/badge/Durum-HTML%20%28%C4%B0skelet%29-orange?style=for-the-badge" alt="Durum HTML">
-  <img src="https://img.shields.io/badge/Lisans-Open%20Source-green?style=for-the-badge" alt="Lisans">
+/* Genel Ayarlar */
+body, html {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+    scroll-behavior: smooth;
+}
 
-  <br><br>
-  
-  _Bu proje, dijital çağın sessiz tehlikesi olan sanal bahis bağımlılığına karşı üniversite öğrencilerini bilinçlendirmek amacıyla Akıncılar Grubu tarafından geliştirilmiştir._
-  
-</div>
+/* W3Schools Arka Plan Örneği: Sabit Görsel (Parallax Effect) */
+#banner-sorunlar {
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('img/banner-bg.jpg');
+    height: 300px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
 
----
+/* Menü ve Navigasyon */
+header { background: #2c3e50; color: white; padding: 10px 0; }
+.kutu { width: 80%; margin: auto; overflow: hidden; }
+nav ul { padding: 0; list-style: none; display: flex; justify-content: flex-end; }
+nav li { margin-left: 20px; }
+nav a { color: white; text-decoration: none; font-weight: bold; }
+.aktif { border-bottom: 3px solid #e74c3c; }
 
-## 📑 İçindekiler
-1. [Proje Hakkında](#-proje-hakkında)
-2. [Mevcut Durum ve Teknoloji](#-mevcut-durum-ve-teknoloji)
-3. [Proje Takvimi (Roadmap)](#-proje-takvimi-roadmap)
-4. [Dosya Yapısı ve Sayfa İçerikleri](#-dosya-yapısı-ve-sayfa-içerikleri)
-5. [Ekip Üyeleri](#-akıncılar-proje-ekibi)
-6. [Kurulum ve Çalıştırma](#-kurulum-ve-çalıştırma)
+/* --- TİMELİNE (DÜZ ÇİZGİ) TASARIMI --- */
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 50px auto;
+}
 
----
+/* Ortadaki Dikey Çizgi */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: #2c3e50;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+}
 
-## 💡 Proje Hakkında
+/* İçerik Kutuları */
+.konteynir {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+    box-sizing: border-box;
+}
 
-Sanal bahis ve şans oyunları, günümüzde özellikle gençler ve üniversite öğrencileri arasında hızla yayılan ciddi bir bağımlılık türüdür.
+/* Çizgi Üzerindeki Noktalar */
+.konteynir::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -17px;
+    background-color: white;
+    border: 4px solid #e74c3c;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
 
-### 🎯 Temel Hedeflerimiz:
-* **Farkındalık:** Kumarın "kazanç" değil "kayıp" sistemi olduğunu matematiksel ve psikolojik gerçeklerle anlatmak.
-* **Destek:** Bağımlılık döngüsüne giren bireylere `cozumler.html` sayfası üzerinden çıkış yolları sunmak.
+.sol { left: 0; }
+.sag { left: 50%; }
 
----
+.sag::after { left: -17px; }
 
-## 🚧 Mevcut Durum ve Teknoloji
+.icerik {
+    padding: 20px 30px;
+    background-color: white;
+    position: relative;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
 
-Projemiz şu anda **Aşama 1 (HTML İskelet)** seviyesindedir. Görsel tasarım (CSS) ve etkileşim (JS) katmanları proje takvimine uygun olarak bir sonraki sprintte eklenecektir.
+/* Mobil Uyumluluk (Ekran küçülünce çizgi sola kayar) */
+@media screen and (max-width: 600px) {
+    .timeline::after { left: 31px; }
+    .konteynir { width: 100%; padding-left: 70px; padding-right: 25px; }
+    .konteynir::after { left: 15px; }
+    .sag { left: 0; }
+}
 
-| Teknoloji | Kullanım Amacı | Durum |
-| :--- | :--- | :---: |
-| <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white" /> | Sayfa iskeleti ve içerik yapısı | ✅ Tamamlandı |
-| <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white" /> | Renklendirme ve Yerleşim (Layout) | ⏳ 23 Aralık Bekleniyor |
-| <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black" /> | Sayfa içi etkileşimler | ⏳ 23 Aralık Bekleniyor |
-
----
-
-## 📅 Proje Takvimi (Roadmap)
-
-Ders kapsamında hocamızın belirlediği takvime sadık kalarak ilerliyoruz.
-
-- [x] **2 Aralık 🗓️**
-    - [x] Tasarım dosyalarının (mockup) hazırlanması.
-    - [x] GitHub Reposunun oluşturulması ve ekip izinleri.
-- [x] **9 Aralık 📝**
-    - [x] Tüm HTML sayfalarının oluşturulması (`.html`).
-    - [x] Sayfa içeriklerinin, metinlerin ve görsellerin girilmesi.
-- [ ] **23 Aralık 🎨**
-    - [ ] `styl.css`dosyasının detaylandırılması.
-    - [ ] Responsive (Mobil Uyumlu) tasarımın yapılması.
-- [ ] **30 Aralık 🎤**
-    - [ ] Sınıf sunumu ve demosu.
-- [ ] **Final Haftası 🏁**
-    - [ ] Proje Raporu.
-
----
-
-## 📂 Dosya Yapısı ve Sayfa İçerikleri
-
-Projemiz modüler bir yapıya sahiptir. Aşağıda hangi dosyanın hangi amaca hizmet ettiği açıklanmıştır:
-
-### 🏠 `index.html` (Ana Sayfa)
-Kullanıcıyı karşılayan vitrin sayfasıdır. Vurucu sloganlar ve projenin misyonunu içerir.
-
-### ⚠️ `sorunlar.html` (Problem Analizi)
-Sanal bahisin bireyde yarattığı **maddi iflas, depresyon ve sosyal izolasyon** gibi etkileri detaylandırır.
-
-### 🛡️ `cozumler.html` (Çıkış Yolu)
-Bağımlılıktan kurtulmak için atılması gereken adımlar, profesyonel destek kanalları (Yeşilay vb.) ve "Dopamin Detoksu" yöntemleri.
-
-### 🎓 `universite.html` (Üniversite)
-Ders başarısızlığı ve kampüs yaşamına etkileri.
-
-### 🎯 `hedef.html` (Misyonumuz)
-Projenin sosyal sorumluluk boyutu ve ulaşmak istediğimiz kitle analizi.
-
-### 📞 `iletisim.html` (Bize Ulaşın)
-Kullanıcı geri bildirim formu ve iletişim bilgileri.
-
----
-
-## 👥 Akıncılar Proje Ekibi
-
-| Avatar | İsim Soyad | Görev Tanımı | GitHub |
-| :---: | :--- | :--- | :--- |
-| <img src="https://github.com/yunusayyldz.png" width="40px" style="border-radius:50%"> | **Yunus Ayyıldız** | Proje Yöneticisi | [@yunusayyldz](https://github.com/yunusayyldz) |
-| <img src="https://github.com/ismailckr.png" width="40px" style="border-radius:50%"> | **İsmail Çakır** | İçerik Geliştirme  | [@ismailckr](https://github.com/ismailckr) |
-| <img src="https://github.com/elifcgungor.png" width="40px" style="border-radius:50%"> | **Elif C. Güngör** | Tasarım | [@elifcgungor](https://github.com/elifcgungor) |
-
----
-
-## 🚀 Kurulum ve Çalıştırma
-
-Bu proje şu an statik HTML dosyalarından oluşmaktadır. Bilgisayarınızda görüntülemek için:
-
-1.  Bu repoyu sağ üstteki **Code > Download ZIP** butonu ile indirin.
-2.  Klasörü zipten çıkarın.
-3.  `index.html` dosyasına çift tıklayarak tarayıcınızda açın.
-
----
-<div align="center">
-  
-  **© 2025 Akıncılar Grubu.**
-  <br>
-  *Web Tasarım Dersi Final Projesidir.*
-
-</div>
-
-graph TD
-    %% Ana Giriş
-    A[index.html <br/><b>Ana Sayfa</b>] --> B[hedef.html <br/><b>Vizyon & SKA 3</b>]
-    A --> C[sorunlar.html <br/><b>Tahribat Boyutları</b>]
-    
-    %% Sorunlardan Derinleşme
-    C --> D[universite.html <br/><b>Kampüs Etkisi & YBS Bakışı</b>]
-    
-    %% Veri ve Analiz
-    D --> E[sonuclar.html <br/><b>Anket Analiz Paneli</b>]
-    C --> E
-    
-    %% Çözüm Odaklılık
-    E --> F[cozumler.html <br/><b>Kurtuluş Yolları & Destek</b>]
-    C --> F
-    
-    %% Alt Detaylar (Styling & Legend)
-    style A fill:#3498db,stroke:#fff,stroke-width:2px,color:#fff
-    style F fill:#2ecc71,stroke:#fff,stroke-width:2px,color:#fff
-    style C fill:#e74c3c,stroke:#fff,stroke-width:2px,color:#fff
-    style E fill:#9b59b2,stroke:#fff,stroke-width:2px,color:#fff
-
+footer { text-align: center; padding: 20px; background: #2c3e50; color: white; margin-top: 50px; }
