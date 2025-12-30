@@ -45,8 +45,7 @@ Projemiz şu anda **Aşama 1 (HTML İskelet)** seviyesindedir. Görsel tasarım 
 | Teknoloji | Kullanım Amacı | Durum |
 | :--- | :--- | :---: |
 | <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white" /> | Sayfa iskeleti ve içerik yapısı | ✅ Tamamlandı |
-| <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white" /> | Renklendirme ve Yerleşim (Layout) | ⏳ 23 Aralık Bekleniyor |
-| <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black" /> | Sayfa içi etkileşimler | ⏳ 23 Aralık Bekleniyor |
+| <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white" /> | Renklendirme ve Yerleşim  | ✅ Tamamlandı | |
 
 ---
 
