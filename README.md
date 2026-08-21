@@ -51,7 +51,7 @@ Projemiz şu anda **Aşama 1 (HTML İskelet)** seviyesindedir. Görsel tasarım 
 
 ## 📅 Proje Takvimi (Roadmap)
 
-Ders kapsamında hocamızın belirlediği takvime sadık kalarak ilerliyoruz.
+Takvime sadık kalarak ilerliyoruz.
 
 - [x] **2 Aralık 🗓️**
     - [x] Tasarım dosyalarının (mockup) hazırlanması.
